@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
+<extension version="3.1" type="template" client="site">
+    <name>tmpl_restonic_blog</name>
+    <version>1.0</version>
+    <creationDate>8/23/2013</creationDate>
+    <author>Chad Windnagle - Cohesive Websites</author>
+    <authorEmail>chad@cohesivewebsites.com</authorEmail>
+    <copyright>Copyright (C) 2005 - 2013 Servant Holdings, LLC</copyright>
+    <description>Custom Bootstrap Responsive Restonic template</description>
+    <files>
+        <filename>templateDetails.xml</filename>
+        <folder>css</folder>
+        <folder>images</folder>
+        <folder>less</folder>
+    </files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+						name="logo"
+						type="list"
+						default="light"
+						label="Logo type"
+						description="Selec the logo to be used, light or dark">
+						<option value="light">Light Logo</option>
+						<option value="dark">Dark Logo</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+    <positions>
+        <position>logo</position>
+        <position>left</position>
+        <position>search</position>
+        <position>social</position>
+        <position>anniversary</position>
+        <position>top-menu</position>
+        <position>breadcrumbs</position>
+    </positions>
+</extension>

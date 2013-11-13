@@ -1,10 +1,132 @@
-.home > .container {
-  background: url('../images/menu-bg.png') repeat-x;
+body.home {
+  //background: url('../images/family-bg.jpg') no-repeat;
+  background-size: cover;
+}
 
-  .container-inner {
-    background: url('../images/home-background.png') no-repeat 0px 120px
+body, html {
+  height: 100%;
+}
+
+#site-wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -@fixedFooterHeight;
+}
+
+header {
+  padding-top: 15px;
+  section {
+	.makeRow();
+  }
+  .logo {
+	.makeColumn(3);
+	margin-left: 8px;
+	text-align: left;
+	padding: 0px 15px;
+  }
+  .search-social {
+	.makeColumn(6);
+	.pull-right();
+	.search {
+	  .makeColumn(3);
+	}
+	.social {
+	  .makeColumn(3);
+	  margin-left: 0px;
+	}
+  }
+  nav {
+	.makeColumn(9);
+	.pull-right();
   }
 }
+
+#background {
+  .mc-image {
+	background-position: top center !important;
+  }
+  .in-slide-content {
+	margin: 0 auto;
+	text-align: center;
+	position: relative;
+	top: 100px;
+	.slide-text {
+	  position: absolute;
+	  right: 0px;
+	  &#about-restonic {
+		width: 210px;
+	  }
+	  &#comfort-care-couple {
+		width: 340px;
+	  }
+	  &#restonic-signature {
+		width: 275px;
+		top: 120px;
+	  }
+	  &#restonic-blog-couple {
+		width: 567px;
+	  }
+	  &#restonic-comfort-care-signature-family {
+		width: 340px;
+
+	  }
+	  &#restonic-tempagel-mattress {
+
+	  }
+	  &#restonic-collection-couple {
+		  width: 433px;
+	  }
+	}
+  }
+  .container {
+	position: relative;
+  }
+}
+
+#push {
+  height: @fixedFooterHeight;
+}
+
+section {
+  .main-body-row {
+	.makeRow();
+	aside {
+	  .makeColumn(3);
+	}
+	.main-body-sidebar {
+	  .makeColumn(9)
+	}
+	.main-body {
+
+	}
+  }
+}
+
+footer {
+  height: @fixedFooterHeight;
+  .makeRow();
+
+  .footer-logos {
+	.makeColumn(5);
+	.pull-right();
+  }
+  .bestbuy {
+	.makeColumn(4);
+  }
+  .womens-choice {
+	.makeColumn(1);
+  }
+  .bestbuy, .womens-choice {
+	.pull-left();
+	margin-left: 0px;
+  }
+}
+
+.align-bottom {
+  padding-top: 31px;
+}
+
 
 .home {
   header {
@@ -15,6 +137,7 @@
       padding: 15px;
       margin: 0 auto;
       background: url('../images/overlay.png') repeat;
+	  min-height: 200px;
     }
     .span9 {
 
@@ -29,13 +152,20 @@
 
     }
     .span9 {
-      padding: 15px;
+	  padding: 0px 15px 0px 15px;
     }
     .span3 {
       background: url('../images/overlay.png') repeat;
     }
   }
   // end mainbody
+
+  #bottom {
+	.container > .span5 {
+	  background: url('../images/gold-overlay.png') repeat;
+	  padding: 14px;
+	}
+  }
 
   // footer css
   footer {
@@ -51,25 +181,22 @@
       background-color: @grayLight;
     }
     .span3 {
-      padding: 15px;
+	  padding: 0px 15px 0px 15px;
       margin: 0 auto;
     }
     .span9 {
       background-color: @gray;
-      padding: 15px;
+	  padding: 0px 15px 0px 15px;
     }
   }
   // end header css
 
   // section for mainbody css
   section#mainbody {
-    .container {
-      background-color: @grayLight;
-    }
-    .span9 {
-      background-color: @gray;
-      padding: 15px;
-    }
+
+	aside {
+	  padding-left: 2%;
+	}
   }
   // end mainbody
 
@@ -78,4 +205,16 @@
 
   }
   // end footer css
+}
+
+
+// all pages
+.breadcrumb {
+  padding: 4px 0px;
+  margin: 0 0 0px;
+  background: transparent;
+}
+
+.navbar {
+  margin-bottom: 0px;
 }

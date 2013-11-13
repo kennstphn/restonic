@@ -9,7 +9,7 @@
  */
 
 // Core variables and mixins
-@import "variables.less"; // Modify this for custom colors, font-sizes, etc
+@import "../../tmpl_restonic/less/variables"; // Modify this for custom colors, font-sizes, etc
 @import "../../../media/jui/less/mixins.less";
 
   // CSS Reset
@@ -21,7 +21,6 @@
 @import "../../../media/jui/less/layouts.less";
 
   // Base CSS
-@import "../../../media/jui/less/type.less";
 @import "../../../media/jui/less/code.less";
 @import "../../../media/jui/less/forms.less";
 @import "../../../media/jui/less/tables.less";
@@ -73,9 +72,10 @@
 // JOOMLA JUI /* <<< JUI <<< */
 
 /// Local css for typography, layout
-@import "theme.less";
-@import "typography.less";
+@import "./../tmpl_restonic/less/theme.less";
+@import "blog.less";
+@import "type.less";
 
 // custom less
-@import "menu.less";
-@import "k2-custom.less";
+@import "../../tmpl_restonic/less/menu.less";
+@import "../../tmpl_restonic/less/k2-custom.less";

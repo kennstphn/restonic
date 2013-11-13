@@ -1,0 +1,174 @@
+/* custom mattresses layout view */
+
+#mattresses-wrapper {
+  width: 736px;
+  text-align: center;
+  color: @white;
+
+  a {
+	text-align: center;
+	color: @white;
+	text-decoration: underline;
+  }
+  p {
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin: 0px;
+	font-size: 12px;
+  }
+  h2 {
+	padding: 5px 0px 5px 0px;
+	margin: 0px;
+	font-size: 150%;
+  }
+  h4 {
+	color: #d4bf95;
+	text-transform: none;
+	text-align: center;
+	margin: 10px 0px 10px 0px;
+	font-size: 14px;
+  }
+} // end #mattress-wrapper
+
+.comfort-care-collection {
+  width: 368px;
+  float: left;
+  height: 271px;
+  background: url('../images/system/comfort-care-mattress-footer.jpg') no-repeat left bottom #616265;
+  .border-top-left-radius(15px);
+
+  &:hover {
+	width: 368px;
+	float: left;
+	height: 271px;
+	background: url('../images/system/comfort-care-mattress-footer.jpg') no-repeat left bottom #717275;
+  }
+
+  h2 {
+	background-color: #929395;
+	text-align: center;
+	.border-top-left-radius(15px)
+  }
+
+} // end .comfort-care-collection
+
+.healthrest-collection {
+  width: 368px;
+  height: 271px;
+  float: right;
+  background: url('../images/system/healthcare-mattress-footer.jpg') no-repeat left bottom  #766a63;
+  .border-top-right-radius(15px);
+
+  &:hover {
+	width: 368px;
+	height: 271px;
+	float: right;
+	background: url('../images/system/healthcare-mattress-footer.jpg') no-repeat left bottom  #7c6f67;
+  }
+
+   h2 {
+	 background-color: #a09895;
+	 text-align: center;
+	 .border-top-right-radius(15px);
+  }
+
+}// end .healthrest-collection
+
+
+
+.award {
+  line-height: 1.5;
+  padding-top: 10px;
+  font-size: 13px;
+  width: 640px;
+}
+
+.award a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+// end mattress group page custom css.
+
+/* Mattress Page */
+.mattress-logo {
+  float: left;
+  width: 250px;
+}
+
+.mattress-description {
+  width: 380px;
+  float: left;
+  font-size: 0.867em;
+  color: #616265;
+}
+
+.itemList {
+  clear: left;
+}
+
+.mattress-item-image {
+  position: relative;
+  z-index: 10;
+  .pull-left();
+  top: -80px;
+}
+
+.mattress-item-description {
+  .makeColumn(6.5, 4);
+  z-index: 50;
+  position: relative;
+  font-size: 0.800em;
+  min-height: 170px;
+}
+
+.mattress-item-tip-image {
+  float: left;
+  padding-right: 10px;
+}
+
+.tab-content {
+  overflow: visible !important;
+  clear: both;
+}
+
+// mattress tabs
+#restonicTabs {
+  .makeColumn(8);
+  .pull-right();
+  border-bottom: 0px;
+  font-size: 0.833em;
+  background-color: #dadada;
+
+  li {
+	border-right: 1px solid #f4f4f4;
+	&:last-child {
+	  border-right: 0px none;
+	}
+	a {
+	  border: 0 none;
+	  background-color: transparent;
+	  .border-radius(0);
+	  color: @white;
+	}
+	&.active {
+	  border-right: 0px none;
+	  background-color: #f4f4f4;
+	  a {
+		color: #747679;
+		border: 0 none;
+		border-right: 1px solid #f4f4f4
+	  }
+	}
+
+  }
+  // tab items
+
+}
+
+.catItemIntroText {
+  position: relative;
+}

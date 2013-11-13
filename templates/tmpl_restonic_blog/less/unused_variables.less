@@ -36,7 +36,6 @@
 // -------------------------
 @bodyBackground:        @white;
 @textColor:             @grayDark;
-@restonic-menu:			#231f20;
 
 
 // Links
@@ -57,23 +56,23 @@
 @font-face {
   font-family: museo;
   src: url('../fonts/Museo500-Regular.otf');
-  font-weight: bold;
+  font-weight: 500;
 }
 
 @font-face {
   font-family: museo;
   src: url('../fonts/Museo700-Regular.otf');
-  font-weight: bolder;
+  font-weight: 700;
 }
 
-@sansFontFamily:        "Trebuchet MS", Helvetica, Arial, sans-serif;
+@sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
 @serifFontFamily:       museo, Georgia, "Times New Roman", Times, serif;
 @monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
 
 @baseFontSize:          15px;
-@baseFontFamily:        @sansFontFamily;
+@baseFontFamily:        @serifFontFamily;
 @baseLineHeight:        20px;
-@altFontFamily:         @serifFontFamily;
+@altFontFamily:         @sansFontFamily;
 
 @headingsFontFamily:    inherit; // empty to use BS default, @baseFontFamily
 @headingsFontWeight:    bold;    // instead of browser default, bold
@@ -209,8 +208,8 @@
 @navbarBackground:                darken(@navbarBackgroundHighlight, 5%);
 @navbarBorder:                    darken(@navbarBackground, 12%);
 
-@navbarText:                      #777;
-@navbarLinkColor:                 #777;
+@navbarText:                      #231f20;
+@navbarLinkColor:                 #231f20;
 @navbarLinkColorHover:            @grayDark;
 @navbarLinkColorActive:           @gray;
 @navbarLinkBackgroundHover:       transparent;
