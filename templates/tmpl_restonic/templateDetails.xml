@@ -14,6 +14,21 @@
         <folder>images</folder>
         <folder>less</folder>
     </files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+						name="logo"
+						type="list"
+						default="light"
+						label="Logo type"
+						description="Selec the logo to be used, light or dark">
+					<option value="light">Light Logo</option>
+					<option value="dark">Dark Logo</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
     <positions>
         <position>logo</position>
         <position>left</position>

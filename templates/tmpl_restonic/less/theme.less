@@ -21,9 +21,6 @@ header {
   }
   .logo {
 	.makeColumn(3);
-	margin-left: 8px;
-	text-align: left;
-	padding: 0px 15px;
   }
   .search-social {
 	.makeColumn(6);
@@ -37,12 +34,13 @@ header {
 	}
   }
   nav {
-	.makeColumn(9);
+	.makeColumn(10.5);
 	.pull-right();
   }
 }
 
 #background {
+  margin-top: 107px;
   .mc-image {
 	background-position: top center !important;
   }
@@ -95,18 +93,26 @@ section {
 	  .makeColumn(3);
 	}
 	.main-body-sidebar {
-	  .makeColumn(9)
+	  .makeColumn(9);
 	}
 	.main-body {
-
+	  .makeColumn(12);
 	}
+  }
+}
+
+.main-banner {
+  .sprocket-features-img-container img {
+	min-width: 100%;
+  }
+  .layout-slideshow .sprocket-features-img-container {
+	width: 100%;
   }
 }
 
 footer {
   height: @fixedFooterHeight;
   .makeRow();
-
   .footer-logos {
 	.makeColumn(5);
 	.pull-right();
@@ -121,6 +127,12 @@ footer {
 	.pull-left();
 	margin-left: 0px;
   }
+  .footer-nav-wrapper {
+	.makeColumn(10.5, 3);
+	.footer-nav {
+	  .makeColumn(3);
+	}
+  }
 }
 
 .align-bottom {
@@ -131,7 +143,6 @@ footer {
 .home {
   header {
     .container {
-
     }
     .span3 {
       padding: 15px;

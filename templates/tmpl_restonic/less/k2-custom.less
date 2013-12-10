@@ -118,7 +118,7 @@
 }
 
 .mattress-item-description {
-  .makeColumn(6.5, 4);
+  .makeColumn(6.5, .8);
   z-index: 50;
   position: relative;
   font-size: 0.800em;
@@ -137,16 +137,21 @@
 
 // mattress tabs
 #restonicTabs {
-  .makeColumn(8);
+  .makeColumn(10.5);
   .pull-right();
   border-bottom: 0px;
   font-size: 0.833em;
-  background-color: #dadada;
+  background-color: #bcbec0;
+  .border-radius(5px);
 
   li {
 	border-right: 1px solid #f4f4f4;
+	&:first-child {
+	  .border-left-radius(5px);
+	}
 	&:last-child {
 	  border-right: 0px none;
+
 	}
 	a {
 	  border: 0 none;
@@ -163,10 +168,13 @@
 		border-right: 1px solid #f4f4f4
 	  }
 	}
-
   }
   // tab items
+}
 
+#restonicContent {
+  .makeColumn(10.5);
+  .pull-right();
 }
 
 .catItemIntroText {

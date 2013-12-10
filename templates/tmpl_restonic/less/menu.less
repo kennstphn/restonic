@@ -4,10 +4,15 @@
   font-weight: 500;
   font-size: 1em;
   .nav > li {
-	&:first-child {
+	padding: 0 36px;
+	&:first-child, &.first {
+	  padding: 0 36px 0px 0px;
 	  a {
 		padding: 10px 15px 10px 0px;
 	  }
+	}
+	&.last-child, &.last {
+	  padding: 0px 0px 0px 36px;
 	}
 	a {
 	  color: @restonic-menu;
@@ -15,7 +20,7 @@
 	  text-shadow: 0 0px 0 transparent;
 
 	  &:hover {
-		color: @white;
+		color: @restonicRed;
 	  }
 	}
   } // end .nav > li
@@ -71,3 +76,27 @@ aside {
 	background: transparent;
   }
 } // end aside
+
+footer {
+  font-size: 0.800em;
+  font-weight: bold;
+  .footer-nav {
+	ul {
+	  li {
+		border-bottom: 1px solid #c0c0bf;
+		a {
+		  color: #777777;
+		}
+		&:last-child {
+		  border-bottom: 0 none;
+		}
+	  }
+	}
+	ul.nav > li:first-child {
+	  border-bottom: 0 none;
+	  a {
+		color: @restonicBeige;
+	  }
+	}
+  }
+}

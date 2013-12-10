@@ -101,23 +101,12 @@ if ($page_type == 'home') {
 			</div>
 		</section>
 	<?php endif; ?>
-	<section class="container">
-		<div class="custom">
-			<div class="left-column">
-				<p>Grid 1</p>
-			</div>
-			<div class="center-column">
-				<p>Grid 2</p>
-			</div>
-			<div class="right-column">
-				<p>Grid 3</p>
-			</div>
-		</div>
-	</section>
 	<footer>
 		<section class="container">
 			<?php if ($this->countModules('footer-menu')): ?>
-				<jdoc:include type="modules" name="footer-menu" style="xhtml" />
+				<div class="footer-nav-wrapper">
+					<jdoc:include type="modules" name="footer-menu" style="xhtml" />
+				</div>
 			<?php endif; ?>
 			<?php if ($this->countModules('bestbuy') ||$this->countModules('choice')): ?>
 				<div class="footer-logos">
