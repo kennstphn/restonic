@@ -51,10 +51,10 @@ defined('_JEXEC') or die;
 
 			<?php if($this->params->get('catImage') && $this->category->image): ?>
 			<!-- Category image -->
-				<div class="mattress-logo">
-					<img alt="<?php echo K2HelperUtilities::cleanHtml($this->category->name); ?>" src="<?php echo $this->category->image; ?>" style="width:<?php echo $this->params->get('catImageWidth'); ?>px; height:auto;" />
-				</div>
-			<?php endif; ?>
+                <div class="mattress-logo">
+			        <img alt="<?php echo K2HelperUtilities::cleanHtml($this->category->name); ?>" src="<?php echo $this->category->image; ?>" style="width:<?php echo $this->params->get('catImageWidth'); ?>px; height:auto;" />
+                </div>
+            <?php endif; ?>
 
 			<?php if($this->params->get('catTitle')): ?>
 			<!-- Category title -->
@@ -63,9 +63,9 @@ defined('_JEXEC') or die;
 
 			<?php if($this->params->get('catDescription')): ?>
 			<!-- Category description -->
-				<div class="mattress-description">
-					<?php echo $this->category->description; ?>
-				</div>
+                <div class="collection-description">
+                    <?php echo $this->category->description; ?>
+                </div>
 			<?php endif; ?>
 
 			<!-- K2 Plugins: K2CategoryDisplay -->
@@ -77,8 +77,7 @@ defined('_JEXEC') or die;
 
 		<?php if($this->params->get('subCategories') && isset($this->subCategories) && count($this->subCategories)): ?>
 		<!-- Subcategories -->
-		<div class="itemListSubCategories">
-			<h3><?php echo JText::_('K2_CHILDREN_CATEGORIES'); ?></h3>
+		<div class="collection-items">
 
 			<?php foreach($this->subCategories as $key=>$subCategory): ?>
 
@@ -90,37 +89,30 @@ defined('_JEXEC') or die;
 				$lastContainer='';
 			?>
 
-			<div class="subCategoryContainer<?php echo $lastContainer; ?>"<?php echo (count($this->subCategories)==1) ? '' : ' style="width:'.number_format(100/$this->params->get('subCatColumns'), 1).'%;"'; ?>>
-				<div class="subCategory">
-					<?php if($this->params->get('subCatImage') && $subCategory->image): ?>
-					<!-- Subcategory image -->
-					<a class="subCategoryImage" href="<?php echo $subCategory->link; ?>">
-						<img alt="<?php echo K2HelperUtilities::cleanHtml($subCategory->name); ?>" src="<?php echo $subCategory->image; ?>" />
-					</a>
-					<?php endif; ?>
+            <div class="collection-item">
+                <?php if($this->params->get('subCatImage') && $subCategory->image): ?>
+                <!-- Subcategory image -->
+                <a class="subCategoryImage" href="<?php echo $subCategory->link; ?>">
+                    <img alt="<?php echo K2HelperUtilities::cleanHtml($subCategory->name); ?>" src="<?php echo $subCategory->image; ?>" />
+                </a>
+                <?php endif; ?>
 
-					<?php if($this->params->get('subCatTitle')): ?>
-					<!-- Subcategory title -->
-					<h2>
-						<a href="<?php echo $subCategory->link; ?>">
-							<?php echo $subCategory->name; ?><?php if($this->params->get('subCatTitleItemCounter')) echo ' ('.$subCategory->numOfItems.')'; ?>
-						</a>
-					</h2>
-					<?php endif; ?>
+                <?php if($this->params->get('subCatTitle')): ?>
+                <!-- Subcategory title -->
+                <h2>
+                    <a href="<?php echo $subCategory->link; ?>">
+                        <?php echo $subCategory->name; ?><?php if($this->params->get('subCatTitleItemCounter')) echo ' ('.$subCategory->numOfItems.')'; ?>
+                    </a>
+                </h2>
+                <?php endif; ?>
 
-					<?php if($this->params->get('subCatDescription')): ?>
-					<!-- Subcategory description -->
-					<p><?php echo $subCategory->description; ?></p>
-					<?php endif; ?>
+                <?php if($this->params->get('subCatDescription')): ?>
+                <!-- Subcategory description -->
+                <p><?php echo $subCategory->description; ?></p>
+                <?php endif; ?>
 
-					<!-- Subcategory more... -->
-					<a class="subCategoryMore" href="<?php echo $subCategory->link; ?>">
-						<?php echo JText::_('K2_VIEW_ITEMS'); ?>
-					</a>
-
-					<div class="clr"></div>
-				</div>
-			</div>
+                <div class="clr"></div>
+            </div>
 			<?php if(($key+1)%($this->params->get('subCatColumns'))==0): ?>
 			<div class="clr"></div>
 			<?php endif; ?>
@@ -140,36 +132,29 @@ defined('_JEXEC') or die;
 	<div class="itemList">
 
 		<?php if(isset($this->leading) && count($this->leading)): ?>
-			<!-- Leading items -->
-        		<div id="itemListLeading">
-					<?php echo JHtmlBootstrap::startTabSet('restonic', array('active' => $this->leading[0]->id)); ?>
-					<?php foreach($this->leading as $key=>$item): ?>
+		<!-- Leading items -->
+		<div id="itemListLeading" class="collection-items">
+			<?php foreach($this->leading as $key=>$item): ?>
 
-					<?php
-					// Define a CSS class for the last container on each row
-					if( (($key+1)%($this->params->get('num_leading_columns'))==0) || count($this->leading)<$this->params->get('num_leading_columns') )
-						$lastContainer= ' itemContainerLast';
-					else
-						$lastContainer='';
-					?>
-						<?php echo JHtmlBootstrap::addTab('restonic', $item->id, $item->title); ?>
-							<div class="itemContainer<?php echo $lastContainer; ?>"<?php echo (count($this->leading)==1) ? '' : ' style="width:'.number_format(100/$this->params->get('num_leading_columns'), 1).'%;"'; ?>>
-								<?php
-									// Load category_item.php by default
-									$this->item=$item;
-									echo $this->loadTemplate('item');
-								?>
-							</div>
-						<?php echo JHtmlBootstrap::endTab(); ?>
-					<?php if(($key+1)%($this->params->get('num_leading_columns'))==0): ?>
-					<div class="clr"></div>
-					<?php endif; ?>
-					<?php endforeach; ?>
-					<?php echo JHtmlBootstrap::endTabSet(); ?>
-					<div class="clr"></div>
+			<?php
+			// Define a CSS class for the last container on each row
+			if( (($key+1)%($this->params->get('num_leading_columns'))==0) || count($this->leading)<$this->params->get('num_leading_columns') )
+				$lastContainer= ' itemContainerLast';
+			else
+				$lastContainer='';
+			?>
 
-				</div>
-
+                <?php
+					// Load category_item.php by default
+					$this->item=$item;
+					echo $this->loadTemplate('item');
+				?>
+			<?php if(($key+1)%($this->params->get('num_leading_columns'))==0): ?>
+			<div class="clr"></div>
+			<?php endif; ?>
+			<?php endforeach; ?>
+			<div class="clr"></div>
+		</div>
 		<?php endif; ?>
 
 		<?php if(isset($this->primary) && count($this->primary)): ?>
@@ -271,15 +256,3 @@ defined('_JEXEC') or die;
 	<?php endif; ?>
 </div>
 <!-- End K2 Category Layout -->
-
-<?php
-
-$doc = JFactory::getDocument();
-$doc->addScriptDeclaration("
-        jQuery( document ).ready(function() {
-            jQuery('#restonicTabs').tabCollapse({
-                tabsClass: 'hidden-phone',
-                accordionClass: 'visible-phone'
-            });
-        });");
-?>

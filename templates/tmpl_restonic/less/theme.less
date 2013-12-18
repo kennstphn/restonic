@@ -16,6 +16,7 @@ body, html {
 
 header {
   padding-top: 15px;
+  padding-bottom: 15px;
   section {
 	.makeRow();
   }
@@ -27,6 +28,10 @@ header {
 	.pull-right();
 	.search {
 	  .makeColumn(3);
+      input.search-query {
+        .border-radius(5px);
+        border-color: @black;
+      }
 	}
 	.social {
 	  .makeColumn(3);
@@ -36,6 +41,9 @@ header {
   nav {
 	.makeColumn(10.5);
 	.pull-right();
+  }
+  .navbar {
+    border-bottom: 1px solid @black;
   }
 }
 
@@ -88,7 +96,7 @@ header {
 
 section {
   .main-body-row {
-	.makeRow();
+	//.makeRow();
 	aside {
 	  .makeColumn(3);
 	}
@@ -96,7 +104,7 @@ section {
 	  .makeColumn(9);
 	}
 	.main-body {
-	  .makeColumn(12);
+	  //.makeColumn(12);
 	}
   }
 }
@@ -112,7 +120,13 @@ section {
 
 footer {
   height: @fixedFooterHeight;
-  .makeRow();
+  padding-top: 20px;
+  .footer-nav {
+    .makeColumn(2.7);
+    &:first-child {
+      margin-left: 0px;
+    }
+  }
   .footer-logos {
 	.makeColumn(5);
 	.pull-right();
@@ -134,6 +148,10 @@ footer {
 	}
   }
 }
+
+/*
+**
+** commenting out this code until I actually need it
 
 .align-bottom {
   padding-top: 31px;
@@ -218,6 +236,9 @@ footer {
   // end footer css
 }
 
+** ending
+*/
+
 
 // all pages
 .breadcrumb {
@@ -229,3 +250,4 @@ footer {
 .navbar {
   margin-bottom: 0px;
 }
+

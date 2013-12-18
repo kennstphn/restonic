@@ -51,9 +51,7 @@ defined('_JEXEC') or die;
 
 			<?php if($this->params->get('catImage') && $this->category->image): ?>
 			<!-- Category image -->
-				<div class="mattress-logo">
-					<img alt="<?php echo K2HelperUtilities::cleanHtml($this->category->name); ?>" src="<?php echo $this->category->image; ?>" style="width:<?php echo $this->params->get('catImageWidth'); ?>px; height:auto;" />
-				</div>
+			<img alt="<?php echo K2HelperUtilities::cleanHtml($this->category->name); ?>" src="<?php echo $this->category->image; ?>" style="width:<?php echo $this->params->get('catImageWidth'); ?>px; height:auto;" />
 			<?php endif; ?>
 
 			<?php if($this->params->get('catTitle')): ?>
@@ -63,9 +61,7 @@ defined('_JEXEC') or die;
 
 			<?php if($this->params->get('catDescription')): ?>
 			<!-- Category description -->
-				<div class="mattress-description">
-					<?php echo $this->category->description; ?>
-				</div>
+			<p><?php echo $this->category->description; ?></p>
 			<?php endif; ?>
 
 			<!-- K2 Plugins: K2CategoryDisplay -->
@@ -140,36 +136,31 @@ defined('_JEXEC') or die;
 	<div class="itemList">
 
 		<?php if(isset($this->leading) && count($this->leading)): ?>
-			<!-- Leading items -->
-        		<div id="itemListLeading">
-					<?php echo JHtmlBootstrap::startTabSet('restonic', array('active' => $this->leading[0]->id)); ?>
-					<?php foreach($this->leading as $key=>$item): ?>
+		<!-- Leading items -->
+		<div id="itemListLeading">
+			<?php foreach($this->leading as $key=>$item): ?>
 
-					<?php
-					// Define a CSS class for the last container on each row
-					if( (($key+1)%($this->params->get('num_leading_columns'))==0) || count($this->leading)<$this->params->get('num_leading_columns') )
-						$lastContainer= ' itemContainerLast';
-					else
-						$lastContainer='';
-					?>
-						<?php echo JHtmlBootstrap::addTab('restonic', $item->id, $item->title); ?>
-							<div class="itemContainer<?php echo $lastContainer; ?>"<?php echo (count($this->leading)==1) ? '' : ' style="width:'.number_format(100/$this->params->get('num_leading_columns'), 1).'%;"'; ?>>
-								<?php
-									// Load category_item.php by default
-									$this->item=$item;
-									echo $this->loadTemplate('item');
-								?>
-							</div>
-						<?php echo JHtmlBootstrap::endTab(); ?>
-					<?php if(($key+1)%($this->params->get('num_leading_columns'))==0): ?>
-					<div class="clr"></div>
-					<?php endif; ?>
-					<?php endforeach; ?>
-					<?php echo JHtmlBootstrap::endTabSet(); ?>
-					<div class="clr"></div>
-
-				</div>
-
+			<?php
+			// Define a CSS class for the last container on each row
+			if( (($key+1)%($this->params->get('num_leading_columns'))==0) || count($this->leading)<$this->params->get('num_leading_columns') )
+				$lastContainer= ' itemContainerLast';
+			else
+				$lastContainer='';
+			?>
+			
+			<div class="itemContainer<?php echo $lastContainer; ?>"<?php echo (count($this->leading)==1) ? '' : ' style="width:'.number_format(100/$this->params->get('num_leading_columns'), 1).'%;"'; ?>>
+				<?php
+					// Load category_item.php by default
+					$this->item=$item;
+					echo $this->loadTemplate('item');
+				?>
+			</div>
+			<?php if(($key+1)%($this->params->get('num_leading_columns'))==0): ?>
+			<div class="clr"></div>
+			<?php endif; ?>
+			<?php endforeach; ?>
+			<div class="clr"></div>
+		</div>
 		<?php endif; ?>
 
 		<?php if(isset($this->primary) && count($this->primary)): ?>
@@ -271,15 +262,3 @@ defined('_JEXEC') or die;
 	<?php endif; ?>
 </div>
 <!-- End K2 Category Layout -->
-
-<?php
-
-$doc = JFactory::getDocument();
-$doc->addScriptDeclaration("
-        jQuery( document ).ready(function() {
-            jQuery('#restonicTabs').tabCollapse({
-                tabsClass: 'hidden-phone',
-                accordionClass: 'visible-phone'
-            });
-        });");
-?>

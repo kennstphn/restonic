@@ -1,11 +1,85 @@
 
 // break point for the min width
-@media (min-width: 980px ) {
+@media (min-width: 1200px ) {
   section {
 	.main-body-row  {
 	  .main-body {
 		width: 1070px;
 	  }
 	}
+  }
+
+}
+
+@media (max-width: 1199px) {
+  // responsive tabs
+  #restonicTabs,
+  #restonicContent {
+    .makeColumn(9);
+    .pull-right();
+  }
+}
+
+@media (max-width: 1199px) {
+
+}
+
+@media (max-width: 979px) {
+  .mattress-logo {
+    padding-bottom: 10px;
+    .center-block();
+  }
+  .collection-description {
+    .center-block();
+    .text-center();
+  }
+  .collection-items {
+    .center-block();
+    width: 100%;
+  }
+}
+
+// 100% everything for smallest devices
+@media (max-width: 767px) {
+  header {
+    .logo {
+      .center-block();
+      .text-center();
+      padding-bottom: 5px;
+    }
+    .search-social {
+      .center-block();
+      width: 100%;
+      .search, .social {
+        .center-block();
+        .text-center();
+      }
+    }
+  }
+  .mattress-logo {
+
+    .text-center();
+  }
+  .mattress-description {
+    .center-block();
+    .text-center();
+    width: 100%;
+  }
+  .mattress-item-description {
+    .center-block();
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .mattress-item-image {
+    top: auto;
+  }
+  .mattress-item-tip-image {
+    float: none;
+    .text-center();
+  }
+  .mattress-item-description {
+    .text-center();
   }
 }

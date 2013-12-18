@@ -70,6 +70,7 @@
 @import "../../../media/jui/less/responsive-767px-max.less";
 @import "../../../media/jui/less/responsive-768px-979px.less";
 @import "../../../media/jui/less/responsive-1200px-min.less";
+@import "../../../media/jui/less/responsive-utilities.less";
 // JOOMLA JUI /* <<< JUI <<< */
 
 /// Local css for typography, layout
@@ -81,3 +82,18 @@
 @import "menu.less";
 @import "k2-custom.less";
 @import "responsive-custom.less";
+
+.center-block {
+  .center-block();
+  float: none;
+}
+
+// make the clear classes work properly
+.clearfix {
+  .clearfix();
+  clear: both;
+}
+
+.clr {
+  .clearfix(); // reuse the clearfix class
+}

@@ -83,20 +83,37 @@ footer {
   .footer-nav {
 	ul {
 	  li {
-		border-bottom: 1px solid #c0c0bf;
+        color: #777777;
 		a {
 		  color: #777777;
+          &:hover {
+            background-color: transparent;
+          }
 		}
-		&:last-child {
-		  border-bottom: 0 none;
-		}
-	  }
-	}
-	ul.nav > li:first-child {
-	  border-bottom: 0 none;
-	  a {
-		color: @restonicBeige;
-	  }
-	}
+      }
+    }
+  }
+}
+
+// Responsive menuing
+@media (max-width: 1199px) {
+  #top-menu {
+    .nav {
+      > li {
+        padding: 0 21px;
+        &:first-child {
+          padding: 0 21px 0px 0px;
+        }
+        &.last {
+          padding: 0px 0px 0px 21px;
+        }
+      }
+    }
+  }
+  header {
+    nav {
+      .makeColumn(9);
+      .pull-right();
+    }
   }
 }

@@ -95,15 +95,31 @@
 
 /* Mattress Page */
 .mattress-logo {
-  float: left;
-  width: 250px;
+  .makeColumn(3);
+  margin-left: 0px;
 }
 
 .mattress-description {
-  width: 380px;
-  float: left;
+  .makeColumn(5);
   font-size: 0.867em;
   color: #616265;
+}
+
+.collection-description {
+  .makeColumn(7);
+  margin-left: 30px;
+}
+
+.collection-items {
+  .makeColumn(10.5);
+  .pull-right();
+  .collection-item-image {
+    .makeColumn(4.8);
+    margin-right: 10px;
+  }
+  .collection-item-logo {
+    margin-top: 30px;
+  }
 }
 
 .itemList {
@@ -118,7 +134,7 @@
 }
 
 .mattress-item-description {
-  .makeColumn(6.5, .8);
+  .makeColumn(8.5, .8);
   z-index: 50;
   position: relative;
   font-size: 0.800em;
@@ -170,6 +186,22 @@
 	}
   }
   // tab items
+}
+
+#restonicTabs-accordion {
+  .panel-heading {
+    background-color: #bcbec0;
+    padding: 1px 3px;
+    .border-radius(5px);
+    margin: 8px 0px;
+    h4 {
+      margin: 6px 10px;
+      font-weight: normal;
+    }
+    a {
+      color: @white;
+    }
+  }
 }
 
 #restonicContent {

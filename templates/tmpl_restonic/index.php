@@ -26,12 +26,15 @@ $page_type = tmpHelper::pageType();
 
 // Add JavaScript Frameworks
 JHtml::_('bootstrap.framework');
+$doc->addScript(JUri::root().'media/jui/js/html5.js');
 
 /* if ($page_type == 'home') {
 	$doc->addStyleSheet('templates/'.$this->template.'/css/jquery.maximage.min.css');
 	$doc->addScript('templates/' . $this->template . '/js/jquery.cycle.all.js');
 	$doc->addScript('templates/' . $this->template . '/js/jquery.maximage.js');
 }*/
+
+$doc->addScript('templates/' . $this->template . '/js/bootstrap-tabcollapse.js');
 ?>
 
 <!DOCTYPE html>
@@ -39,6 +42,9 @@ JHtml::_('bootstrap.framework');
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <jdoc:include type="head" />
+    <script type="text/javascript">
+
+    </script>
 </head>
 
 <body class="<?php echo $page_type; ?>">
@@ -89,8 +95,7 @@ JHtml::_('bootstrap.framework');
 			</div>
 		</section>
 	<?php endif; ?>
-	<footer>
-		<section class="container">
+	<footer class="container">
 			<?php if ($this->countModules('footer-menu')): ?>
 				<jdoc:include type="modules" name="footer-menu" style="xhtml" />
 			<?php endif; ?>
@@ -100,7 +105,6 @@ JHtml::_('bootstrap.framework');
 					<jdoc:include type="modules" name="choice" style="none" />
 				</div>
 			<?php endif; ?>
-		</section>
 	</footer>
 </body>
 </html>
