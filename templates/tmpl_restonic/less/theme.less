@@ -16,7 +16,7 @@ body, html {
 
 header {
   padding-top: 15px;
-  padding-bottom: 15px;
+  padding-bottom: 0px;
   section {
 	.makeRow();
   }
@@ -113,29 +113,53 @@ section {
   .sprocket-features-img-container img {
 	min-width: 100%;
   }
-  .layout-slideshow .sprocket-features-img-container {
-	width: 100%;
+  .layout-slideshow
+  {
+    .sprocket-features-img-container {
+      width: 100%;
+    }
+    /* .sprocket-features-content {
+      top: 32px;
+      left: auto;
+      margin: 0 auto;
+      position: relative;
+      right: 20%;
+      width: 20%;
+    }*/
+    .sprocket-features-content {
+      position: absolute;
+      top: 40px;
+      right: 40px;
+      width: 40%;
+      text-align: right;
+      left: auto;
+    }
   }
 }
 
 footer {
   height: @fixedFooterHeight;
   padding-top: 20px;
+  position: relative;
+  z-index: 999;
   .footer-nav {
     .makeColumn(2.7);
     &:first-child {
       margin-left: 0px;
     }
   }
+  .footer-row {
+    .makeRow();
+  }
   .footer-logos {
-	.makeColumn(5);
+	.makeColumn(6);
 	.pull-right();
   }
   .bestbuy {
 	.makeColumn(4);
   }
   .womens-choice {
-	.makeColumn(1);
+	.makeColumn(2);
   }
   .bestbuy, .womens-choice {
 	.pull-left();
@@ -147,6 +171,11 @@ footer {
 	  .makeColumn(3);
 	}
   }
+}
+
+.home footer {
+  margin-top: -@fixedFooterHeight;
+  padding-top: 0px;
 }
 
 /*

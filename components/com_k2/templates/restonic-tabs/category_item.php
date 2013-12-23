@@ -122,26 +122,32 @@ K2HelperUtilities::setDefaultImage($this->item, 'itemlist', $this->params);
 
 	  <!-- Call to prepare extra fields -->
 	  <?php
-	  //convertArray to use ids as key
-	  $extrafields = array();
-	  foreach($this->item->extra_fields as $item)
-	  {
-		  $extrafields[$item->id] = $item->value;
-	  }
+          //convertArray to use ids as key
+          $extrafields = array();
+
+          if (count($this->item->extra_fields)) {
+              foreach($this->item->extra_fields as $item) {
+                  $extrafields[$item->id] = $item->value;
+              }
+          }
 	  ?>
 
 	  <?php if($this->item->params->get('catItemIntroText')): ?>
 	  <!-- Item introtext -->
 	  <div class="catItemIntroText">
 		  <div class="mattress-item-description">
-			  <div class="mattress-item-tip-image">
-				  <?php echo $extrafields[91]; ?>
-			  </div>
+              <?php if (array_key_exists(91, $extrafields)): ?>
+                  <div class="mattress-item-tip-image">
+                      <?php echo $extrafields[91]; ?>
+                  </div>
+              <?php endif; ?>
 			  <?php echo $this->item->introtext; ?>
 		  </div>
-		  <div class="mattress-item-image">
-		    <?php echo $extrafields[90]; ?>
-		  </div>
+          <?php if (array_key_exists(90, $extrafields)): ?>
+              <div class="mattress-item-image">
+                <?php echo $extrafields[90]; ?>
+              </div>
+          <?php endif; ?>
 
 	  </div>
 	  <?php endif; ?>

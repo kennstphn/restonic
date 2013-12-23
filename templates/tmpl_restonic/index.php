@@ -51,7 +51,7 @@ $doc->addScript('templates/' . $this->template . '/js/bootstrap-tabcollapse.js')
 	<header class="container">
 		<section>
 			<div class="logo">
-				<a href="<?php echo $this->baseurl; ?>">
+				<a href="<?php echo JUri::root(); ?>">
 					<img src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/images/<?php echo $params->get('logo', 'light'); ?>-logo.png" />
 				</a>
 			</div>
@@ -96,15 +96,19 @@ $doc->addScript('templates/' . $this->template . '/js/bootstrap-tabcollapse.js')
 		</section>
 	<?php endif; ?>
 	<footer class="container">
-			<?php if ($this->countModules('footer-menu')): ?>
-				<jdoc:include type="modules" name="footer-menu" style="xhtml" />
-			<?php endif; ?>
-			<?php if ($this->countModules('bestbuy') ||$this->countModules('choice')): ?>
-				<div class="footer-logos">
-					<jdoc:include type="modules" name="bestbuy" style="none" />
-					<jdoc:include type="modules" name="choice" style="none" />
-				</div>
-			<?php endif; ?>
+        <?php if ($this->countModules('bestbuy') ||$this->countModules('choice')): ?>
+            <section class="footer-row">
+                <div class="footer-logos">
+                    <jdoc:include type="modules" name="bestbuy" style="none" />
+                    <jdoc:include type="modules" name="choice" style="none" />
+                </div>
+            </section>
+        <?php endif; ?>
+        <?php if ($this->countModules('footer-menu')): ?>
+            <section class="footer-row">
+                <jdoc:include type="modules" name="footer-menu" style="xhtml" />
+            </section>
+        <?php endif; ?>
 	</footer>
 </body>
 </html>

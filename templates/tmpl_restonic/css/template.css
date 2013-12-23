@@ -6266,11 +6266,11 @@ html {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -160px;
+  margin: 0 auto -390px;
 }
 header {
   padding-top: 15px;
-  padding-bottom: 15px;
+  padding-bottom: 0px;
 }
 header section {
   margin-left: -20px;
@@ -6371,7 +6371,7 @@ header .navbar {
   position: relative;
 }
 #push {
-  height: 160px;
+  height: 390px;
 }
 section .main-body-row aside {
   float: left;
@@ -6386,12 +6386,32 @@ section .main-body-row .main-body-sidebar {
 .main-banner .sprocket-features-img-container img {
   min-width: 100%;
 }
+.main-banner .layout-slideshow {
+  /* .sprocket-features-content {
+      top: 32px;
+      left: auto;
+      margin: 0 auto;
+      position: relative;
+      right: 20%;
+      width: 20%;
+    }*/
+}
 .main-banner .layout-slideshow .sprocket-features-img-container {
   width: 100%;
 }
+.main-banner .layout-slideshow .sprocket-features-content {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  width: 40%;
+  text-align: right;
+  left: auto;
+}
 footer {
-  height: 160px;
+  height: 390px;
   padding-top: 20px;
+  position: relative;
+  z-index: 999;
 }
 footer .footer-nav {
   float: left;
@@ -6401,10 +6421,33 @@ footer .footer-nav {
 footer .footer-nav:first-child {
   margin-left: 0px;
 }
+footer .footer-row {
+  margin-left: -20px;
+  *zoom: 1;
+  clear: both;
+}
+footer .footer-row:before,
+footer .footer-row:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+footer .footer-row:after {
+  clear: both;
+}
+footer .footer-row:before,
+footer .footer-row:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+footer .footer-row:after {
+  clear: both;
+}
 footer .footer-logos {
   float: left;
   margin-left: 20px;
-  width: 380px;
+  width: 460px;
   float: right;
 }
 footer .bestbuy {
@@ -6415,7 +6458,7 @@ footer .bestbuy {
 footer .womens-choice {
   float: left;
   margin-left: 20px;
-  width: 60px;
+  width: 140px;
 }
 footer .bestbuy,
 footer .womens-choice {
@@ -6431,6 +6474,10 @@ footer .footer-nav-wrapper .footer-nav {
   float: left;
   margin-left: 20px;
   width: 220px;
+}
+.home footer {
+  margin-top: -390px;
+  padding-top: 0px;
 }
 /*
 **
@@ -6534,6 +6581,13 @@ footer .footer-nav-wrapper .footer-nav {
 }
 header .search-query {
   color: #000000;
+}
+.main-banner .layout-slideshow .sprocket-features-desc {
+  background: transparent;
+  color: #616265;
+  font-family: museo, Georgia, "Times New Roman", Times, serif;
+  font-size: 2.733em;
+  font-weight: bolder;
 }
 aside h3 {
   color: #ffffff;
@@ -6656,91 +6710,100 @@ footer .footer-nav ul li a:hover {
   }
 }
 /* custom mattresses layout view */
+/*
 #mattresses-wrapper {
   width: 736px;
   text-align: center;
-  color: #ffffff;
-}
-#mattresses-wrapper a {
-  text-align: center;
-  color: #ffffff;
-  text-decoration: underline;
-}
-#mattresses-wrapper p {
-  padding-left: 10px;
-  padding-right: 10px;
-  text-align: center;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin: 0px;
-  font-size: 12px;
-}
-#mattresses-wrapper h2 {
-  padding: 5px 0px 5px 0px;
-  margin: 0px;
-  font-size: 150%;
-}
-#mattresses-wrapper h4 {
-  color: #d4bf95;
-  text-transform: none;
-  text-align: center;
-  margin: 10px 0px 10px 0px;
-  font-size: 14px;
-}
+  color: @white;
+
+  a {
+	text-align: center;
+	color: @white;
+	text-decoration: underline;
+  }
+  p {
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin: 0px;
+	font-size: 12px;
+  }
+  h2 {
+	padding: 5px 0px 5px 0px;
+	margin: 0px;
+	font-size: 150%;
+  }
+  h4 {
+	color: #d4bf95;
+	text-transform: none;
+	text-align: center;
+	margin: 10px 0px 10px 0px;
+	font-size: 14px;
+  }
+} // end #mattress-wrapper
+
 .comfort-care-collection {
   width: 368px;
   float: left;
   height: 271px;
   background: url('../images/system/comfort-care-mattress-footer.jpg') no-repeat left bottom #616265;
-  -webkit-border-top-left-radius: 15px;
-  -moz-border-radius-topleft: 15px;
-  border-top-left-radius: 15px;
-}
-.comfort-care-collection:hover {
-  width: 368px;
-  float: left;
-  height: 271px;
-  background: url('../images/system/comfort-care-mattress-footer.jpg') no-repeat left bottom #717275;
-}
-.comfort-care-collection h2 {
-  background-color: #929395;
-  text-align: center;
-  -webkit-border-top-left-radius: 15px;
-  -moz-border-radius-topleft: 15px;
-  border-top-left-radius: 15px;
-}
+  .border-top-left-radius(15px);
+
+  &:hover {
+	width: 368px;
+	float: left;
+	height: 271px;
+	background: url('../images/system/comfort-care-mattress-footer.jpg') no-repeat left bottom #717275;
+  }
+
+  h2 {
+	background-color: #929395;
+	text-align: center;
+	.border-top-left-radius(15px)
+  }
+
+} // end .comfort-care-collection
+
 .healthrest-collection {
   width: 368px;
   height: 271px;
   float: right;
-  background: url('../images/system/healthcare-mattress-footer.jpg') no-repeat left bottom #766a63;
-  -webkit-border-top-right-radius: 15px;
-  -moz-border-radius-topright: 15px;
-  border-top-right-radius: 15px;
-}
-.healthrest-collection:hover {
-  width: 368px;
-  height: 271px;
-  float: right;
-  background: url('../images/system/healthcare-mattress-footer.jpg') no-repeat left bottom #7c6f67;
-}
-.healthrest-collection h2 {
-  background-color: #a09895;
-  text-align: center;
-  -webkit-border-top-right-radius: 15px;
-  -moz-border-radius-topright: 15px;
-  border-top-right-radius: 15px;
-}
+  background: url('../images/system/healthcare-mattress-footer.jpg') no-repeat left bottom  #766a63;
+  .border-top-right-radius(15px);
+
+  &:hover {
+	width: 368px;
+	height: 271px;
+	float: right;
+	background: url('../images/system/healthcare-mattress-footer.jpg') no-repeat left bottom  #7c6f67;
+  }
+
+   h2 {
+	 background-color: #a09895;
+	 text-align: center;
+	 .border-top-right-radius(15px);
+  }
+
+}// end .healthrest-collection
+
+
+
 .award {
   line-height: 1.5;
   padding-top: 10px;
   font-size: 13px;
   width: 640px;
 }
+
 .award a {
   color: #ffffff;
   text-decoration: underline;
 }
+
+// end mattress group page custom css.
+*/
 /* Mattress Page */
 .mattress-logo {
   float: left;
@@ -6947,6 +7010,9 @@ footer .footer-nav ul li a:hover {
     margin-right: auto;
     float: none;
     width: 100%;
+  }
+  .main-banner {
+    margin: 0 -20px;
   }
 }
 @media (max-width: 500px) {
