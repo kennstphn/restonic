@@ -35,6 +35,7 @@ $doc->addScript(JUri::root().'media/jui/js/html5.js');
 }*/
 
 $doc->addScript('templates/' . $this->template . '/js/bootstrap-tabcollapse.js');
+
 ?>
 
 <!DOCTYPE html>
@@ -63,10 +64,19 @@ $doc->addScript('templates/' . $this->template . '/js/bootstrap-tabcollapse.js')
 					<jdoc:include type="modules" name="social-media" style="none" />
 				</div>
 			</div>
-			<nav>
-				<div class="navbar">
-					<jdoc:include type="modules" name="top-menu" style="none" />
-				</div>
+			<nav id="top-menu">
+                <div class="navbar">
+                    <div class="container">
+                        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target="#nav1">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="nav-collapse collapse" id="nav1">
+                            <jdoc:include type="modules" name="top-menu" style="none" />
+                        </div><!--/.nav-collapse -->
+                    </div>
+                </div>
 			</nav>
 		</section>
 	</header>
