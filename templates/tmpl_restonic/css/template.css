@@ -6997,26 +6997,27 @@ footer .footer-logos {
   font-size: .7em;
   line-height: 1.5em;
 }
+.nav-text {
+  float: left;
+  padding-left: 30px;
+  color: #75133a;
+}
 #top-menu {
   font-family: museo, Georgia, "Times New Roman", Times, serif;
   font-weight: 500;
   font-size: 1em;
 }
 #top-menu .nav > li {
-  padding: 0 36px;
+  padding: 0 35px;
 }
 #top-menu .nav > li:first-child,
 #top-menu .nav > li.first {
-  padding: 0 36px 0px 0px;
-}
-#top-menu .nav > li:first-child a,
-#top-menu .nav > li.first a {
-  padding: 10px 15px 10px 0px;
+  padding: 0 35px 0px 0px;
 }
 #top-menu .nav > li.last-child,
 #top-menu .nav > li.last,
 #top-menu .nav > li:last-child {
-  padding: 0px 0px 0px 36px;
+  padding: 0px 0px 0px 35px;
 }
 #top-menu .nav > li a {
   color: #231f20;
@@ -7033,15 +7034,20 @@ footer .footer-logos {
   box-shadow: 0 0 0 transparent;
   background: transparent;
 }
-#top-menu .parent .maximenuck2 {
-  background: #ffffff;
+#top-menu .dropdown-menu {
+  padding-left: 10px;
+}
+#top-menu .dropdown-menu li {
+  float: left;
+  margin-left: 20px;
+  width: 132px;
+  margin-left: 0px;
 }
 #top-menu img {
   width: auto;
 }
 #top-menu ul.nav > .parent ul li {
-  min-width: 170px;
-  padding: 8px !important;
+  padding: 8px;
   border-bottom: 1px dotted #ccc;
 }
 #top-menu ul.nav > .parent ul li:last-child {
@@ -7054,11 +7060,28 @@ footer .footer-logos {
   color: #000000;
   text-decoration: none;
 }
+#top-menu ul.nav > .parent ul li.image-nav {
+  padding: 0px;
+  border-bottom: 0 none;
+}
+#top-menu ul.nav > .parent ul li.image-nav a {
+  padding: 0px;
+}
+#top-menu ul.nav > .parent ul li.image-nav img {
+  opacity: .8;
+}
+#top-menu ul.nav > .parent ul li.image-nav img:hover {
+  opacity: 1;
+}
+#top-menu .nav-child .image-title {
+  display: none;
+}
 .navbar {
   border-bottom: 2px solid #fff;
 }
 .navbar .nav {
   float: right;
+  margin: 0px;
 }
 aside .parent > ul {
   padding-left: 10px;
@@ -7081,13 +7104,13 @@ footer .footer-nav ul li a:hover {
 }
 @media (max-width: 1199px) {
   #top-menu .nav > li {
-    padding: 0 21px;
+    padding: 0 18px;
   }
   #top-menu .nav > li:first-child {
-    padding: 0 21px 0px 0px;
+    padding: 0 18px 0px 0px;
   }
   #top-menu .nav > li.last {
-    padding: 0px 0px 0px 21px;
+    padding: 0px 0px 0px 18px;
   }
   header nav {
     float: left;
@@ -7380,6 +7403,14 @@ footer .footer-nav ul li a:hover {
     float: none;
     text-align: center;
   }
+  header nav {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+    text-align: center;
+    width: 100%;
+  }
   .mattress-logo {
     text-align: center;
   }
@@ -7414,7 +7445,7 @@ footer .footer-nav ul li a:hover {
     text-align: center;
   }
 }
-@media (max-width: 969px) {
+@media (max-width: 767px) {
   body {
     padding-top: 0;
   }
@@ -7562,13 +7593,18 @@ footer .footer-nav ul li a:hover {
   }
   .navbar .btn-navbar {
     display: block;
+    margin: 10px auto;
+    float: none;
   }
   .navbar-static .navbar-inner {
     padding-left: 10px;
     padding-right: 10px;
   }
+  #top-menu .nav-child .image-title {
+    display: block;
+  }
 }
-@media (min-width: 969px + 1) {
+@media (min-width: 767px + 1) {
   .nav-collapse.collapse {
     height: auto !important;
     overflow: visible !important;
@@ -7650,7 +7686,7 @@ header .navbar .dropdown.yamm-fullwidth .nav-child {
   left: 0;
   right: 0;
 }
-@media (max-width: 969px) {
+@media (max-width: 767px) {
   .yamm .dropdown.yamm-fullwidth .dropdown-menu {
     width: auto;
   }

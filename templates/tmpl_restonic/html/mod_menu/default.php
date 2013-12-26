@@ -22,7 +22,14 @@ defined('_JEXEC') or die;
 ?>>
 <?php
 foreach ($list as $i => &$item) :
+
 	$class = 'item-'.$item->id;
+
+    // if the menu is an image add a class so we can kill some padding
+    if (!empty($item->menu_image)) {
+        $class.= ' image-nav';
+    }
+
     $dataToggle = '';
 	if ($item->id == $active_id)
 	{

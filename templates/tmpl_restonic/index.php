@@ -8,15 +8,10 @@
  */
 
 // Getting params from template
-$params = JFactory::getApplication()->getTemplate(true)->params;
-
-$app = JFactory::getApplication();
-$doc = JFactory::getDocument();
-$this->language = $doc->language;
-$this->direction = $doc->direction;
+$params = $this->params;
 
 // Add Stylesheets
-$doc->addStyleSheet('templates/'.$this->template.'/css/template.css');
+$this->addStyleSheet('templates/'.$this->template.'/css/template.css');
 
 // get some template functions
 require_once('templates/' .  $this->template . '/template_function.php');
@@ -26,7 +21,7 @@ $page_type = tmpHelper::pageType();
 
 // Add JavaScript Frameworks
 JHtml::_('bootstrap.framework');
-$doc->addScript(JUri::root().'media/jui/js/html5.js');
+$this->addScript(JUri::root().'media/jui/js/html5.js');
 
 /* if ($page_type == 'home') {
 	$doc->addStyleSheet('templates/'.$this->template.'/css/jquery.maximage.min.css');
@@ -34,7 +29,7 @@ $doc->addScript(JUri::root().'media/jui/js/html5.js');
 	$doc->addScript('templates/' . $this->template . '/js/jquery.maximage.js');
 }*/
 
-$doc->addScript('templates/' . $this->template . '/js/bootstrap-tabcollapse.js');
+$this->addScript('templates/' . $this->template . '/js/bootstrap-tabcollapse.js');
 
 ?>
 
@@ -68,6 +63,7 @@ $doc->addScript('templates/' . $this->template . '/js/bootstrap-tabcollapse.js')
                 <div class="navbar">
                     <div class="container">
                         <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target="#nav1">
+                            <span class="nav-text">Site Navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>

@@ -10,4 +10,5 @@
 defined('_JEXEC') or die;
 
 ?>
+
 <a class="dropdown-toggle" href="#" data-toggle="dropdown"><?php echo $item->title; ?></a>
