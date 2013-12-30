@@ -230,7 +230,14 @@ jQuery(document).ready(function () {
     }
 
     function writeError() {
-        jQuery("#results").append('<div style="background-color: #7f103f; margin-top: 10px; padding: 10px;"><strong>There were no results found. Please try a different zipcode </div>');
+        var message = jQuery('.alert');
+        message.append("<p>No results found. Please try another zipcode.</p>");
+        message.removeClass('hidden');
+        message.addClass('in');
+        message.addClass('alert-info');
+        // jQuery("#results").append('<div style="background-color: #7f103f; margin-top: 10px; padding: 10px;"><strong>There were no results found. Please try a different zipcode </div>');
+        // hide the submit button
+        jQuery("#submit").show();
     }
 
     //parses through distancesArr and addressesArr and returns results list sorted by distance - @Chad Windnagle
