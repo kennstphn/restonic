@@ -18,9 +18,8 @@
 | distance array.									  |
 \*****************************************************/
 
-var $j = jQuery.noConflict();
 
-$j(document).ready(function () {
+jQuery(document).ready(function () {
 
      
   // First we create the map and set the center location
@@ -36,9 +35,8 @@ $j(document).ready(function () {
 
   // We set the map to show the middle of the US, zoomed out quite a bit
   geocoder.geocode({'address': "1200 Market Street St. Louis MO 63103"}, function (results, status) {
-    if (status == google.maps.GeocoderStatus.OK)
-    {
-      var myOptions = {
+    if (status == google.maps.GeocoderStatus.OK) {
+        var myOptions = {
         zoom: 3,
         center: results[0].geometry.location,
         mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -49,26 +47,25 @@ $j(document).ready(function () {
   });
 
   // When the user clicks the submit button, we locate the stores
-  $j("#submit").click(function () {
+  jQuery("#submit").click(function () {
     // clear the results
-    $j("#results").html("");
+    jQuery("#results").html("");
 
     // hide the submit button
-    $j("#submit").hide();
+    jQuery("#submit").hide();
 
     // show the loader
-    $j("#loader").show();
+    jQuery("#loader").show();
 
     locateStores();
   });
 
+  
+
   // This is the function that is called when the user clicks on Submit
   function locateStores ()
   {
-  
-  	
-  
-    var zip = $j("#zip").val();
+    var zip = jQuery("#zip").val();
 
     // The first thing we do is center on the user's zip code and zoom in
     geocoder.geocode({'address': zip}, function (results, status) {
@@ -80,30 +77,30 @@ $j(document).ready(function () {
           center: results[0].geometry.location,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
- 
+
 
        map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
       }
     });
 
     // let's get the JSON list of stores
-    
+
     addresses = "";
-    
-    $j.post("components/com_locateretailers/views/locateretailers/tmpl/getStores.php", {'zip': zip}, function (data) {
-      addresses = $j.parseJSON(data);
- 
+
+    jQuery.post("components/com_locateretailers/views/locateretailers/tmpl/getStores.php", {'zip': zip}, function (data) {
+      addresses = jQuery.parseJSON(data);
+
  	if(addresses != "") {
       // run the recursive function to geocode and place the markers
       runMarkers(0);
       //alert(distanceArr);
       writeResults(); // loop through results and return sorted by distance @chad windnagle
-      
+
       }
      else {
      	writeError();
-     } 
-    });    
+     }
+    });
   }
 
   function runMarkers(i)
@@ -120,10 +117,10 @@ $j(document).ready(function () {
     if ((i == addresses.length) || (addresses.length == 0))
     {
       // hide the ajax loader
-      $j("#loader").hide();
+      jQuery("#loader").hide();
 
       // show the submit button
-      $j("#submit").show();
+      jQuery("#submit").show();
     }
 
   }
@@ -131,7 +128,7 @@ $j(document).ready(function () {
   function placeMarker (address, name, street, city, state, zip, phone, lt, lg, url)
   {
     var myLatlng = new google.maps.LatLng(lt, lg);
-   
+
     rad = function(x) {return x*Math.PI/180;}
 
     hDistance = (function(p1, p2) {
@@ -149,15 +146,15 @@ $j(document).ready(function () {
 
     var distance = hDistance(originalLatLng, myLatlng) * .62137119;
     distance = distance.toFixed(3);
-    
-    var distanceConfig =  $j("#distanceConfig").val();
-    var zipConfig = $j("#zip").val();
 
-   
+    var distanceConfig =  jQuery("#distanceConfig").val();
+    var zipConfig = jQuery("#zip").val();
+
+
 	// make sure distances go array in as numbers
      distance = distance *1;
-     
-	
+
+
     if (distance <= distanceConfig || zipConfig == zip )
     {
       // Add the marker
@@ -183,9 +180,9 @@ $j(document).ready(function () {
       google.maps.event.addListener(marker, 'click', function() {
         infowindow.open(map, marker);
       });
-     
-     
-     
+
+
+
      // put just distances in distancesArr
      distancesArr.push(distance);
 
@@ -195,35 +192,35 @@ $j(document).ready(function () {
      addressesArr.push('<div style="background-color: #7f103f; margin-top: 10px; padding: 10px;"><strong>' + name +
         '</strong><br />Distance: ' + distance + ' miles<br />'
         + phone + '<br />' + street + '<br />' + city + ", " + state + " " + zip +
-        '<br /><a href="http://maps.google.com/?daddr=' + street + '+' + city + '+' + state + '+' + zip + 
+        '<br /><a href="http://maps.google.com/?daddr=' + street + '+' + city + '+' + state + '+' + zip +
         '" target="_blank">Get Directions</a><br /><a href="' + url + '">' + url + '</a></div>');
-          
+
      }
 
       // Add to the results division
-      /* $j("#results").append('<div style="background-color: #511221; margin-top: 10px; padding: 10px;"><strong>' + name +
+      /* jQuery("#results").append('<div style="background-color: #511221; margin-top: 10px; padding: 10px;"><strong>' + name +
         '</strong><br />Distance: ' + distance + ' miles<br />'
         + phone + '<br />' + street + '<br />' + city + ", " + state + " " + zip +
-        '<br /><a href="http://maps.google.com/?daddr=' + street + '+' + city + '+' + state + '+' + zip + 
+        '<br /><a href="http://maps.google.com/?daddr=' + street + '+' + city + '+' + state + '+' + zip +
         '" target="_blank">Get Directions</a><br /><a href="' + url + '">' + url + '</a></div>'); */
     }
   }
-  
+
   function writeError() {
-  	$j("#results").append('<div style="background-color: #7f103f; margin-top: 10px; padding: 10px;"><strong>There were no results found. Please try a different zipcode </div>');
+  	jQuery("#results").append('<div style="background-color: #7f103f; margin-top: 10px; padding: 10px;"><strong>There were no results found. Please try a different zipcode </div>');
   }
-  
+
   //parses through distancesArr and addressesArr and returns results list sorted by distance - @Chad Windnagle
   function writeResults() {
-  	// set up a few vars for our loops	
+  	// set up a few vars for our loops
   	var lowest = 1000; // high number which gets reset for distances
   	var lowest_id = 0; // records our lowest iterator
   	var count = 0; // iterates our while loop
   	var length = distancesArr.length; // find the first total number of results
-  	
+
   	// while loop iterates through array num of times before we remove anything from it
   	while (count < length ) {
-  		
+
   		// inner loop iterates through our distances to find lowest distance and lowest distance index
   		for (d=0; d < distancesArr.length; d++) {
   			if (distancesArr[d] < lowest) {
@@ -231,15 +228,15 @@ $j(document).ready(function () {
   				lowest_id = d;	// get lowest distance index
   			}
   		}
-		
-   		$j("#results").append(addressesArr[lowest_id]); // print from addressesArr our lowest distance using lowest distance index
+
+   		jQuery("#results").append(addressesArr[lowest_id]); // print from addressesArr our lowest distance using lowest distance index
   		distancesArr.splice(lowest_id,1); // remove lowest distance from distancesArr
   		addressesArr.splice(lowest_id,1); // remove lowest distance address from addressArr
   		lowest = 1000; // rest lowest distance
-  		
+
   		count++; // while loop iterator
   	} // end while
-  	
+
   	}
 
   function geocodeAndPlaceMarker (address, name, street, city, state, zip, phone)
@@ -271,8 +268,8 @@ $j(document).ready(function () {
         var distance = hDistance(originalLatLng, myLatlng) * .62137119;
         distance = distance.toFixed(3);
 
-        var distanceConfig =  $j("#distanceConfig").val();
-        var zipConfig = $j("#zip").val();
+        var distanceConfig =  jQuery("#distanceConfig").val();
+        var zipConfig = jQuery("#zip").val();
 
    		 if (distance <= distanceConfig || zipConfig == zip )
         {
@@ -294,10 +291,10 @@ $j(document).ready(function () {
           google.maps.event.addListener(marker, 'click', function() {
             infowindow.open(map, marker);
           });
-	
-		
+
+
           // Add to the results division
-          $j("#results").append('<div style="background-color: #7f103f; margin-top: 10px; padding: 10px;"><strong>' + name + 
+          jQuery("#results").append('<div style="background-color: #7f103f; margin-top: 10px; padding: 10px;"><strong>' + name +
             '</strong><br />Distance: ' + distance + ' miles<br />' 
             + phone + '<br />' + street + '<br />' + city + ", " + state + " " + zip +
             '<br /><a href="http://maps.google.com/?daddr=' + street + '+' + city + '+' + state + '+' + zip + '" target="_blank">Get Directions</a></div>');

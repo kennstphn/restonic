@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+    <layout title="Locate Retailers" option="com_locateretailers">
+
+        <message>
+            Default view for locate retailers
+        </message>
+    </layout>
+</metadata>
