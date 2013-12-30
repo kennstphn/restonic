@@ -21,6 +21,10 @@ class LocateRetailersViewLocateRetailers extends JViewLegacy
 {
     function display($tpl = null)
     {
+        $model = $this->getModel();
+        $rows = $model->getLocations('321');
+        print_r($rows);
+
         parent::display($tpl);
     }
 }
