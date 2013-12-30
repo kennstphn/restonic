@@ -9,8 +9,7 @@
 // No direct access
  
 defined( '_JEXEC' ) or die( 'Restricted access' );
- 
-jimport('joomla.application.component.controller');
+
  
 /**
  * Locate Retailer Component Controller
@@ -18,16 +17,27 @@ jimport('joomla.application.component.controller');
  * @package    LocateRetailers
  * @subpackage Components
  */
-class LocateRetailersController extends JController
+class LocateRetailersController extends JControllerLegacy
 {
+    protected $default_view = 'locateretailers';
+
     /**
-     * Method to display the view
-     *
-     * @access    public
+     * @var         string        the default view
+     * @since        1.6
      */
-    function display()
+    public function __construct($config = array())
+    {
+        parent::__construct($config);
+    }
+
+    /**
+     * Display a view
+     *
+     * @param bool $cachable
+     * @param bool $urlparams
+     */
+    public function display($cachable = false, $urlparams = false)
     {
         parent::display();
     }
- 
 }

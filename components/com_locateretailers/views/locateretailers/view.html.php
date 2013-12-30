@@ -9,8 +9,7 @@
 // no direct access
  
 defined( '_JEXEC' ) or die( 'Restricted access' );
- 
-jimport( 'joomla.application.component.view');
+
  
 /**
  * HTML View class for the LocateRetailers Component
@@ -18,12 +17,10 @@ jimport( 'joomla.application.component.view');
  * @package    LocateRetailers
  */
  
-class LocateRetailersViewLocateRetailers extends JView
+class LocateRetailersViewLocateRetailers extends JViewLegacy
 {
     function display($tpl = null)
-    {	
-    		
-    		    		
-            parent::display($tpl);
+    {
+        parent::display($tpl);
     }
 }
