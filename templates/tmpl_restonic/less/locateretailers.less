@@ -1,0 +1,21 @@
+#map_canvas {
+    height: 400px;
+    margin-top: 30px;
+}
+
+#results {
+  .retailer-location {
+    border-bottom: 1px solid #75133a;
+    margin-bottom: 15px;
+    padding: 1px 0px 14px 10px;
+    &:last-child {
+      border-bottom: 0 none;
+    }
+    &:nth-child(even) {
+      background-color: @grayLighter;
+    }
+  }
+  h3 {
+    color: @restonicRed;
+  }
+}

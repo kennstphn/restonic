@@ -23,7 +23,7 @@ $doc = JFactory::getDocument();
 $doc->addScript('http://maps.google.com/maps/api/js?sensor=false&region=US');
 // $doc->addScript('components/com_locateretailers/assets/js/jquery-1.5.min.js');
 $doc->addScript('components/com_locateretailers/assets/js/locator.js');
-$doc->addStyleSheet('components/com_locateretailers/assets/css/locateretailers.css');
+//$doc->addStyleSheet('components/com_locateretailers/assets/css/locateretailers.css');
 
 
 // instantiate the controller

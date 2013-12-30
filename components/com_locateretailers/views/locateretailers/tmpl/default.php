@@ -1,7 +1,7 @@
 <?php defined( '_JEXEC' ) or die( 'Restricted access' ); ?>
 
 <div id="restonicContent">
-    <div class="alert hidden"></div>
+
     <h2>Find a Retailer.</h2>
     <p>Looking for a retailer near you? Simply enter your zip code and find one closest to you.</p>
     <div class="form-inline">
@@ -17,6 +17,7 @@
 
             <input class="btn btn-priamry input-medium" type="submit" name="submit" id="submit" value="Search Locations" />
             <img class="hidden" src="components/com_locateretailers/assets/images/ajax-loader.gif" id="loader" />
+            <div class="fade alert hidden"></div>
             <div id="map_canvas"></div>
             <div id="results"></div>
             <div id="no"></div>

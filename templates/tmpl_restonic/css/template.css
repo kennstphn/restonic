@@ -7109,6 +7109,24 @@ footer .footer-nav ul li a:hover {
     float: right;
   }
 }
+#map_canvas {
+  height: 400px;
+  margin-top: 30px;
+}
+#results .retailer-location {
+  border-bottom: 1px solid #75133a;
+  margin-bottom: 15px;
+  padding: 1px 0px 14px 10px;
+}
+#results .retailer-location:last-child {
+  border-bottom: 0 none;
+}
+#results .retailer-location:nth-child(even) {
+  background-color: #eeeeee;
+}
+#results h3 {
+  color: #75133a;
+}
 /* custom mattresses layout view */
 /*
 #mattresses-wrapper {
