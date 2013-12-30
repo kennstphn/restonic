@@ -107,8 +107,11 @@ jQuery(document).ready(function () {
 
         addresses = "";
 
-        jQuery.post("components/com_locateretailers/views/locateretailers/tmpl/getStores.php", {'zip': zip}, function (data) {
-            addresses = jQuery.parseJSON(data);
+        //jQuery.post("components/com_locateretailers/views/locateretailers/tmpl/getStores.php", {'zip': zip}, function (data) {
+        jQuery.get("/index.php?option=com_locateretailers&view=locateretailers&format=json", {'zip': zip}, function (data) {
+
+        //addresses = jQuery.parseJSON(data);
+        addresses = data;
 
             if(addresses != "") {
                 // run the recursive function to geocode and place the markers

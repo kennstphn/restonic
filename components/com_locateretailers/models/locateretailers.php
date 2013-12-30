@@ -12,10 +12,12 @@ class LocateRetailersModelLocateRetailers extends JModelLegacy {
         // override constructor
         $options = array();
 
-        $options['host'] = 'vps-fullcircle-mysql.hspheredns.com';
-        $options['user'] = 'Restoni_joomla';
-        $options['password'] = 'bpzOHXptWSdI';
-        $options['database'] = 'Restoni_joomla';
+        $config = JComponentHelper::getParams('com_locateretailers');
+
+        $options['host'] = $config->get('host');
+        $options['user'] = $config->get('db_user');
+        $options['password'] = $config->get('db_password');
+        $options['database'] = $config->get('db_name');
 
         // set new remote database location
         $db = JDatabase::getInstance($options);
@@ -44,9 +46,13 @@ class LocateRetailersModelLocateRetailers extends JModelLegacy {
         $query->from('tbl_locations');
         $query->where('location_zip LIKE '. $db->quote($zip.'%'));
         $db->setQuery($query);
-        $rows = $db->loadObjectList();
+        $rows = $db->loadAssocList();
+        $addresses = array();
+        foreach ($rows as $row) {
+            $addresses[] = $row;
+        }
 
-        return $rows;
+        return $addresses;
     }
 }
 

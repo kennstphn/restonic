@@ -21,7 +21,15 @@ class LocateRetailersViewLocateRetailers extends JViewLegacy
 {
     function display($tpl = null)
     {
+        $model = $this->getModel();
+        $app = JFactory::getApplication();
+        $doc = JFactory::getDocument();
+        $doc->setMimeEncoding('application/json');
+        // Change the suggested filename.
 
-        parent::display($tpl);
+        $zipcode = $app->input->getInt('zip');
+        $rows = $model->getLocations($zipcode);
+        echo json_encode($rows);
+
     }
 }

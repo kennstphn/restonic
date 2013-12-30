@@ -18,6 +18,7 @@ class LocateRetailersViewLocateRetailers extends JViewLegacy
     protected function addToolbar()
     {
         JToolbarHelper::title(JText::_('Locate Retailers'));
+        JToolbarHelper::preferences('com_locateretailers');
     }
 
 }
