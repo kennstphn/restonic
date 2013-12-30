@@ -1,0 +1,65 @@
+
+#content
+{
+  position: relative;
+  color: #FFFFFF;
+  width: 826px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#content a
+{
+  color: #C9A1AC;
+  text-decoration: none;
+}
+
+#content a:hover
+{
+  color: #E8D5A0;
+  text-decoration: none;
+}
+
+#title
+{
+  border-bottom: solid 1px #E8D5A0;
+  margin-top: 80px;
+  margin-bottom: 20px;
+  line-height: 1.5em;
+}
+
+#map_canvas
+{
+  position: relative;
+  width: 500px;
+  height: 300px;
+  margin-top: 10px;
+}
+
+#results
+{
+  margin-top: 20px;
+}
+
+#footer
+{
+  position: relative;
+  color: #C9A1AC;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: .7em;
+}
+
+#footer a
+{
+  color: #C9A1AC;
+  text-decoration: none;
+}
+
+#footer a:hover
+{
+  color: #E8D5A0;
+  text-decoration: none;
+}
+

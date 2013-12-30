@@ -18,6 +18,9 @@
     .makeColumn(9);
     .pull-right();
   }
+  .mattress-item-description {
+    .makeColumn(6, 1);
+  }
 }
 
 @media (max-width: 1199px) {
@@ -59,7 +62,9 @@
       .center-block();
       .text-center();
       width: 100%;
-
+    }
+    section {
+      margin-left: auto;
     }
   }
   .mattress-logo {
@@ -76,6 +81,29 @@
   }
   .main-banner {
     margin: 0 -20px;
+  }
+  #top-menu {
+    .nav {
+      > li {
+        padding: 0 18px 0 18px;
+        clear:both;
+        &:first-child, &:last-child {
+          padding: 0 18px 0 18px;
+        }
+        .image-nav {
+          img {
+            display: none;
+          }
+        }
+      }
+    }
+    .dropdown-menu {
+      li {
+        float: none;
+        margin: 0 auto;
+        width: 100%;
+      }
+    }
   }
 }
 
