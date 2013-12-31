@@ -7467,6 +7467,20 @@ footer .footer-nav ul li a:hover {
     margin: 0 auto;
     width: 100%;
   }
+  #restonicContent {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+    text-align: center;
+    width: 100%;
+  }
+  #restonicContent .form-inline input {
+    margin: 10px 0px;
+  }
+  #restonicContent #results .retailer-location {
+    padding: 1px 0px 14px 0px;
+  }
 }
 @media (max-width: 500px) {
   .mattress-item-image {
