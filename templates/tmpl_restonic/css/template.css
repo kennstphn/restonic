@@ -7279,16 +7279,22 @@ footer .footer-nav ul li a:hover {
 }
 .mattress-item-description {
   float: left;
-  margin-left: 84px;
-  width: 660px;
+  margin-left: 20px;
+  width: 700px;
   z-index: 50;
   position: relative;
   font-size: 0.800em;
   min-height: 170px;
+  margin-left: 0px;
 }
 .mattress-item-tip-image {
   float: left;
   padding-right: 10px;
+}
+.mattress-item-tip-text {
+  float: left;
+  margin-left: 20px;
+  width: 380px;
 }
 .tab-content {
   overflow: visible !important;
@@ -7386,6 +7392,11 @@ footer .footer-nav ul li a:hover {
   .mattress-description {
     margin-left: 30px;
   }
+  .mattress-item-description {
+    float: left;
+    margin-left: 84px;
+    width: 700px;
+  }
 }
 @media (max-width: 1199px) {
   #restonicTabs,
@@ -7393,11 +7404,6 @@ footer .footer-nav ul li a:hover {
     float: left;
     margin-left: 248px;
     width: 700px;
-  }
-  .mattress-item-description {
-    float: left;
-    margin-left: 100px;
-    width: 460px;
   }
   .mattress-description {
     float: left;
@@ -7522,14 +7528,17 @@ footer .footer-nav ul li a:hover {
   #restonicContent #results .retailer-location {
     padding: 1px 0px 14px 0px;
   }
-}
-@media (max-width: 500px) {
   .mattress-item-image {
     top: auto;
   }
-  .mattress-item-tip-image {
-    float: none;
+  .mattress-item-tip-image,
+  .mattress-item-tip-text {
     text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+    width: 100%;
   }
   .mattress-item-description {
     text-align: center;

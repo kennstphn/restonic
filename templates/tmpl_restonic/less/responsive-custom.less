@@ -11,6 +11,9 @@
   header nav, .mattress-description {
     margin-left: 30px;
   }
+  .mattress-item-description {
+    .makeColumn(9, .8);
+  }
 }
 
 @media (max-width: 1199px) {
@@ -19,9 +22,8 @@
   #restonicContent {
     .makeColumn(9, 2.85);
   }
-  .mattress-item-description {
-    .makeColumn(6, 1);
-  }
+
+
   .mattress-description {
     .makeColumn(9);
   }
@@ -130,17 +132,20 @@
       }
     }
   }
-}
-
-@media (max-width: 500px) {
   .mattress-item-image {
     top: auto;
   }
-  .mattress-item-tip-image {
+  .mattress-item-tip-image, .mattress-item-tip-text {
     float: none;
     .text-center();
+    .center-block();
+    width: 100%;
   }
   .mattress-item-description {
     .text-center();
   }
+}
+
+@media (max-width: 500px) {
+
 }

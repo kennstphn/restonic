@@ -141,7 +141,9 @@ K2HelperUtilities::setDefaultImage($this->item, 'itemlist', $this->params);
                       <?php echo $extrafields[91]; ?>
                   </div>
               <?php endif; ?>
-			  <?php echo $this->item->introtext; ?>
+			  <div class="mattress-item-tip-text">
+			    <?php echo $this->item->introtext; ?>
+			  </div>
 		  </div>
           <?php if (array_key_exists(90, $extrafields)): ?>
               <div class="mattress-item-image">
