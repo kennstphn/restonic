@@ -45,7 +45,7 @@ if ($page_type == 'home') {
 				// Trigger maximage
 				jQuery('#background').maximage();
 				// To show it is dynamic html text
-				jQuery('.in-slide-content').delay(1200).fadeIn();
+				jQuery('.in-slide-content').delay(6000).fadeIn();
 			});
 		</script>
 	<?php endif; ?>

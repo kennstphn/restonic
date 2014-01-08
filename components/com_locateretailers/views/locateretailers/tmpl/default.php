@@ -2,7 +2,7 @@
 
 <div id="restonicContent">
 
-    <h2>Find a Retailer.</h2>
+    <h2>Find a Retailer</h2>
     <p>Looking for a retailer near you? Simply enter your zip code and find one closest to you.</p>
     <div class="form-inline">
         <fieldset class="locator">

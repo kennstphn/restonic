@@ -218,7 +218,7 @@ body {
   font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
   font-size: 15px;
   line-height: 20px;
-  color: #8c8d8e;
+  color: #616265;
   background-color: #ffffff;
 }
 a {
@@ -962,7 +962,7 @@ pre {
   padding: 0 3px 2px;
   font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
   font-size: 13px;
-  color: #8c8d8e;
+  color: #616265;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -1021,7 +1021,7 @@ legend {
   margin-bottom: 20px;
   font-size: 22.5px;
   line-height: 40px;
-  color: #8c8d8e;
+  color: #616265;
   border: 0;
   border-bottom: 1px solid #e5e5e5;
 }
@@ -1602,7 +1602,7 @@ select:focus:invalid:focus {
 }
 .help-block,
 .help-inline {
-  color: #b3b3b4;
+  color: #87888c;
 }
 .help-block {
   display: block;
@@ -2694,7 +2694,7 @@ table th[class*="span"],
   clear: both;
   font-weight: normal;
   line-height: 20px;
-  color: #8c8d8e;
+  color: #616265;
   white-space: nowrap;
 }
 .dropdown-menu > li > a:hover,
@@ -2919,7 +2919,7 @@ button.close {
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
-  color: #8c8d8e;
+  color: #616265;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
   background-color: #f5f5f5;
   background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
@@ -2951,7 +2951,7 @@ button.close {
 .btn.active,
 .btn.disabled,
 .btn[disabled] {
-  color: #8c8d8e;
+  color: #616265;
   background-color: #e6e6e6;
   *background-color: #d9d9d9;
 }
@@ -2964,7 +2964,7 @@ button.close {
 }
 .btn:hover,
 .btn:focus {
-  color: #8c8d8e;
+  color: #616265;
   text-decoration: none;
   background-position: 0 -15px;
   -webkit-transition: background-position 0.1s linear;
@@ -3289,7 +3289,7 @@ input[type="submit"].btn.btn-mini {
 }
 .btn-link[disabled]:hover,
 .btn-link[disabled]:focus {
-  color: #8c8d8e;
+  color: #616265;
   text-decoration: none;
 }
 .btn-group {
@@ -4072,7 +4072,7 @@ input[type="submit"].btn.btn-mini {
 }
 .navbar-link:hover,
 .navbar-link:focus {
-  color: #8c8d8e;
+  color: #616265;
 }
 .navbar .divider-vertical {
   height: 40px;
@@ -4256,7 +4256,7 @@ input[type="submit"].btn.btn-mini {
 .navbar .nav > li > a:focus,
 .navbar .nav > li > a:hover {
   background-color: transparent;
-  color: #8c8d8e;
+  color: #616265;
   text-decoration: none;
 }
 .navbar .nav > .active > a,
@@ -4359,8 +4359,8 @@ input[type="submit"].btn.btn-mini {
 }
 .navbar .nav li.dropdown > a:hover .caret,
 .navbar .nav li.dropdown > a:focus .caret {
-  border-top-color: #8c8d8e;
-  border-bottom-color: #8c8d8e;
+  border-top-color: #616265;
+  border-bottom-color: #616265;
 }
 .navbar .nav li.dropdown.open > .dropdown-toggle,
 .navbar .nav li.dropdown.active > .dropdown-toggle,
@@ -4498,7 +4498,7 @@ input[type="submit"].btn.btn-mini {
 .navbar-inverse .navbar-search .search-query:focus,
 .navbar-inverse .navbar-search .search-query.focused {
   padding: 5px 15px;
-  color: #8c8d8e;
+  color: #616265;
   text-shadow: 0 1px 0 #ffffff;
   background-color: #ffffff;
   border: 0;
@@ -5220,11 +5220,11 @@ a.badge:focus {
 }
 .label-inverse,
 .badge-inverse {
-  background-color: #8c8d8e;
+  background-color: #616265;
 }
 .label-inverse[href],
 .badge-inverse[href] {
-  background-color: #727475;
+  background-color: #48494b;
 }
 .btn .label,
 .btn .badge {
@@ -5561,7 +5561,7 @@ a.badge:focus {
   right: 0;
   bottom: 0;
   padding: 15px;
-  background: #8c8d8e;
+  background: #616265;
   background: rgba(0, 0, 0, 0.75);
 }
 .carousel-caption h4,
@@ -6619,7 +6619,7 @@ html {
 }
 header {
   padding-top: 15px;
-  padding-bottom: 0px;
+  padding-bottom: 10px;
 }
 header section {
   margin-left: -20px;
@@ -6694,7 +6694,6 @@ header nav {
   float: left;
   margin-left: 20px;
   width: 820px;
-  float: right;
 }
 header .navbar {
   border-bottom: 1px solid #000000;
@@ -6980,7 +6979,7 @@ aside h3 {
 }
 .collection-description {
   font-size: .9em;
-  color: #8c8d8e;
+  color: #616265;
 }
 footer .footer-logos {
   color: #575a5d;
@@ -7044,7 +7043,7 @@ footer .footer-logos {
   border-bottom: 0 none;
 }
 #top-menu ul.nav > .parent ul li a {
-  color: #8c8d8e;
+  color: #616265;
 }
 #top-menu ul.nav > .parent ul li a:hover {
   color: #000000;
@@ -7232,12 +7231,10 @@ footer .footer-nav ul li a:hover {
   margin-left: 0px;
 }
 .mattress-description {
+  font-size: 0.867em;
   float: left;
   margin-left: 20px;
-  width: 380px;
-  font-size: 0.867em;
-  color: #616265;
-  margin-left: 30px;
+  width: 820px;
 }
 .collection-description {
   float: left;
@@ -7288,9 +7285,8 @@ footer .footer-nav ul li a:hover {
 }
 #restonicTabs {
   float: left;
-  margin-left: 20px;
+  margin-left: 248px;
   width: 820px;
-  float: right;
   border-bottom: 0px;
   font-size: 0.833em;
   background-color: #bcbec0;
@@ -7319,6 +7315,8 @@ footer .footer-nav ul li a:hover {
   -moz-border-radius: 0;
   border-radius: 0;
   color: #ffffff;
+  padding-right: 11px;
+  padding-left: 11px;
 }
 #restonicTabs li.active {
   border-right: 0px none;
@@ -7353,23 +7351,47 @@ footer .footer-nav ul li a:hover {
 .catItemIntroText {
   position: relative;
 }
+.catItemVideoEmbedded {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+.catItemVideoEmbedded iframe,
+.catItemVideoEmbedded object,
+.catItemVideoEmbedded embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 @media (min-width: 1200px) {
   section .main-body-row .main-body {
     width: 1070px;
+  }
+  header nav,
+  .mattress-description {
+    margin-left: 30px;
   }
 }
 @media (max-width: 1199px) {
   #restonicTabs,
   #restonicContent {
     float: left;
-    margin-left: 20px;
+    margin-left: 248px;
     width: 700px;
-    float: right;
   }
   .mattress-item-description {
     float: left;
     margin-left: 100px;
     width: 460px;
+  }
+  .mattress-description {
+    float: left;
+    margin-left: 20px;
+    width: 700px;
   }
 }
 @media (max-width: 979px) {
@@ -7388,6 +7410,14 @@ footer .footer-nav ul li a:hover {
     text-align: center;
   }
   .collection-items {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+    width: 100%;
+  }
+  #restonicTabs,
+  #restonicContent {
     display: block;
     margin-left: auto;
     margin-right: auto;
