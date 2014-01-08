@@ -6670,13 +6670,14 @@ header .logo {
 header .search-social {
   float: left;
   margin-left: 20px;
-  width: 460px;
+  width: 364px;
   float: right;
 }
 header .search-social .search {
   float: left;
   margin-left: 20px;
-  width: 220px;
+  width: 184px;
+  margin-left: 15px;
 }
 header .search-social .search input.search-query {
   -webkit-border-radius: 5px;
@@ -6685,10 +6686,20 @@ header .search-social .search input.search-query {
   border-color: #000000;
 }
 header .search-social .social {
-  float: left;
-  margin-left: 20px;
-  width: 220px;
   margin-left: 0px;
+  float: right;
+  padding-top: 4px;
+}
+header .search-social .social ul {
+  margin: 0px;
+}
+header .search-social .social ul li {
+  display: inline;
+  list-style: none;
+  padding-right: 5px;
+}
+header .search-social .social ul li:last-child {
+  padding-right: 0px;
 }
 header nav {
   float: left;

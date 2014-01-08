@@ -24,18 +24,31 @@ header {
 	.makeColumn(3);
   }
   .search-social {
-	.makeColumn(6);
+	.makeColumn(4.8);
 	.pull-right();
 	.search {
-	  .makeColumn(3);
+	  .makeColumn(2.55);
+      margin-left: 15px;
       input.search-query {
         .border-radius(5px);
         border-color: @black;
       }
 	}
 	.social {
-	  .makeColumn(3);
 	  margin-left: 0px;
+      .pull-right();
+      padding-top: 4px;
+      ul {
+        margin: 0px;
+        li {
+          display: inline;
+          list-style: none;
+          padding-right: 5px;
+          &:last-child {
+            padding-right: 0px;
+          }
+        }
+      }
 	}
   }
   nav {
