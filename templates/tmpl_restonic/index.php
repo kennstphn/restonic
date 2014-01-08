@@ -104,7 +104,7 @@ $this->addScript('templates/' . $this->template . '/js/bootstrap-tabcollapse.js'
 	<footer class="container">
         <?php if ($this->countModules('bestbuy') ||$this->countModules('choice')): ?>
             <section class="footer-row">
-                <div class="footer-logos">
+                <div class="footer-logos hidden-phone">
                     <jdoc:include type="modules" name="bestbuy" style="none" />
                     <jdoc:include type="modules" name="choice" style="none" />
                 </div>

@@ -758,20 +758,20 @@ h6 small {
 h1,
 h2,
 h3 {
-  line-height: 40px;
+  line-height: 30px;
 }
 h1 {
-  font-size: 41.25px;
+  font-size: 27px;
 }
 h2 {
-  font-size: 33.75px;
+  font-size: 24px;
   font-family: museo, Georgia, "Times New Roman", Times, serif;
 }
 h3 {
-  font-size: 26.25px;
+  font-size: 18px;
 }
 h4 {
-  font-size: 18.75px;
+  font-size: 16.5px;
 }
 h5 {
   font-size: 15px;
@@ -6754,6 +6754,7 @@ section .main-body-row aside {
   float: left;
   margin-left: 20px;
   width: 220px;
+  margin-left: 0px;
 }
 section .main-body-row .main-body-sidebar {
   float: left;
@@ -6792,6 +6793,7 @@ footer .footer-row {
   margin-left: -20px;
   *zoom: 1;
   clear: both;
+  padding-bottom: 20px;
 }
 footer .footer-row:before,
 footer .footer-row:after {
@@ -6861,8 +6863,8 @@ footer .footer-nav-wrapper .footer-nav {
   width: 220px;
 }
 .home footer {
-  margin-top: -390px;
   padding-top: 0px;
+  margin-top: -210px;
 }
 /*
 **
@@ -7388,6 +7390,12 @@ footer .footer-nav ul li a:hover {
   section .main-body-row .main-body {
     width: 1070px;
   }
+  section .main-body-row .main-body-sidebar {
+    float: left;
+    margin-left: 20px;
+    width: 820px;
+    margin-left: 30px;
+  }
   header nav,
   .mattress-description {
     margin-left: 30px;
@@ -7440,6 +7448,10 @@ footer .footer-nav ul li a:hover {
     margin-right: auto;
     float: none;
     width: 100%;
+  }
+  section .main-body-row aside {
+    display: none;
+    visibility: hidden;
   }
 }
 @media (max-width: 767px) {
@@ -7796,6 +7808,256 @@ header .navbar .dropdown.yamm-fullwidth .nav-child {
   .yamm .dropdown-menu > li > ul {
     display: block;
   }
+}
+.cf-input-text,
+.text_area {
+  width: 270px;
+}
+.ce-button-submit {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+  *zoom: 1;
+  padding: 4px 12px;
+  margin-bottom: 0;
+  font-size: 15px;
+  line-height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  color: #616265;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  background-color: #f5f5f5;
+  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+  *background-color: #e6e6e6;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  border: 1px solid #cccccc;
+  *border: 0;
+  border-bottom-color: #b3b3b3;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  *margin-left: .3em;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #5bb75b;
+  background-image: -moz-linear-gradient(top, #62c462, #51a351);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#62c462), to(#51a351));
+  background-image: -webkit-linear-gradient(top, #62c462, #51a351);
+  background-image: -o-linear-gradient(top, #62c462, #51a351);
+  background-image: linear-gradient(to bottom, #62c462, #51a351);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff51a351', GradientType=0);
+  border-color: #51a351 #51a351 #387038;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #51a351;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.ce-button-submit:hover,
+.ce-button-submit:focus,
+.ce-button-submit:active,
+.ce-button-submit.active,
+.ce-button-submit.disabled,
+.ce-button-submit[disabled] {
+  color: #616265;
+  background-color: #e6e6e6;
+  *background-color: #d9d9d9;
+}
+.ce-button-submit:active,
+.ce-button-submit.active {
+  background-color: #cccccc \9;
+}
+.ce-button-submit:first-child {
+  *margin-left: 0;
+}
+.ce-button-submit:hover,
+.ce-button-submit:focus {
+  color: #616265;
+  text-decoration: none;
+  background-position: 0 -15px;
+  -webkit-transition: background-position 0.1s linear;
+  -moz-transition: background-position 0.1s linear;
+  -o-transition: background-position 0.1s linear;
+  transition: background-position 0.1s linear;
+}
+.ce-button-submit:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.ce-button-submit.active,
+.ce-button-submit:active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+}
+.ce-button-submit.disabled,
+.ce-button-submit[disabled] {
+  cursor: default;
+  background-image: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.ce-button-submit .label,
+.ce-button-submit .badge {
+  position: relative;
+  top: -1px;
+}
+.ce-button-submit:hover,
+.ce-button-submit:focus,
+.ce-button-submit:active,
+.ce-button-submit.active,
+.ce-button-submit.disabled,
+.ce-button-submit[disabled] {
+  color: #ffffff;
+  background-color: #51a351;
+  *background-color: #499249;
+}
+.ce-button-submit:active,
+.ce-button-submit.active {
+  background-color: #408140 \9;
+}
+.ce-button-submit .caret {
+  border-top-color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+.ce-button-reset {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+  *zoom: 1;
+  padding: 4px 12px;
+  margin-bottom: 0;
+  font-size: 15px;
+  line-height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  color: #616265;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  background-color: #f5f5f5;
+  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+  *background-color: #e6e6e6;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  border: 1px solid #cccccc;
+  *border: 0;
+  border-bottom-color: #b3b3b3;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  *margin-left: .3em;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #faa732;
+  background-image: -moz-linear-gradient(top, #fbb450, #f89406);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fbb450), to(#f89406));
+  background-image: -webkit-linear-gradient(top, #fbb450, #f89406);
+  background-image: -o-linear-gradient(top, #fbb450, #f89406);
+  background-image: linear-gradient(to bottom, #fbb450, #f89406);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffbb450', endColorstr='#fff89406', GradientType=0);
+  border-color: #f89406 #f89406 #ad6704;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #f89406;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.ce-button-reset:hover,
+.ce-button-reset:focus,
+.ce-button-reset:active,
+.ce-button-reset.active,
+.ce-button-reset.disabled,
+.ce-button-reset[disabled] {
+  color: #616265;
+  background-color: #e6e6e6;
+  *background-color: #d9d9d9;
+}
+.ce-button-reset:active,
+.ce-button-reset.active {
+  background-color: #cccccc \9;
+}
+.ce-button-reset:first-child {
+  *margin-left: 0;
+}
+.ce-button-reset:hover,
+.ce-button-reset:focus {
+  color: #616265;
+  text-decoration: none;
+  background-position: 0 -15px;
+  -webkit-transition: background-position 0.1s linear;
+  -moz-transition: background-position 0.1s linear;
+  -o-transition: background-position 0.1s linear;
+  transition: background-position 0.1s linear;
+}
+.ce-button-reset:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.ce-button-reset.active,
+.ce-button-reset:active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+}
+.ce-button-reset.disabled,
+.ce-button-reset[disabled] {
+  cursor: default;
+  background-image: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.ce-button-reset .label,
+.ce-button-reset .badge {
+  position: relative;
+  top: -1px;
+}
+.ce-button-reset:hover,
+.ce-button-reset:focus,
+.ce-button-reset:active,
+.ce-button-reset.active,
+.ce-button-reset.disabled,
+.ce-button-reset[disabled] {
+  color: #ffffff;
+  background-color: #f89406;
+  *background-color: #df8505;
+}
+.ce-button-reset:active,
+.ce-button-reset.active {
+  background-color: #c67605 \9;
+}
+.ce-button-reset .caret {
+  border-top-color: #ffffff;
+  border-bottom-color: #ffffff;
 }
 .center-block {
   display: block;
