@@ -63,7 +63,7 @@ defined('_JEXEC') or die;
 
 			<?php if($this->params->get('catDescription')): ?>
 			<!-- Category description -->
-                <div class="library-description">
+                <div class="collection-description">
 			        <?php echo $this->category->description; ?>
                 </div>
 			<?php endif; ?>
@@ -119,49 +119,9 @@ defined('_JEXEC') or die;
 					<div class="clr"></div>
 				</div>
 			</div>
-
-				<?php
-					$db = JFactory::getDbo();
-
-					$query = $db->getQuery(true);
-					$query->select('*');
-					$query->from('#__k2_items');
-					$query->where('catid='.$subCategory->id);
-					$query->where('published=' . 1);
-					$query->where('trash!=' . 1);
-
-					$db->setQuery($query);
-
-					$results = $db->loadObjectList();
-
-
-				?>
-
-			<?php
-			$this->leading = $results;
-			?>
-
-			<?php if((isset($this->leading) || isset($this->primary) || isset($this->secondary) || isset($this->links)) && (count($this->leading) || count($this->primary) || count($this->secondary) || count($this->links))): ?>
-				<!-- Item list -->
-				<div class="itemList">
-					<?php if(isset($this->leading) && count($this->leading)): ?>
-						<!-- Leading items -->
-							<?php foreach($this->leading as $key=>$item): ?>
-								<?php
-								// Load category_item.php by default
-								$this->item=$item;
-								echo $this->loadTemplate('item_mattress');
-								?>
-							<?php endforeach; ?>
-							<div class="clr"></div>
-					<?php endif; ?>
-				</div>
-			<?php endif; ?>
-
 			<?php if(($key+1)%($this->params->get('subCatColumns'))==0): ?>
 			<div class="clr"></div>
 			<?php endif; ?>
-
 			<?php endforeach; ?>
 
 			<div class="clr"></div>
@@ -171,7 +131,43 @@ defined('_JEXEC') or die;
 	</div>
 	<?php endif; ?>
 
+	<?php
+		print_r(isset($this->leading));
+		exit;
+	?>
 
+
+	<?php if((isset($this->leading) || isset($this->primary) || isset($this->secondary) || isset($this->links)) && (count($this->leading) || count($this->primary) || count($this->secondary) || count($this->links))): ?>
+	<!-- Item list -->
+	<div class="itemList">
+
+		<?php if(isset($this->leading) && count($this->leading)): ?>
+		<!-- Leading items -->
+		<div id="itemListLeading">
+			<?php foreach($this->leading as $key=>$item): ?>
+
+			<?php
+			// Define a CSS class for the last container on each row
+			if( (($key+1)%($this->params->get('num_leading_columns'))==0) || count($this->leading)<$this->params->get('num_leading_columns') )
+				$lastContainer= ' itemContainerLast';
+			else
+				$lastContainer='';
+			?>
+			
+			<div class="itemContainer<?php echo $lastContainer; ?>"<?php echo (count($this->leading)==1) ? '' : ' style="width:'.number_format(100/$this->params->get('num_leading_columns'), 1).'%;"'; ?>>
+				<?php
+					// Load category_item.php by default
+					$this->item=$item;
+					echo $this->loadTemplate('item');
+				?>
+			</div>
+			<?php if(($key+1)%($this->params->get('num_leading_columns'))==0): ?>
+			<div class="clr"></div>
+			<?php endif; ?>
+			<?php endforeach; ?>
+			<div class="clr"></div>
+		</div>
+		<?php endif; ?>
 
 		<?php if(isset($this->primary) && count($this->primary)): ?>
 		<!-- Primary items -->
@@ -269,5 +265,6 @@ defined('_JEXEC') or die;
 	</div>
 	<?php endif; ?>
 
+	<?php endif; ?>
 </div>
 <!-- End K2 Category Layout -->

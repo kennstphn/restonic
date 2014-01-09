@@ -222,12 +222,12 @@ body {
   background-color: #ffffff;
 }
 a {
-  color: #0088cc;
+  color: #75133a;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #005580;
+  color: #330819;
   text-decoration: underline;
 }
 .img-rounded {
@@ -2703,14 +2703,14 @@ table th[class*="span"],
 .dropdown-submenu:focus > a {
   text-decoration: none;
   color: #ffffff;
-  background-color: #0081c2;
-  background-image: -moz-linear-gradient(top, #0088cc, #0077b3);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0077b3));
-  background-image: -webkit-linear-gradient(top, #0088cc, #0077b3);
-  background-image: -o-linear-gradient(top, #0088cc, #0077b3);
-  background-image: linear-gradient(to bottom, #0088cc, #0077b3);
+  background-color: #6c1236;
+  background-image: -moz-linear-gradient(top, #75133a, #5f0f2f);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#75133a), to(#5f0f2f));
+  background-image: -webkit-linear-gradient(top, #75133a, #5f0f2f);
+  background-image: -o-linear-gradient(top, #75133a, #5f0f2f);
+  background-image: linear-gradient(to bottom, #75133a, #5f0f2f);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff75133a', endColorstr='#ff5f0f2f', GradientType=0);
 }
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
@@ -2718,14 +2718,14 @@ table th[class*="span"],
   color: #ffffff;
   text-decoration: none;
   outline: 0;
-  background-color: #0081c2;
-  background-image: -moz-linear-gradient(top, #0088cc, #0077b3);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0077b3));
-  background-image: -webkit-linear-gradient(top, #0088cc, #0077b3);
-  background-image: -o-linear-gradient(top, #0088cc, #0077b3);
-  background-image: linear-gradient(to bottom, #0088cc, #0077b3);
+  background-color: #6c1236;
+  background-image: -moz-linear-gradient(top, #75133a, #5f0f2f);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#75133a), to(#5f0f2f));
+  background-image: -webkit-linear-gradient(top, #75133a, #5f0f2f);
+  background-image: -o-linear-gradient(top, #75133a, #5f0f2f);
+  background-image: linear-gradient(to bottom, #75133a, #5f0f2f);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff75133a', endColorstr='#ff5f0f2f', GradientType=0);
 }
 .dropdown-menu > .disabled > a,
 .dropdown-menu > .disabled > a:hover,
@@ -3276,14 +3276,14 @@ input[type="submit"].btn.btn-mini {
 .btn-link {
   border-color: transparent;
   cursor: pointer;
-  color: #0088cc;
+  color: #75133a;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
 }
 .btn-link:hover,
 .btn-link:focus {
-  color: #005580;
+  color: #330819;
   text-decoration: underline;
   background-color: transparent;
 }
@@ -3617,7 +3617,7 @@ input[type="submit"].btn.btn-mini {
 .nav-list > .active > a:focus {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  background-color: #0088cc;
+  background-color: #75133a;
 }
 .nav-list [class^="icon-"],
 .nav-list [class*=" icon-"] {
@@ -3737,7 +3737,7 @@ input[type="submit"].btn.btn-mini {
 .nav-pills > .active > a:hover,
 .nav-pills > .active > a:focus {
   color: #ffffff;
-  background-color: #0088cc;
+  background-color: #75133a;
 }
 .nav-stacked > li {
   float: none;
@@ -3792,14 +3792,14 @@ input[type="submit"].btn.btn-mini {
   border-radius: 6px;
 }
 .nav .dropdown-toggle .caret {
-  border-top-color: #0088cc;
-  border-bottom-color: #0088cc;
+  border-top-color: #75133a;
+  border-bottom-color: #75133a;
   margin-top: 6px;
 }
 .nav .dropdown-toggle:hover .caret,
 .nav .dropdown-toggle:focus .caret {
-  border-top-color: #005580;
-  border-bottom-color: #005580;
+  border-top-color: #330819;
+  border-bottom-color: #330819;
 }
 /* move down carets for tabs */
 .nav-tabs .dropdown-toggle .caret {
@@ -5134,7 +5134,7 @@ input[type="submit"].btn.btn-mini {
 }
 a.thumbnail:hover,
 a.thumbnail:focus {
-  border-color: #0088cc;
+  border-color: #75133a;
   -webkit-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
   -moz-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
   box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
@@ -7278,6 +7278,16 @@ footer .footer-nav ul li a:hover {
 }
 .collection-items .collection-item-logo {
   margin-top: 30px;
+}
+.library-description {
+  float: left;
+  margin-left: 244px;
+  width: 820px;
+}
+.library-item {
+  float: left;
+  margin-left: 20px;
+  width: 140px;
 }
 .itemList {
   clear: left;

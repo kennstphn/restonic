@@ -228,7 +228,6 @@ K2HelperUtilities::setDefaultImage($this->item, 'itemlist', $this->params);
   <?php if($this->item->params->get('catItemVideo') && !empty($this->item->video)): ?>
   <!-- Item video -->
   <div class="catItemVideoBlock">
-  	<h3><?php echo JText::_('K2_RELATED_VIDEO'); ?></h3>
 		<?php if($this->item->videoType=='embedded'): ?>
 		<div class="catItemVideoEmbedded">
 			<?php echo $this->item->video; ?>
