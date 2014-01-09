@@ -23,11 +23,9 @@ $page_type = tmpHelper::pageType();
 JHtml::_('bootstrap.framework');
 $this->addScript(JUri::root().'media/jui/js/html5.js');
 
-/* if ($page_type == 'home') {
-	$doc->addStyleSheet('templates/'.$this->template.'/css/jquery.maximage.min.css');
-	$doc->addScript('templates/' . $this->template . '/js/jquery.cycle.all.js');
-	$doc->addScript('templates/' . $this->template . '/js/jquery.maximage.js');
-}*/
+ if ($page_type == 'home') {
+	$this->addScript('templates/' . $this->template . '/js/jquery.flexslider-min.js');
+}
 
 $this->addScript('templates/' . $this->template . '/js/bootstrap-tabcollapse.js');
 
@@ -78,7 +76,20 @@ $this->addScript('templates/' . $this->template . '/js/bootstrap-tabcollapse.js'
 	</header>
 	<?php if ($this->countModules('main-banner')): ?>
 		<section class="main-banner">
-			<jdoc:include type="modules" name="main-banner" type="none" />
+			<div class="banner-slides">
+				<ul class="slides">
+					<jdoc:include type="modules" name="main-banner" style="slides" />
+				</ul>
+				<?php /* if ($this->countModules('bestbuy') ||$this->countModules('choice') && false): ?>
+					<div class="award-container">
+					<div class="hidden-phone">
+						<jdoc:include type="modules" name="bestbuy" style="none" />
+						<jdoc:include type="modules" name="choice" style="none" />
+					</div>
+					</div>
+				<?php endif; */ ?>
+			</div>
+
 		</section>
 	<?php endif; ?>
 	<?php if($page_type != 'home'): // only show mainbody on non-homepage ?>
@@ -102,19 +113,23 @@ $this->addScript('templates/' . $this->template . '/js/bootstrap-tabcollapse.js'
 		</section>
 	<?php endif; ?>
 	<footer class="container">
-        <?php if ($this->countModules('bestbuy') ||$this->countModules('choice')): ?>
-            <section class="footer-row">
-                <div class="footer-logos hidden-phone">
-                    <jdoc:include type="modules" name="bestbuy" style="none" />
-                    <jdoc:include type="modules" name="choice" style="none" />
-                </div>
-            </section>
-        <?php endif; ?>
+
         <?php if ($this->countModules('footer-menu')): ?>
             <section class="footer-row">
                 <jdoc:include type="modules" name="footer-menu" style="xhtml" />
             </section>
         <?php endif; ?>
 	</footer>
+	<script type="text/javascript" charset="utf-8">
+		jQuery(window).load(function() {
+			jQuery('.banner-slides').flexslider({
+				animation: "slide",
+				controlNav: false,
+				directionNav: false,
+				pauseOnAction: false,
+				pauseOnHover: true
+			});
+		});
+	</script>
 </body>
 </html>

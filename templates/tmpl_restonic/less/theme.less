@@ -125,21 +125,43 @@ section {
 }
 
 .main-banner {
-  .sprocket-features-img-container img {
-	min-width: 100%;
-  }
-  .layout-slideshow {
-    .sprocket-features-img-container {
-      width: 100%;
-    }
 
-    .sprocket-features-content {
-      position: absolute;
-      top: 40px;
-      right: 40px;
-      width: 40%;
-      text-align: right;
-      left: auto;
+  ul, li {
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+  }
+  .img-container {
+    position: relative;
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+  .container {
+    position: relative;
+    z-index: 10;
+  }
+  .slide-content {
+    position: absolute;
+    .makeColumn(5);
+    right: 0px;
+  }
+  .awards-content {
+    position: absolute;
+    .makeColumn(6);
+    height: 100px;
+    bottom: 120px;
+    right: 20%;
+    .womens-choice {
+      .makeColumn(2);
+    }
+    .bestbuy, .womens-choice {
+      .pull-left();
+      margin-left: 0px;
+    }
+    .bestbuy {
+      .makeColumn(4);
     }
   }
 }
@@ -151,28 +173,12 @@ footer {
   z-index: 999;
   .footer-nav {
     .makeColumn(2.7);
-    &:first-child {
-      margin-left: 0px;
-    }
   }
   .footer-row {
     .makeRow();
     padding-bottom: 20px;
   }
-  .footer-logos {
-	.makeColumn(6);
-	.pull-right();
-  }
-  .bestbuy {
-	.makeColumn(4);
-  }
-  .womens-choice {
-	.makeColumn(2);
-  }
-  .bestbuy, .womens-choice {
-	.pull-left();
-	margin-left: 0px;
-  }
+
   .footer-nav-wrapper {
 	.makeColumn(10.5, 3);
 	.footer-nav {
@@ -183,7 +189,6 @@ footer {
 
 .home footer {
   padding-top: 0px;
-  margin-top: -210px;
 }
 
 /*

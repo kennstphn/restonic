@@ -40,3 +40,32 @@ function modChrome_background($module, &$params, &$attribs)
 	echo    '</div>';
 	echo '</div>';
 }
+
+function modChrome_blank($module, &$params, &$attribs) {
+	echo $module->content;
+}
+
+function modChrome_slides($module, &$params, &$attribs)
+{
+	$document = JFactory::getDocument();
+	$bestbuy = JModuleHelper::getModule('mod_custom', 'Best Buy');
+	$choice = JModuleHelper::getModule('mod_custom', 'womens choice');
+
+	echo '<li>';
+	echo '<div class="container">';
+	echo    '<div class="slide-content">';
+	echo        trim(strip_tags($module->content, '<h1><h2><h3><h4><span><p><b><strong>'));
+	echo    '</div>';
+	echo '</div>';
+	echo '<div class="img-container">';
+	echo    '<img src="'.$params->get('backgroundimage').'"/>';
+	echo '</div>';
+	echo '<div class="awards-content visible-desktop">';
+	echo '<div class="bestbuy">';
+	echo    JModuleHelper::renderModule($bestbuy, array('style'=>'blank'));
+	echo '</div>';
+	echo    JModuleHelper::renderModule($choice, array('style'=>'blank'));
+	echo '</div>';
+	echo '</li>';
+}
+
