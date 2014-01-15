@@ -17,11 +17,12 @@ if (count($raw_fields)) {
 }
 ?>
 
+
 <div class="library-item">
 	<div class="library-item-logo">
-		<img src="<?php echo $extrafields[92]; ?>" />
+		<img src="<?php echo $extrafields[93]; ?>" />
 	</div>
 	<div class="libray-item-image">
-		<img src="<?php echo $extrafields[93]; ?>" />
+		<img src="<?php echo $extrafields[92]; ?>" />
 	</div>
 </div>

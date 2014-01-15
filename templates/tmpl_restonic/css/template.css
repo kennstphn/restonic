@@ -97,17 +97,19 @@ sup {
 sub {
   bottom: -0.25em;
 }
+/* Responsive images (ensure images don't scale beyond their parents) */
 img {
   /* Responsive images (ensure images don't scale beyond their parents) */
   max-width: 100%;
   /* Part 1: Set a maxium relative to the parent */
-  width: auto\9;
+  min-width: auto\9;
   /* IE7-8 need help adjusting responsive images */
-  height: auto;
-  /* Part 2: Scale the height according to the width, otherwise you get stretching */
-  vertical-align: middle;
   border: 0;
   -ms-interpolation-mode: bicubic;
+}
+img[width] {
+  min-width: 0;
+  /* Overwrite min-width: auto when img width set IE9 fix */
 }
 #map_canvas img,
 .google-maps img {
@@ -7261,8 +7263,7 @@ footer .footer-nav ul li a:hover {
 .collection-description {
   float: left;
   margin-left: 20px;
-  width: 540px;
-  margin-left: 30px;
+  width: 460px;
 }
 .collection-items {
   float: left;
@@ -7281,13 +7282,23 @@ footer .footer-nav ul li a:hover {
 }
 .library-description {
   float: left;
-  margin-left: 244px;
+  margin-left: 20px;
   width: 820px;
+  margin-left: 0px;
 }
-.library-item {
+.mattress-items {
   float: left;
   margin-left: 20px;
-  width: 140px;
+  width: 580px;
+  float: right;
+}
+.mattress-items .library-item {
+  float: left;
+  margin-left: 20px;
+  width: 180px;
+}
+.mattress-items .library-item:first-child {
+  margin-left: 0px;
 }
 .itemList {
   clear: left;
@@ -7432,6 +7443,26 @@ footer .footer-nav ul li a:hover {
     margin-left: 20px;
     width: 460px;
   }
+  .mattress-items {
+    float: left;
+    margin-left: 20px;
+    width: 580px;
+    float: right;
+  }
+  .mattress-items .library-item {
+    float: left;
+    margin-left: 20px;
+    width: 180px;
+  }
+  .mattress-items .library-item:first-child {
+    margin-left: 0px;
+  }
+  .collection-description {
+    float: left;
+    margin-left: 20px;
+    width: 540px;
+    margin-left: 30px;
+  }
 }
 @media (max-width: 1199px) {
   #restonicTabs,
@@ -7461,6 +7492,12 @@ footer .footer-nav ul li a:hover {
     float: none;
     text-align: center;
   }
+  .mattress-items {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+  }
   .collection-items {
     display: block;
     margin-left: auto;
@@ -7469,7 +7506,8 @@ footer .footer-nav ul li a:hover {
     width: 100%;
   }
   #restonicTabs,
-  #restonicContent {
+  #restonicContent,
+  .library-description {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -7479,6 +7517,13 @@ footer .footer-nav ul li a:hover {
   section .main-body-row aside {
     display: none;
     visibility: hidden;
+  }
+  section .main-body-row .main-body-sidebar {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+    width: 100%;
   }
 }
 @media (max-width: 767px) {
@@ -7519,7 +7564,8 @@ footer .footer-nav ul li a:hover {
   .mattress-logo {
     text-align: center;
   }
-  .mattress-description {
+  .mattress-description,
+  .main-body-sidebar {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -7583,7 +7629,9 @@ footer .footer-nav ul li a:hover {
     top: auto;
   }
   .mattress-item-tip-image,
-  .mattress-item-tip-text {
+  .mattress-item-tip-text,
+  .mattress-items,
+  .collection-description {
     text-align: center;
     display: block;
     margin-left: auto;
@@ -7594,6 +7642,21 @@ footer .footer-nav ul li a:hover {
   .mattress-item-description {
     text-align: center;
   }
+}
+@media (max-width: 620px) {
+  .mattress-items .library-item {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+  }
+  .mattress-items .library-item:first-child {
+    margin-left: auto;
+  }
+}
+/* Prevent height distortion in IE8. */
+img {
+  max-width: auto !important;
 }
 @media (max-width: 767px) {
   body {

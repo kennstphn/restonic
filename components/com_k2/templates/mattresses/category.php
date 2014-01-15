@@ -61,12 +61,7 @@ defined('_JEXEC') or die;
 			<h2><?php echo $this->category->name; ?><?php if($this->params->get('catTitleItemCounter')) echo ' ('.$this->pagination->total.')'; ?></h2>
 			<?php endif; ?>
 
-			<?php if($this->params->get('catDescription')): ?>
-			<!-- Category description -->
-                <div class="library-description">
-			        <?php echo $this->category->description; ?>
-                </div>
-			<?php endif; ?>
+
 
 			<!-- K2 Plugins: K2CategoryDisplay -->
 			<?php echo $this->category->event->K2CategoryDisplay; ?>
@@ -90,7 +85,7 @@ defined('_JEXEC') or die;
 			?>
 
 			<div class="subCategoryContainer<?php echo $lastContainer; ?>"<?php echo (count($this->subCategories)==1) ? '' : ' style="width:'.number_format(100/$this->params->get('subCatColumns'), 1).'%;"'; ?>>
-				<div class="subCategory">
+				<div class="collections">
 					<?php if($this->params->get('subCatImage') && $subCategory->image): ?>
 					<!-- Subcategory image -->
                     <div class="mattress-logo">
@@ -133,12 +128,11 @@ defined('_JEXEC') or die;
 					$db->setQuery($query);
 
 					$results = $db->loadObjectList();
-
-
 				?>
 
 			<?php
 			$this->leading = $results;
+
 			?>
 
 			<?php if((isset($this->leading) || isset($this->primary) || isset($this->secondary) || isset($this->links)) && (count($this->leading) || count($this->primary) || count($this->secondary) || count($this->links))): ?>
@@ -146,14 +140,16 @@ defined('_JEXEC') or die;
 				<div class="itemList">
 					<?php if(isset($this->leading) && count($this->leading)): ?>
 						<!-- Leading items -->
+						<div class="mattress-items">
 							<?php foreach($this->leading as $key=>$item): ?>
 								<?php
 								// Load category_item.php by default
-								$this->item=$item;
-								echo $this->loadTemplate('item_mattress');
+									$this->item=$item;
+									echo $this->loadTemplate('item_mattress');
 								?>
 							<?php endforeach; ?>
-							<div class="clr"></div>
+						</div>
+						<div class="clr"></div>
 					<?php endif; ?>
 				</div>
 			<?php endif; ?>
@@ -171,6 +167,12 @@ defined('_JEXEC') or die;
 	</div>
 	<?php endif; ?>
 
+	<?php if($this->params->get('catDescription')): ?>
+		<!-- Category description -->
+		<div class="library-description">
+			<?php echo $this->category->description; ?>
+		</div>
+	<?php endif; ?>
 
 
 		<?php if(isset($this->primary) && count($this->primary)): ?>
