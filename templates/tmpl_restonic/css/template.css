@@ -7421,8 +7421,16 @@ footer .footer-nav ul li a:hover {
   }
   .mattress-item-description {
     float: left;
-    margin-left: 84px;
-    width: 700px;
+    margin-left: 20px;
+    width: 820px;
+  }
+  .mattress-item-description .mattress-item-tip-image {
+    margin-left: 50px;
+  }
+  .mattress-item-description .mattress-item-tip-text {
+    float: left;
+    margin-left: 20px;
+    width: 460px;
   }
 }
 @media (max-width: 1199px) {
