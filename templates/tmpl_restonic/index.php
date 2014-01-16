@@ -80,16 +80,7 @@ $this->addScript('templates/' . $this->template . '/js/bootstrap-tabcollapse.js'
 				<ul class="slides">
 					<jdoc:include type="modules" name="main-banner" style="slides" />
 				</ul>
-				<?php /* if ($this->countModules('bestbuy') ||$this->countModules('choice') && false): ?>
-					<div class="award-container">
-					<div class="hidden-phone">
-						<jdoc:include type="modules" name="bestbuy" style="none" />
-						<jdoc:include type="modules" name="choice" style="none" />
-					</div>
-					</div>
-				<?php endif; */ ?>
 			</div>
-
 		</section>
 	<?php endif; ?>
 	<?php if($page_type != 'home'): // only show mainbody on non-homepage ?>
@@ -120,16 +111,6 @@ $this->addScript('templates/' . $this->template . '/js/bootstrap-tabcollapse.js'
             </section>
         <?php endif; ?>
 	</footer>
-	<script type="text/javascript" charset="utf-8">
-		jQuery(window).load(function() {
-			jQuery('.banner-slides').flexslider({
-				animation: "slide",
-				controlNav: false,
-				directionNav: false,
-				pauseOnAction: false,
-				pauseOnHover: true
-			});
-		});
-	</script>
+	<script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/templates/<?php echo $this->template; ?>/js/main.js"></script>
 </body>
 </html>
