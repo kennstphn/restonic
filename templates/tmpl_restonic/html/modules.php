@@ -54,11 +54,11 @@ function modChrome_slides($module, &$params, &$attribs)
 	echo '<li>';
 	echo '<div class="container">';
 	echo    '<div class="slide-content">';
-	echo        trim(strip_tags($module->content, '<h1><h2><h3><h4><span><p><b><strong>'));
+	echo        '<h2>' . $params->get('title_desc') . "</h2>";
 	echo    '</div>';
 	echo '</div>';
 	echo '<div class="img-container">';
-	echo    '<img src="'.$params->get('backgroundimage').'"/>';
+	echo    '<a href="'. $params->get('link') .'"><img src="'.$params->get('backgroundimage').'"/></a>';
 	echo '</div>';
 	echo '<div class="awards-content visible-desktop">';
 	echo '<div class="bestbuy">';
