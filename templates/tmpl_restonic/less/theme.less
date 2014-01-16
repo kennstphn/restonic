@@ -59,56 +59,8 @@ header {
   }
 }
 
-#background {
-  margin-top: 107px;
-  .mc-image {
-	background-position: top center !important;
-  }
-  .in-slide-content {
-	margin: 0 auto;
-	text-align: center;
-	position: relative;
-	top: 100px;
-	.slide-text {
-	  position: absolute;
-	  right: 0px;
-	  &#about-restonic {
-		width: 210px;
-	  }
-	  &#comfort-care-couple {
-		width: 340px;
-	  }
-	  &#restonic-signature {
-		width: 275px;
-		top: 120px;
-	  }
-	  &#restonic-blog-couple {
-		width: 567px;
-	  }
-	  &#restonic-comfort-care-signature-family {
-		width: 340px;
-
-	  }
-	  &#restonic-tempagel-mattress {
-
-	  }
-	  &#restonic-collection-couple {
-		  width: 433px;
-	  }
-	}
-  }
-  .container {
-	position: relative;
-  }
-}
-
-#push {
-  height: @fixedFooterHeight;
-}
-
 section {
   .main-body-row {
-	//.makeRow();
 	aside {
 	  .makeColumn(3);
       margin-left: 0px;
@@ -116,10 +68,6 @@ section {
 	}
 	.main-body-sidebar {
 	  .makeColumn(9);
-
-	}
-	.main-body {
-	  //.makeColumn(12);
 	}
   }
 }
@@ -190,97 +138,6 @@ footer {
 .home footer {
   padding-top: 0px;
 }
-
-/*
-**
-** commenting out this code until I actually need it
-
-.align-bottom {
-  padding-top: 31px;
-}
-
-
-.home {
-  header {
-    .container {
-    }
-    .span3 {
-      padding: 15px;
-      margin: 0 auto;
-      background: url('../images/overlay.png') repeat;
-	  min-height: 200px;
-    }
-    .span9 {
-
-      padding: 15px;
-    }
-  }
-  // end header css
-
-  // section for mainbody css
-  section#mainbody {
-    .container {
-
-    }
-    .span9 {
-	  padding: 0px 15px 0px 15px;
-    }
-    .span3 {
-      background: url('../images/overlay.png') repeat;
-    }
-  }
-  // end mainbody
-
-  #bottom {
-	.container > .span5 {
-	  background: url('../images/gold-overlay.png') repeat;
-	  padding: 14px;
-	}
-  }
-
-  // footer css
-  footer {
-
-  }
-  // end footer css
-}
-
-// header css
-.inside {
-  header {
-    .container {
-      background-color: @grayLight;
-    }
-    .span3 {
-	  padding: 0px 15px 0px 15px;
-      margin: 0 auto;
-    }
-    .span9 {
-      background-color: @gray;
-	  padding: 0px 15px 0px 15px;
-    }
-  }
-  // end header css
-
-  // section for mainbody css
-  section#mainbody {
-
-	aside {
-	  padding-left: 2%;
-	}
-  }
-  // end mainbody
-
-  // footer css
-  footer {
-
-  }
-  // end footer css
-}
-
-** ending
-*/
-
 
 // all pages
 .breadcrumb {
