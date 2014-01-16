@@ -23,7 +23,7 @@ $page_type = tmpHelper::pageType();
 JHtml::_('bootstrap.framework');
 $this->addScript(JUri::root().'media/jui/js/html5.js');
 
- if ($page_type == 'home') {
+if ($page_type == 'home') {
 	$this->addScript('templates/' . $this->template . '/js/jquery.flexslider-min.js');
 }
 
@@ -36,9 +36,6 @@ $this->addScript('templates/' . $this->template . '/js/bootstrap-tabcollapse.js'
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <jdoc:include type="head" />
-    <script type="text/javascript">
-
-    </script>
 </head>
 
 <body class="<?php echo $page_type; ?>">
@@ -56,6 +53,7 @@ $this->addScript('templates/' . $this->template . '/js/bootstrap-tabcollapse.js'
 				<div class="social">
 					<jdoc:include type="modules" name="social-media" style="none" />
 				</div>
+
 			</div>
 			<nav id="top-menu">
                 <div class="navbar">
@@ -104,7 +102,6 @@ $this->addScript('templates/' . $this->template . '/js/bootstrap-tabcollapse.js'
 		</section>
 	<?php endif; ?>
 	<footer class="container">
-
         <?php if ($this->countModules('footer-menu')): ?>
             <section class="footer-row">
                 <jdoc:include type="modules" name="footer-menu" style="xhtml" />
