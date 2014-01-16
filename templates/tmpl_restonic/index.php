@@ -20,13 +20,21 @@ require_once('templates/' .  $this->template . '/template_function.php');
 $page_type = tmpHelper::pageType();
 
 // Add JavaScript Frameworks
-JHtml::_('bootstrap.framework');
+
+// load customized version of Bootstrap
+
+//JHtml::_('bootstrap.framework');
+$this->addScript(JUri::root().'templates/'.$this->template.'/js/bootstrap-custom.js');
+
+// HTML 5 shiv for IE elements
 $this->addScript(JUri::root().'media/jui/js/html5.js');
 
+// add flex slider
 if ($page_type == 'home') {
 	$this->addScript('templates/' . $this->template . '/js/jquery.flexslider-min.js');
 }
 
+// tabs for content pages
 $this->addScript('templates/' . $this->template . '/js/bootstrap-tabcollapse.js');
 
 ?>
@@ -36,6 +44,22 @@ $this->addScript('templates/' . $this->template . '/js/bootstrap-tabcollapse.js'
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <jdoc:include type="head" />
+	<script type="text/javascript">
+		jQuery().ready(function () {
+			jQuery(".navbar-nav li a").each(function(n) {
+				var $parent = jQuery(this).parent();
+				if ($parent.hasClass('parent')) {
+					jQuery(this).toggle(
+						function() {
+							$parent.addClass('open');
+						}, function() {
+							$parent.removeClass('open');
+						}
+					)
+				};
+			});
+		});
+	</script>
 </head>
 
 <body class="<?php echo $page_type; ?>">
@@ -70,10 +94,13 @@ $this->addScript('templates/' . $this->template . '/js/bootstrap-tabcollapse.js'
                     </div>
                 </div>
 			</nav>
+
 		</section>
 	</header>
+
 	<?php if ($this->countModules('main-banner')): ?>
 		<section class="main-banner">
+
 			<div class="banner-slides">
 				<ul class="slides">
 					<jdoc:include type="modules" name="main-banner" style="slides" />
@@ -83,6 +110,7 @@ $this->addScript('templates/' . $this->template . '/js/bootstrap-tabcollapse.js'
 	<?php endif; ?>
 	<?php if($page_type != 'home'): // only show mainbody on non-homepage ?>
 		<section class="container">
+
 			<div class="main-body-row">
 				<?php if ($this->countModules('sidebar')): ?>
 					<aside>
@@ -108,6 +136,8 @@ $this->addScript('templates/' . $this->template . '/js/bootstrap-tabcollapse.js'
             </section>
         <?php endif; ?>
 	</footer>
+	<?php if ($page_type == 'home') : ?>
 	<script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/templates/<?php echo $this->template; ?>/js/main.js"></script>
-</body>
+	<?php endif; ?>
+	</body>
 </html>
