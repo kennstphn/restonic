@@ -108,7 +108,7 @@ foreach ($list as $i => &$item) :
 	// The next item is deeper.
 	if ($item->deeper)
 	{
-		echo '<ul class="dropdown-menu nav-child unstyled small">';
+		echo '<ul class="dropdown-menu nav-child unstyled">';
 	}
 	// The next item is shallower.
 	elseif ($item->shallower)
