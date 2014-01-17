@@ -148,13 +148,22 @@ K2HelperUtilities::setDefaultImage($this->item, 'itemlist', $this->params);
           <?php if (array_key_exists(90, $extrafields)): ?>
               <div class="mattress-item-image">
                 <?php echo $extrafields[90]; ?>
+
+	              <div class="clr"></div>
+	              <?php if (array_key_exists(94, $extrafields)): ?>
+		              <small><?php echo $extrafields[94]; ?></small>
+	              <?php endif; ?>
               </div>
           <?php endif; ?>
 
 	  </div>
 	  <?php endif; ?>
 
+
 		<div class="clr"></div>
+
+
+
 
 	  <!-- Plugins: AfterDisplayContent -->
 	  <?php echo $this->item->event->AfterDisplayContent; ?>
