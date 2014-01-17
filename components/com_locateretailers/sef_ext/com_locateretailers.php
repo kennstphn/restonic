@@ -56,7 +56,7 @@ switch ($task) {
 		print_r($sh_LANG[$shLangIso]);
 
 		//$title[] = $sh_LANG[$shLangIso]['LOCATE_RETAILERS'];// insert a 'View sample' string,
-		$title[] = 'Locate Retailers';
+		$title[] = 'find-retailer';
 		// according to language
 		// only if you have defined the
 		if (!empty($sampleId)) {                                   // fetch some data about the content
