@@ -60,6 +60,7 @@ $this->addScript('templates/' . $this->template . '/js/bootstrap-tabcollapse.js'
 			});
 		});
 	</script>
+
 </head>
 
 <body class="<?php echo $page_type; ?>">
@@ -77,7 +78,6 @@ $this->addScript('templates/' . $this->template . '/js/bootstrap-tabcollapse.js'
 				<div class="social">
 					<jdoc:include type="modules" name="social-media" style="none" />
 				</div>
-
 			</div>
 			<nav id="top-menu">
                 <div class="navbar">
@@ -94,13 +94,11 @@ $this->addScript('templates/' . $this->template . '/js/bootstrap-tabcollapse.js'
                     </div>
                 </div>
 			</nav>
-
 		</section>
 	</header>
 
 	<?php if ($this->countModules('main-banner')): ?>
 		<section class="main-banner">
-
 			<div class="banner-slides">
 				<ul class="slides">
 					<jdoc:include type="modules" name="main-banner" style="slides" />
@@ -110,7 +108,6 @@ $this->addScript('templates/' . $this->template . '/js/bootstrap-tabcollapse.js'
 	<?php endif; ?>
 	<?php if($page_type != 'home'): // only show mainbody on non-homepage ?>
 		<section class="container">
-
 			<div class="main-body-row">
 				<?php if ($this->countModules('sidebar')): ?>
 					<aside>
@@ -139,5 +136,19 @@ $this->addScript('templates/' . $this->template . '/js/bootstrap-tabcollapse.js'
 	<?php if ($page_type == 'home') : ?>
 	<script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/templates/<?php echo $this->template; ?>/js/main.js"></script>
 	<?php endif; ?>
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-10432300-1']);
+		_gaq.push(['_trackPageview']);
+
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+
+	</script>
 	</body>
 </html>

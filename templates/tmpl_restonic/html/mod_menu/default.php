@@ -21,6 +21,7 @@ defined('_JEXEC') or die;
 	}
 ?>>
 <?php
+
 foreach ($list as $i => &$item) :
 
 	$class = 'item-'.$item->id;
@@ -89,8 +90,10 @@ foreach ($list as $i => &$item) :
             require JModuleHelper::getLayoutPath('mod_menu', 'default_'.$item->type);
             break;
 		case 'heading':
-            // check if the item is parent and load alternative seperator
-            if ($item->parent) {
+            if ($item->alias == 'mod-custom') {
+	            require JModuleHelper::getLayoutPath('mod_menu', 'default_heading_module');
+            }
+            elseif ($item->parent) {
                 require JModuleHelper::getLayoutPath('mod_menu', 'default_heading_dropdown');
             }
             else
