@@ -151,7 +151,7 @@ K2HelperUtilities::setDefaultImage($this->item, 'itemlist', $this->params);
 
 	              <div class="clr"></div>
 	              <?php if (array_key_exists(94, $extrafields)): ?>
-		              <small><?php echo $extrafields[94]; ?></small>
+		              <div class="disclaimer"><?php echo $extrafields[94]; ?></div>
 	              <?php endif; ?>
               </div>
           <?php endif; ?>

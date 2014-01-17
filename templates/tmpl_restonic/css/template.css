@@ -1385,6 +1385,10 @@ address {
   font-style: normal;
   line-height: 20px;
 }
+.disclaimer {
+  font-size: 11px;
+  text-align: center;
+}
 code,
 pre {
   padding: 0 3px 2px;
