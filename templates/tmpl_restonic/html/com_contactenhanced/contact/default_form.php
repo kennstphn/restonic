@@ -14,23 +14,20 @@ defined('_JEXEC') or die;
 	</div>
 <?php endif; ?>
 
-
-	 
+<div class="row">
 <?php
 $formWidth	= 99; 
 if($this->params->get('show_sidebar')){
 	$formWidth	= $formWidth - 60;
 	?>
-	<div class="contact-sidebar" 
-		style="width:60%;float:<?php echo $this->params->get('show_sidebar','right'); ?>">
+	<div class="span5 contact-sidebar">
 		<?php  echo $this->loadTemplate('sidebar');  ?>
 	</div>
 	<?php 
 }
 
 ?>
-<div style="width:<?php echo $formWidth; ?>%;float:<?php 
-		echo ($this->params->get('show_sidebar','right') == 'left' ? 'right' : 'left'); ?>">
+<div class="span4">
 	<div class="contact-form" id="contact-form">
 		<?php echo ceHelper::loadForm($this); ?>
 	</div>
@@ -41,3 +38,4 @@ if($this->params->get('show_sidebar')){
 <br style="clear:both" />
 
 <?php // echo $this->loadTemplate('after_form'); ?>
+</div>

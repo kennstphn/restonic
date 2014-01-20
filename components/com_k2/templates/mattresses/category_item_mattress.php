@@ -23,6 +23,12 @@ if (count($raw_fields)) {
 		<img src="<?php echo $extrafields[93]; ?>" />
 	</div>
 	<div class="libray-item-image">
-		<img src="<?php echo $extrafields[92]; ?>" />
+		<?php if ($extrafields[95]): ?>
+		<a href="<?php echo $extrafields[95]; ?>">
+			<img src="<?php echo $extrafields[92]; ?>" />
+		</a>
+		<?php else: ?>
+			<img src="<?php echo $extrafields[92]; ?>" />
+		<?php endif; ?>
 	</div>
 </div>

@@ -136,7 +136,13 @@ K2HelperUtilities::setDefaultImage($this->item, 'itemlist', $this->params);
 	  <div class="catItemIntroText">
           <?php if ($extrafields[92]): ?>
               <div class="collection-item-image">
+	          <?php if ($extrafields[95]): ?>
+		          <a href="<?php echo $extrafields[95]; ?>">
                   <?php echo $extrafields[92]; ?>
+		          </a>
+		          <?php else: ?>
+		             <?php echo $extrafields[92]; ?>
+		          <?php endif; ?>
               </div>
           <?php endif; ?>
           <?php if ($extrafields[93]): ?>
