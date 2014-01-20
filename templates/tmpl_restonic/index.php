@@ -10,6 +10,8 @@
 // Getting params from template
 $params = $this->params;
 
+echo "HI dave these are a bunch of changes to this file!";
+
 // Add Stylesheets
 $this->addStyleSheet('templates/'.$this->template.'/css/template.css');
 
