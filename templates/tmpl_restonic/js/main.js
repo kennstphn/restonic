@@ -7,3 +7,4 @@ jQuery(window).load(function() {
         pauseOnHover: false
     });
 });
+

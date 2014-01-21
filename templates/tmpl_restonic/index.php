@@ -10,7 +10,6 @@
 // Getting params from template
 $params = $this->params;
 
-echo "HI dave these are a bunch of changes to this file!";
 
 // Add Stylesheets
 $this->addStyleSheet('templates/'.$this->template.'/css/template.css');
@@ -21,24 +20,6 @@ require_once('templates/' .  $this->template . '/template_function.php');
 // check to see if we are home
 $page_type = tmpHelper::pageType();
 
-// Add JavaScript Frameworks
-
-// load customized version of Bootstrap
-
-//JHtml::_('bootstrap.framework');
-$this->addScript(JUri::root().'templates/'.$this->template.'/js/bootstrap-custom.js');
-
-// HTML 5 shiv for IE elements
-$this->addScript(JUri::root().'media/jui/js/html5.js');
-
-// add flex slider
-if ($page_type == 'home') {
-	$this->addScript('templates/' . $this->template . '/js/jquery.flexslider-min.js');
-}
-
-// tabs for content pages
-$this->addScript('templates/' . $this->template . '/js/bootstrap-tabcollapse.js');
-
 ?>
 
 <!DOCTYPE html>
@@ -46,22 +27,6 @@ $this->addScript('templates/' . $this->template . '/js/bootstrap-tabcollapse.js'
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <jdoc:include type="head" />
-	<script type="text/javascript">
-		jQuery().ready(function () {
-			jQuery(".navbar-nav li a").each(function(n) {
-				var $parent = jQuery(this).parent();
-				if ($parent.hasClass('parent')) {
-					jQuery(this).toggle(
-						function() {
-							$parent.addClass('open');
-						}, function() {
-							$parent.removeClass('open');
-						}
-					)
-				};
-			});
-		});
-	</script>
 
 </head>
 
@@ -135,9 +100,30 @@ $this->addScript('templates/' . $this->template . '/js/bootstrap-tabcollapse.js'
             </section>
         <?php endif; ?>
 	</footer>
+
+	<script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/templates/<?php echo $this->template; ?>/js/frontend.js"></script>
+
+	<script type="text/javascript">
+		jQuery().ready(function () {
+			jQuery(".navbar-nav li a").each(function(n) {
+				var $parent = jQuery(this).parent();
+				if ($parent.hasClass('parent')) {
+					jQuery(this).toggle(
+						function() {
+							$parent.addClass('open');
+						}, function() {
+							$parent.removeClass('open');
+						}
+					)
+				};
+			});
+		});
+	</script>
+
 	<?php if ($page_type == 'home') : ?>
-	<script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/templates/<?php echo $this->template; ?>/js/main.js"></script>
+		<script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/templates/<?php echo $this->template; ?>/js/home.js"></script>
 	<?php endif; ?>
+
 
 	<script type="text/javascript">
 		var _gaq = _gaq || [];

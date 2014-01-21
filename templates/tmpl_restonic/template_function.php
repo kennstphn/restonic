@@ -27,4 +27,10 @@ abstract class tmpHelper
         return 'inside';
 
     }
+
+	public function removeJS()
+	{
+		$doc = JFactory::getDocument();
+		$doc->unset($doc->_scripts[JURI::base() . '/media/jui/js/jquery.min.js']);
+	}
 }
