@@ -14,7 +14,7 @@ $params = $this->params;
 // Add Stylesheets
 $this->addStyleSheet('templates/'.$this->template.'/css/template.css');
 
-// get some template functions
+// get some template functionsg
 require_once('templates/' .  $this->template . '/template_function.php');
 
 // check to see if we are home
@@ -27,7 +27,7 @@ $page_type = tmpHelper::pageType();
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <jdoc:include type="head" />
-
+	<script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/media/jui/js/html5.js"></script>
 </head>
 
 <body class="<?php echo $page_type; ?>">
@@ -101,7 +101,11 @@ $page_type = tmpHelper::pageType();
         <?php endif; ?>
 	</footer>
 
-	<script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/templates/<?php echo $this->template; ?>/js/frontend.js"></script>
+	<script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/media/jui/js/jquery.js"></script>
+	<script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/media/jui/js/jquery-noconflict.js"></script>
+	<script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/templates/<?php echo $this->template; ?>/js/bootstrap-custom.js"></script>
+	<script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/templates/<?php echo $this->template; ?>/js/bootstrap-tabcollapse.js"></script>
+
 
 	<script type="text/javascript">
 		jQuery().ready(function () {
