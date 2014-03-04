@@ -30,6 +30,15 @@
     .makeColumn(7);
     margin-left: 30px;
   }
+  .main-body {
+    > .not-found {
+      border: 1px solid #8c8d8e;
+      .border-radius(5px);
+      .not-found-error {
+        padding: 20px;
+      }
+    }
+  }
 }
 
 @media (max-width: 1199px) {
@@ -42,6 +51,13 @@
 
   .mattress-description {
     .makeColumn(9);
+  }
+
+  .main-body {
+    > .not-found {
+      .makeColumn(12,0);
+      margin-left: 0px;
+    }
   }
 }
 
@@ -81,6 +97,17 @@
       .main-body-sidebar {
         .center-block();
         width: 100%;
+      }
+    }
+  }
+  .main-body {
+    > .not-found {
+      width: 100%;
+      background: transparent;
+      .text-center();
+      min-height: 200px;
+      .not-found-error {
+        margin-top: 0px;
       }
     }
   }

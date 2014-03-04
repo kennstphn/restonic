@@ -33,4 +33,22 @@ abstract class tmpHelper
 		$doc = JFactory::getDocument();
 		$doc->unset($doc->_scripts[JURI::base() . '/media/jui/js/jquery.min.js']);
 	}
+
+	public function getPageSuffix()
+	{
+
+		$app = JFactory::getApplication();
+		$menu = $app->getMenu();
+
+		$active = $menu->getActive();
+
+		// get the active page title
+		if (! is_object( $active )) {
+			return;
+		}
+
+		$suffix = $active->params->get('pageclass_sfx');
+
+		return $suffix;
+	}
 }
