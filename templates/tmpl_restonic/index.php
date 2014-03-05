@@ -27,6 +27,10 @@ $page_type = tmpHelper::pageType();
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <jdoc:include type="head" />
+
+	<script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/templates/<?php echo $this->template; ?>/js/bootstrap-custom.js"></script>
+	<script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/templates/<?php echo $this->template; ?>/js/bootstrap-tabcollapse.js">
+	<script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/media/jui/js/jquery-noconflict.js"></script>
 	<script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/media/jui/js/html5.js"></script>
 </head>
 
@@ -101,10 +105,10 @@ $page_type = tmpHelper::pageType();
         <?php endif; ?>
 	</footer>
 
-	<script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/media/jui/js/jquery.js"></script>
+	<!-- <script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/media/jui/js/jquery.js"></script>
 	<script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/media/jui/js/jquery-noconflict.js"></script>
-	<script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/templates/<?php echo $this->template; ?>/js/bootstrap-custom.js"></script>
-	<script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/templates/<?php echo $this->template; ?>/js/bootstrap-tabcollapse.js"></script>
+	<script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/templates/<?php echo $this->template; ?>/js/bootstrap-custom.js"></script> -->
+	<!-- <script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/templates/<?php echo $this->template; ?>/js/bootstrap-tabcollapse.js"></script> -->
 
 
 	<script type="text/javascript">
