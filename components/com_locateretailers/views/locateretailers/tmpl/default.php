@@ -4,7 +4,7 @@
 
     <h2>Find a Retailer</h2>
     <p>Looking for a retailer near you? Simply enter your zip code and find one closest to you.</p>
-    <div class="form-inline">
+    <form class="form-inline" id="retailer-lookup" method="post" action="#">
         <fieldset class="locator">
         <input class="required input input-medium" placeholder="Enter zipcode" type="text" name="zip" id="zip" />
             <select class="input input-medium" id="distanceConfig">
@@ -20,5 +20,5 @@
         <div id="map_canvas"></div>
         <div id="results"></div>
         <div id="no"></div>
-    </div>
+    </form>
 </div>

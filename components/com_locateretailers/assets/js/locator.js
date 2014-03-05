@@ -33,21 +33,8 @@ jQuery(document).ready(function () {
     var distancesArr = new Array();
 
 
-    // We set the map to show the middle of the US, zoomed out quite a bit
-    geocoder.geocode({'address': "1200 Market Street St. Louis MO 63103"}, function (results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-            var myOptions = {
-                zoom: 3,
-                center: results[0].geometry.location,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            };
-
-            var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-        }
-    });
-
-    // When the user clicks the submit button, we locate the stores
-    jQuery("#submit").click(function () {
+    function getLocations()
+    {
         // get the zip field
         var zip = jQuery("#zip").val();
 
@@ -80,6 +67,33 @@ jQuery(document).ready(function () {
             messageContainer.addClass('in');
             messageContainer.append(message);
         }
+    }
+
+
+    // We set the map to show the middle of the US, zoomed out quite a bit
+    geocoder.geocode({'address': "1200 Market Street St. Louis MO 63103"}, function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            var myOptions = {
+                zoom: 3,
+                center: results[0].geometry.location,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+        }
+    });
+
+    // When the user clicks the submit button, we locate the stores
+    jQuery("#submit").click(function () {
+        event.preventDefault();
+        // call the get locations function which does all the work
+        getLocations();
+    });
+
+    jQuery('#retailer-lookup').submit(function(){
+        event.preventDefault();
+        // call the get locations function which does all the work
+        getLocations();
     });
 
     // This is the function that is called when the user clicks on Submit
