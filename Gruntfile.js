@@ -5,7 +5,7 @@ module.exports = function(grunt) {
         less: {
             development: {
                 options: {
-                    compress: true
+                    compress: false
                 },
                 files: {
                     "templates/tmpl_restonic/css/template.css":"templates/tmpl_restonic/less/template.less"
