@@ -7303,6 +7303,24 @@ footer .footer-nav-wrapper .footer-nav {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
+.restonic-warranty-card {
+  color: #75133a;
+  font-size: .8em;
+  border: 1px solid #626166;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.restonic-warranty-card th {
+  background-color: #75133a;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-align: center;
+}
+.restonic-warranty-card td {
+  text-align: center;
+  border-top: 1px solid #75133a;
+}
 .home #bottom .container > .span5 {
   color: #ffffff;
 }
