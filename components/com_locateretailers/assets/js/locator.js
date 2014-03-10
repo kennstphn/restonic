@@ -90,10 +90,11 @@ jQuery(document).ready(function () {
         getLocations();
     });
 
-    jQuery('#retailer-lookup').submit(function(){
+    jQuery('#retailer-lookup').submit(function(event){
         event.preventDefault();
         // call the get locations function which does all the work
         getLocations();
+        return false;
     });
 
     // This is the function that is called when the user clicks on Submit
