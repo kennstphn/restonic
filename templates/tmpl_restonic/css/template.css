@@ -7515,6 +7515,11 @@ footer .footer-nav ul li a:hover {
   margin-left: 20px;
   width: 700px;
 }
+.library-collection-description {
+  float: left;
+  margin-left: 20px;
+  width: 460px;
+}
 .collection-items {
   float: left;
   margin-left: 20px;
@@ -7668,6 +7673,11 @@ footer .footer-nav ul li a:hover {
   section .main-body-row .main-body {
     width: 1070px;
   }
+  section .main-body-row .main-body > .search {
+    float: left;
+    margin-left: 248px;
+    width: 820px;
+  }
   section .main-body-row .main-body-sidebar {
     float: left;
     margin-left: 20px;
@@ -7697,6 +7707,11 @@ footer .footer-nav ul li a:hover {
     margin-left: 20px;
     width: 820px;
     margin-left: 30px;
+  }
+  .library-collection-description {
+    float: left;
+    margin-left: 20px;
+    width: 580px;
   }
   .main-body > .not-found {
     border: 1px solid #8c8d8e;
@@ -7734,6 +7749,14 @@ footer .footer-nav ul li a:hover {
     margin-left: auto;
     margin-right: auto;
     float: none;
+  }
+  .library-collection-description {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+    text-align: center;
+    width: 100%;
   }
   .collection-description {
     display: block;

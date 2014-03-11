@@ -106,7 +106,7 @@ defined('_JEXEC') or die;
 
 					<?php if($this->params->get('subCatDescription')): ?>
 					<!-- Subcategory description -->
-                        <div class="collection-description">
+                        <div class="library-collection-description">
                             <?php echo $subCategory->description; ?>
                         </div>
 					<?php endif; ?>
