@@ -643,7 +643,7 @@ textarea {
 }
 body {
   margin: 0;
-  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+  font-family: museo, Georgia, "Times New Roman", Times, serif;
   font-size: 15px;
   line-height: 20px;
   color: #616265;
@@ -1486,7 +1486,7 @@ input,
 button,
 select,
 textarea {
-  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+  font-family: museo, Georgia, "Times New Roman", Times, serif;
 }
 label {
   display: block;
@@ -7348,14 +7348,16 @@ aside h3 {
   font-size: 2.4em;
   font-weight: 700;
 }
-.collection-description {
-  font-size: .9em;
-  color: #616265;
-}
 .awards-content {
   color: #575a5d;
   font-size: .7em;
   line-height: 1.5em;
+}
+ul#restonicTabs {
+  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+}
+footer {
+  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
 }
 .nav-text {
   float: left;
@@ -7363,9 +7365,7 @@ aside h3 {
   color: #75133a;
 }
 #top-menu {
-  font-family: museo, Georgia, "Times New Roman", Times, serif;
   font-weight: 500;
-  font-size: 1em;
 }
 #top-menu .nav > li {
   padding: 0 35px;
@@ -7505,7 +7505,6 @@ footer .footer-nav ul li a:hover {
   margin-left: 0px;
 }
 .mattress-description {
-  font-size: 0.867em;
   float: left;
   margin-left: 20px;
   width: 820px;
@@ -7540,6 +7539,9 @@ footer .footer-nav ul li a:hover {
   margin-left: 20px;
   width: 820px;
   margin-left: 0px;
+}
+.library-item-logo {
+  min-height: 50px;
 }
 .mattress-items {
   float: left;
