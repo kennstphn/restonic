@@ -7359,13 +7359,14 @@ ul#restonicTabs {
 footer {
   font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
 }
+label,
+.cf-label {
+  font-weight: bold;
+}
 .nav-text {
   float: left;
   padding-left: 30px;
   color: #75133a;
-}
-#top-menu {
-  font-weight: 500;
 }
 #top-menu .nav > li {
   padding: 0 35px;
