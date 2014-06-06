@@ -7321,6 +7321,9 @@ footer .footer-nav-wrapper .footer-nav {
   text-align: center;
   border-top: 1px solid #75133a;
 }
+#form_2 .btn[disabled] {
+  display: none;
+}
 .home #bottom .container > .span5 {
   color: #ffffff;
 }
@@ -7565,7 +7568,7 @@ footer .footer-nav ul li a:hover {
   position: relative;
   z-index: 10;
   float: left;
-  top: -80px;
+  top: -30px;
 }
 .mattress-item-description {
   z-index: 50;
