@@ -14,12 +14,12 @@
 @font-face {
   font-family: museo;
   src: url('../fonts/Museo500-Regular.otf');
-  font-weight: bold;
+  font-weight: 500;
 }
 @font-face {
   font-family: museo;
   src: url('../fonts/Museo700-Regular.otf');
-  font-weight: bolder;
+  font-weight: 700;
 }
 .clearfix {
   *zoom: 1;
