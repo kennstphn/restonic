@@ -43,9 +43,7 @@ $page_type = tmpHelper::pageType();
 				</a>
 			</div>
 			<div class="search-social">
-				<div class="search">
-					<jdoc:include type="modules" name="search" style="none" />
-				</div>
+				<jdoc:include type="modules" name="search" style="none" />
 				<div class="social">
 					<jdoc:include type="modules" name="social-media" style="none" />
 				</div>
