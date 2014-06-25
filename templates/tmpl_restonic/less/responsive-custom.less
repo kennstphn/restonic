@@ -15,7 +15,7 @@
       }
 	}
   }
-  header nav, .mattress-description {
+  header nav {
     margin-left: 30px;
   }
 
@@ -49,10 +49,14 @@
 
 @media (max-width: 1199px) {
   // responsive tabs
-  #restonicTabs,
-  #restonicContent {
-    .makeColumn(9, 2.85);
+
+  .main-body {
+    #restonicTabs,
+    #restonicContent {
+      .makeColumn(9, 2.85);
+    }
   }
+
 
 
   .mattress-description {
@@ -94,12 +98,16 @@
     .center-block();
     width: 100%;
   }
-  #restonicTabs,
-  #restonicContent,
-  .library-description  {
-    .center-block();
-    width: 100%;
+
+  .main-body {
+    #restonicTabs,
+    #restonicContent,
+    .library-description  {
+      .center-block();
+      width: 100%;
+    }
   }
+
   section {
     .main-body-row  {
       // hide at tablet and below

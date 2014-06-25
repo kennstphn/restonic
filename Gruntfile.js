@@ -8,7 +8,7 @@ module.exports = function(grunt) {
                     compress: false
                 },
                 files: {
-                    "templates/tmpl_restonic/css/template.css":"templates/tmpl_restonic/less/template.less"
+                    "templates/tmpl_restonic/css/template-sidebarads.css":"templates/tmpl_restonic/less/template.less"
                 }
             }
         },
@@ -24,7 +24,7 @@ module.exports = function(grunt) {
                 tasks: ['concat']
             },
             less: {
-                files: ['templates/companytmpl/less/*.less'],  //watched files
+                files: ['templates/tmpl_restonic/less/*.less'],  //watched files
                 tasks: ['less'],                          //tasks to run
                 options: {
                     // livereload: true                        //reloads the browser

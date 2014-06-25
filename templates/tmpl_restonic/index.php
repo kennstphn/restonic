@@ -10,9 +10,19 @@
 // Getting params from template
 $params = $this->params;
 
+$user = JFactory::getUser();
 
-// Add Stylesheets
-$this->addStyleSheet('templates/'.$this->template.'/css/template.css');
+if ($user->guest)
+{
+	// Add Stylesheets
+	$this->addStyleSheet('templates/'.$this->template.'/css/template.css');
+}
+else
+{
+	// Add Stylesheets
+	$this->addStyleSheet('templates/'.$this->template.'/css/template-sidebarads.css');
+}
+
 
 // get some template functionsg
 require_once('templates/' .  $this->template . '/template_function.php');

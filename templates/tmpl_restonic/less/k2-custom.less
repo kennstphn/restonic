@@ -2,12 +2,14 @@
 .mattress-logo {
   .makeColumn(3);
   margin-left: 0px;
+  .hidden(); // temporary during development
 }
 
+/*
 .mattress-description {
   .pull-left();
   .makeColumn(10.5);
-}
+}*/
 
 .collection-description {
   .makeColumn(9);
@@ -84,7 +86,7 @@
 
 // mattress tabs
 #restonicTabs {
-  .makeColumn(10.5, 2.85);
+  width:100%;
   border-bottom: 0px;
   font-size: 0.833em;
   background-color: #bcbec0;
@@ -136,10 +138,14 @@
   }
 }
 
-#restonicContent {
-  .makeColumn(10.5);
-  .pull-right();
+
+.main-body {
+  #restonicContent {
+    .makeColumn(10.5, 2.85);
+  }
 }
+
+
 
 .catItemIntroText {
   position: relative;
