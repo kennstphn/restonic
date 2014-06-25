@@ -7111,6 +7111,9 @@ header .logo {
   margin-left: 20px;
   width: 220px;
 }
+header .logo img {
+  vertical-align: inherit;
+}
 header .search-social {
   float: left;
   margin-left: 20px;
