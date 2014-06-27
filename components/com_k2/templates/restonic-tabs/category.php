@@ -34,7 +34,7 @@ defined('_JEXEC') or die;
 
 	<?php if(isset($this->category) || ( $this->params->get('subCategories') && isset($this->subCategories) && count($this->subCategories) )): ?>
 	<!-- Blocks for current category and subcategories -->
-	<div class="itemListCategoriesBlock">
+	<div class="itemListCategoriesBlock" id="mattress-item">
 
 		<?php if(isset($this->category) && ( $this->params->get('catImage') || $this->params->get('catTitle') || $this->params->get('catDescription') || $this->category->event->K2CategoryDisplay )): ?>
 		<!-- Category block -->

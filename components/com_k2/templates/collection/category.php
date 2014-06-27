@@ -38,7 +38,7 @@ defined('_JEXEC') or die;
 
 		<?php if(isset($this->category) && ( $this->params->get('catImage') || $this->params->get('catTitle') || $this->params->get('catDescription') || $this->category->event->K2CategoryDisplay )): ?>
 		<!-- Category block -->
-		<div class="itemListCategory">
+		<div class="itemListCategory" id="mattress-collection">
 
 			<?php if(isset($this->addLink)): ?>
 			<!-- Item add link -->

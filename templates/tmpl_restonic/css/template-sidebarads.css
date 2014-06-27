@@ -7507,38 +7507,11 @@ footer .footer-nav ul li a:hover {
   margin-left: 20px;
   width: 220px;
   margin-left: 0px;
-  display: none;
-  visibility: hidden;
-}
-/*
-.mattress-description {
-  .pull-left();
-  .makeColumn(10.5);
-}*/
-.collection-description {
-  float: left;
-  margin-left: 20px;
-  width: 700px;
 }
 .library-collection-description {
   float: left;
   margin-left: 20px;
   width: 460px;
-}
-.collection-items {
-  float: left;
-  margin-left: 20px;
-  width: 820px;
-  float: right;
-}
-.collection-items .collection-item-image {
-  float: left;
-  margin-left: 20px;
-  width: 364px;
-  margin-right: 10px;
-}
-.collection-items .collection-item-logo {
-  margin-top: 30px;
 }
 .library-description {
   float: left;
@@ -7706,12 +7679,6 @@ footer .footer-nav ul li a:hover {
   .mattress-items .library-item:first-child {
     margin-left: 0px;
   }
-  .collection-description {
-    float: left;
-    margin-left: 20px;
-    width: 820px;
-    margin-left: 30px;
-  }
   .library-collection-description {
     float: left;
     margin-left: 20px;
@@ -7734,16 +7701,27 @@ footer .footer-nav ul li a:hover {
     margin-left: 248px;
     width: 700px;
   }
-  .mattress-description {
-    float: left;
-    margin-left: 20px;
-    width: 700px;
-  }
   .main-body > .not-found {
     float: left;
     margin-left: 20px;
     width: 940px;
     margin-left: 0px;
+  }
+}
+@media (min-width: 980px) {
+  #mattress-item .mattress-logo,
+  #mattress-collection .mattress-logo {
+    display: none;
+    visibility: hidden;
+  }
+  .collection-items .collection-item-image {
+    float: left;
+    margin-left: 20px;
+    width: 364px;
+    margin-right: 10px;
+  }
+  .collection-items .collection-item-logo {
+    margin-top: 30px;
   }
 }
 @media (max-width: 979px) {

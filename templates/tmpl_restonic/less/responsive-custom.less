@@ -29,10 +29,6 @@
       }
     }
   }
-  .collection-description {
-    .makeColumn(10.5);
-    margin-left: 30px;
-  }
   .library-collection-description {
     .makeColumn(7.5);
   }
@@ -57,12 +53,6 @@
     }
   }
 
-
-
-  .mattress-description {
-    .makeColumn(9);
-  }
-
   .main-body {
     > .not-found {
       .makeColumn(12,0);
@@ -71,9 +61,24 @@
   }
 }
 
-@media (max-width: 1199px) {
+@media (min-width: 980px) {
+  #mattress-item, #mattress-collection {
+    .mattress-logo {
+      .hidden(); // temporary during development
+    }
+  }
 
+  .collection-items {
+    .collection-item-image {
+      .makeColumn(4.8);
+      margin-right: 10px;
+    }
+    .collection-item-logo {
+      margin-top: 30px;
+    }
+  }
 }
+
 
 @media (max-width: 979px) {
   .mattress-logo {
