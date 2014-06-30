@@ -8,7 +8,7 @@ module.exports = function(grunt) {
                     compress: false
                 },
                 files: {
-                    "templates/tmpl_restonic/css/template-sidebarads.css":"templates/tmpl_restonic/less/template.less"
+                    "templates/tmpl_restonic/css/template.css":"templates/tmpl_restonic/less/template.less"
                 }
             }
         },
