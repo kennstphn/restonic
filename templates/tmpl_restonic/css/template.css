@@ -8418,6 +8418,15 @@ header .navbar .dropdown.yamm-fullwidth .nav-child {
   border-top-color: #ffffff;
   border-bottom-color: #ffffff;
 }
+.retailer-location ul {
+  margin-left: 0px;
+}
+.retailer-location ul li {
+  list-style: none;
+}
+.retailer-location ul.location-links li {
+  display: inline;
+}
 .center-block {
   display: block;
   margin-left: auto;
