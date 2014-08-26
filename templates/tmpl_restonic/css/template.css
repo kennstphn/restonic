@@ -7989,6 +7989,10 @@ footer .footer-nav ul li a:hover {
   .main-body > .not-found .not-found-error {
     margin-top: 0px;
   }
+  .snippet {
+    display: none;
+    visibility: hidden;
+  }
 }
 @media (max-width: 767px) {
   header .logo {
