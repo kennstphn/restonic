@@ -49,7 +49,6 @@ function modChrome_slides($module, &$params, &$attribs)
 {
 	$document = JFactory::getDocument();
 	$bestbuy = JModuleHelper::getModule('mod_custom', 'Best Buy');
-	$choice = JModuleHelper::getModule('mod_custom', 'womens choice');
 
 	echo '<li>';
 	echo '<div class="container">';
@@ -64,7 +63,6 @@ function modChrome_slides($module, &$params, &$attribs)
 	echo '<div class="bestbuy">';
 	echo    JModuleHelper::renderModule($bestbuy, array('style'=>'blank'));
 	echo '</div>';
-	echo    JModuleHelper::renderModule($choice, array('style'=>'blank'));
 	echo '</div>';
 	echo '</li>';
 }
