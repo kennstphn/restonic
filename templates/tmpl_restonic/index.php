@@ -10,19 +10,8 @@
 // Getting params from template
 $params = $this->params;
 
-$user = JFactory::getUser();
-
-if ($user->guest)
-{
-	// Add Stylesheets
-	$this->addStyleSheet('templates/'.$this->template.'/css/template.css');
-}
-else
-{
-	// Add Stylesheets
-	$this->addStyleSheet('templates/'.$this->template.'/css/template-sidebarads.css');
-}
-
+// Add Stylesheets
+$this->addStyleSheet('templates/'.$this->template.'/css/template.css');
 
 // get some template functionsg
 require_once('templates/' .  $this->template . '/template_function.php');
@@ -105,6 +94,14 @@ $page_type = tmpHelper::pageType();
 			</div>
 		</section>
 	<?php endif; ?>
+
+
+    <?php if ($this->countModules('below-content')): ?>
+        <section id="below-content" class="container">
+            <jdoc:include type="modules" name="below-content" style="xhtml" />
+        </section>
+    <?php endif; ?>
+
 	<footer class="container">
         <?php if ($this->countModules('footer-menu')): ?>
             <section class="footer-row">
