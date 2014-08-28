@@ -61,6 +61,14 @@ defined('_JEXEC') or die;
             <?php endforeach; ?>
         <?php endif; ?>
 
+        <?php if (isset($readmoreHtml))
+        {
+            $rawReadmore = new SimpleXMLElement($readmoreHtml);
+        }
+
+        ?>
+
+
       <?php // Plugins: BeforeDisplayContent ?>
       <?php echo $item->event->BeforeDisplayContent; ?>
 
@@ -69,7 +77,13 @@ defined('_JEXEC') or die;
 
       <?php if($params->get('itemImage') && isset($item->image)): ?>
           <div class="snippet-image">
-            <img src="<?php echo $item->image; ?>" alt="<?php echo K2HelperUtilities::cleanHtml($item->title); ?>"/>
+              <?php if(isset($rawReadmore)) : ?>
+                  <a href="<?php echo $rawReadmore['href']; ?>" target="<?php echo $rawReadmore['target']; ?>">
+                     <img src="<?php echo $item->image; ?>" alt="<?php echo K2HelperUtilities::cleanHtml($item->title); ?>"/>
+                  </a>
+              <?php else: ?>
+                  <img src="<?php echo $item->image; ?>" alt="<?php echo K2HelperUtilities::cleanHtml($item->title); ?>"/>
+              <?php endif ?>
           </div>
       <?php endif; ?>
 
