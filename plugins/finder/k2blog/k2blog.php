@@ -17,13 +17,13 @@ require_once JPATH_ADMINISTRATOR.'/components/com_finder/helpers/indexer/adapter
 class plgFinderK2blog extends FinderIndexerAdapter
 {
 
-    protected $context = 'K2blog';
+    protected $context = 'restonicblog';
 
     protected $extension = 'com_k2';
 
     protected $layout = 'item';
 
-    protected $type_title = 'K2 Item';
+    protected $type_title = 'Restonic Blog';
 
     protected $table = '#__k2_items';
 
@@ -192,7 +192,7 @@ class plgFinderK2blog extends FinderIndexerAdapter
         }
 
         // Add the category taxonomy data.
-        $item->addTaxonomy('K2 Category', $item->category, $item->cat_state, $item->cat_access);
+        $item->addTaxonomy('Restonic Blog', $item->category, $item->cat_state, $item->cat_access);
 
         // Add the language taxonomy data.
         $item->addTaxonomy('Language', $item->language);
