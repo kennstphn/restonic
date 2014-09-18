@@ -26,6 +26,22 @@
 					<option value="light">Light Logo</option>
 					<option value="dark">Dark Logo</option>
 				</field>
+                <field
+                        name="background"
+                        type="list"
+                        description="show background image">
+                    <option value="1">yes</option>
+                    <option value="0">no</option>
+                </field>
+                <field
+                        name="sidebar_position"
+                        type="list"
+                        description="Align the sidebar left or right"
+                        default="left"
+                    >
+                    <option value="left">Left</option>
+                    <option value="right">Right</option>
+                </field>
 			</fieldset>
 		</fields>
 	</config>

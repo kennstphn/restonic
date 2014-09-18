@@ -3,6 +3,26 @@ body.home {
   background-size: cover;
 }
 
+body.blog {
+  background: url('../images/blog-bg.jpg') no-repeat;
+  background-size: cover;
+  .main-body-sidebar {
+    background: #fff;
+    .border-radius(10px);
+  }
+
+  #itemListPrimary {
+    .itemContainer:nth-child(3) {
+      clear: left;
+      margin-left: 0px;
+    }
+  }
+  .catItemImageBlock {
+    .pull-left();
+    margin-right: 10px;
+  }
+}
+
 body, html {
   height: 100%;
 }

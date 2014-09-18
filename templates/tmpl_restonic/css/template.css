@@ -7051,6 +7051,24 @@ a.badge:focus {
 body.home {
   background-size: cover;
 }
+body.blog {
+  background: url('../images/blog-bg.jpg') no-repeat;
+  background-size: cover;
+}
+body.blog .main-body-sidebar {
+  background: #fff;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+body.blog #itemListPrimary .itemContainer:nth-child(3) {
+  clear: left;
+  margin-left: 0px;
+}
+body.blog .catItemImageBlock {
+  float: left;
+  margin-right: 10px;
+}
 body,
 html {
   height: 100%;
@@ -7536,6 +7554,136 @@ header .search-query {
   font-family: museo, Georgia, "Times New Roman", Times, serif;
   font-size: 2.733em;
   font-weight: bolder;
+}
+.k2ReadMore {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+  *zoom: 1;
+  padding: 4px 12px;
+  margin-bottom: 0;
+  font-size: 15px;
+  line-height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  color: #616265;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  background-color: #f5f5f5;
+  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+  *background-color: #e6e6e6;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  border: 1px solid #cccccc;
+  *border: 0;
+  border-bottom-color: #b3b3b3;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  *margin-left: .3em;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #75132d;
+  background-image: -moz-linear-gradient(top, #75133a, #751319);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#75133a), to(#751319));
+  background-image: -webkit-linear-gradient(top, #75133a, #751319);
+  background-image: -o-linear-gradient(top, #75133a, #751319);
+  background-image: linear-gradient(to bottom, #75133a, #751319);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff75133a', endColorstr='#ff751319', GradientType=0);
+  border-color: #751319 #751319 #33080b;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #751319;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.k2ReadMore:hover,
+.k2ReadMore:focus,
+.k2ReadMore:active,
+.k2ReadMore.active,
+.k2ReadMore.disabled,
+.k2ReadMore[disabled] {
+  color: #616265;
+  background-color: #e6e6e6;
+  *background-color: #d9d9d9;
+}
+.k2ReadMore:active,
+.k2ReadMore.active {
+  background-color: #cccccc \9;
+}
+.k2ReadMore:first-child {
+  *margin-left: 0;
+}
+.k2ReadMore:hover,
+.k2ReadMore:focus {
+  color: #616265;
+  text-decoration: none;
+  background-position: 0 -15px;
+  -webkit-transition: background-position 0.1s linear;
+  -moz-transition: background-position 0.1s linear;
+  -o-transition: background-position 0.1s linear;
+  transition: background-position 0.1s linear;
+}
+.k2ReadMore:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.k2ReadMore.active,
+.k2ReadMore:active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+}
+.k2ReadMore.disabled,
+.k2ReadMore[disabled] {
+  cursor: default;
+  background-image: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.k2ReadMore .label,
+.k2ReadMore .badge {
+  position: relative;
+  top: -1px;
+}
+.k2ReadMore:hover,
+.k2ReadMore:focus,
+.k2ReadMore:active,
+.k2ReadMore.active,
+.k2ReadMore.disabled,
+.k2ReadMore[disabled] {
+  color: #ffffff;
+  background-color: #751319;
+  *background-color: #5f0f15;
+}
+.k2ReadMore:active,
+.k2ReadMore.active {
+  background-color: #490c10 \9;
+}
+.k2ReadMore .caret {
+  border-top-color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+body.blog #itemListLeading p {
+  font-size: 160%;
+  line-height: 1.2em;
+}
+body.blog aside h3 {
+  color: #d5bf96;
 }
 aside h3 {
   color: #ffffff;

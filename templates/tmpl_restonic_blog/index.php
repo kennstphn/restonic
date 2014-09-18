@@ -75,9 +75,21 @@ if ($page_type == 'home') {
 				</div>
 			<?php endif; ?>
 			<?php if ($this->countModules('top-menu')): ?>
-				<nav class="navbar">
-					<jdoc:include type="modules" name="top-menu" style="none" />
-				</nav>
+                <nav id="top-menu">
+                    <div class="navbar">
+                        <div class="container">
+                            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target="#nav1">
+                                <span class="nav-text">Site Navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <div class="nav-collapse collapse" id="nav1">
+                                <jdoc:include type="modules" name="top-menu" style="none" />
+                            </div><!--/.nav-collapse -->
+                        </div>
+                    </div>
+                </nav>
 			<?php endif; ?>
 		</section>
 	</header>
