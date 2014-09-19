@@ -19,6 +19,13 @@ require_once('templates/' .  $this->template . '/template_function.php');
 // check to see if we are home
 $page_type = tmpHelper::pageType();
 
+
+$background_id = '';
+
+if($params->get('background')) {
+    $background_id = ' blog';
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +40,7 @@ $page_type = tmpHelper::pageType();
 	<script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/media/jui/js/html5.js"></script>
 </head>
 
-<body class="<?php echo $page_type; ?><?php echo tmpHelper::getPageSuffix(); ?>">
+<body class="<?php echo $page_type . $background_id ; ?><?php echo tmpHelper::getPageSuffix(); ?>">
 	<header class="container">
 		<section>
 			<div class="logo">
