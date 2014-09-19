@@ -7135,13 +7135,15 @@ header .search-social {
   width: 420px;
   float: right;
 }
-header .search-social .search {
+header .search-social .search,
+header .search-social .form-search {
   float: left;
   margin-left: 20px;
   width: 184px;
   margin-left: 5px;
 }
-header .search-social .search input.search-query {
+header .search-social .search input.search-query,
+header .search-social .form-search input.search-query {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
