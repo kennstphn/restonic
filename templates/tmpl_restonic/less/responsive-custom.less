@@ -77,6 +77,19 @@
       }
     }
   }
+
+  body.blog {
+    #itemListPrimary {
+      .catItemImageBlock {
+        float: none;
+        clear: both;
+      }
+      .catItemReadMore {
+        position: relative;
+      }
+    }
+  }
+
 }
 
 @media (min-width: 980px) {
@@ -279,6 +292,22 @@
         .makeColumn(2.5, .8);
         clear:both;
       }
+    }
+  }
+
+  body.blog {
+    .main-body-sidebar {
+      text-align: left;
+    }
+    #itemListPrimary {
+      .catItemImageBlock {
+        float: left
+      }
+
+
+    }
+    .catItemBody .catItemReadMore {
+      position: relative;
     }
   }
 }

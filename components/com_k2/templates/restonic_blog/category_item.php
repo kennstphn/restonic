@@ -159,6 +159,15 @@ K2HelperUtilities::setDefaultImage($this->item, 'itemlist', $this->params);
 	  <!-- K2 Plugins: K2AfterDisplayContent -->
 	  <?php echo $this->item->event->K2AfterDisplayContent; ?>
 
+      <?php if ($this->item->params->get('catItemReadMore')): ?>
+          <!-- Item "read more..." link -->
+          <div class="catItemReadMore">
+              <a class="k2ReadMore" href="<?php echo $this->item->link; ?>">
+                  <?php echo JText::_('K2_READ_MORE'); ?>
+              </a>
+          </div>
+      <?php endif; ?>
+
 	  <div class="clr"></div>
   </div>
 
@@ -269,14 +278,7 @@ K2HelperUtilities::setDefaultImage($this->item, 'itemlist', $this->params);
 	</div>
 	<?php endif; ?>
 
-	<?php if ($this->item->params->get('catItemReadMore')): ?>
-	<!-- Item "read more..." link -->
-	<div class="catItemReadMore">
-		<a class="k2ReadMore" href="<?php echo $this->item->link; ?>">
-			<?php echo JText::_('K2_READ_MORE'); ?>
-		</a>
-	</div>
-	<?php endif; ?>
+
 
 	<div class="clr"></div>
 
