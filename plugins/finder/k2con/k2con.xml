@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="finder" method="upgrade">
+    <name>plg_finder_k2con</name>
+    <author>Cohesive Websites</author>
+    <creationDate>Sep 2014</creationDate>
+    <copyright>Copyright Servant Holdings, LLC All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <authorEmail>chad@cohesivewebsites.com</authorEmail>
+    <authorUrl>www.cohesivewebsites.com</authorUrl>
+    <version>1.0.0</version>
+    <description>Custom k2 plugin for restonic general restonic content</description>
+    <files>
+        <file plugin="k2con">k2con.php</file>
+    </files>
+</extension>

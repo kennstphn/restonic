@@ -14,16 +14,16 @@ jimport('joomla.application.component.helper');
 // Load the base adapter.
 require_once JPATH_ADMINISTRATOR.'/components/com_finder/helpers/indexer/adapter.php';
 
-class plgFinderK2mat extends FinderIndexerAdapter
+class plgFinderK2con extends FinderIndexerAdapter
 {
 
-    protected $context = 'restonicmattresses';
+    protected $context = 'restoniccontent';
 
     protected $extension = 'com_k2';
 
     protected $layout = 'item';
 
-    protected $type_title = 'Restonic Mattresses';
+    protected $type_title = 'Restonic Content';
 
     protected $table = '#__k2_items';
 
@@ -150,20 +150,18 @@ class plgFinderK2mat extends FinderIndexerAdapter
         $item->body = FinderIndexerHelper::prepareContent($item->body, $item->params);
 
         // Build the necessary route and path information.
-        $item->url      = $this->getURL($item->id, $this->extension, $this->layout);
-        $item->route    = 'index.php?option=com_k2&view=itemlist&layout=category&task=category&id=' . $item->catid;
+        $item->url = $this->getURL($item->id, $this->extension, $this->layout);
+        $item->route = K2HelperRoute::getItemRoute($item->slug, $item->catslug);
         $item->path     = FinderIndexerHelper::getContentPath($item->route);
 
         // Get the menu title if it exists.
-        // $title = $this->getItemMenuTitle($item->url);
+        $title = $this->getItemMenuTitle($item->url);
 
         // Adjust the title if necessary.
-        /*if (!empty($title) && $this->params->get('use_menu_title', true))
+        if (!empty($title) && $this->params->get('use_menu_title', true))
         {
             $item->title = $title;
-        }*/
-
-        $item->title = $item->category . ': ' . $item->title;
+        }
 
         // Add the meta-author.
         $item->metaauthor = $item->metadata->get('author');
@@ -185,7 +183,7 @@ class plgFinderK2mat extends FinderIndexerAdapter
         }
 
         // Add the type taxonomy data.
-        $item->addTaxonomy('Type', 'Restonic Mattresses');
+        $item->addTaxonomy('Type', 'Restonic Content');
 
         // Add the author taxonomy data.
         if (!empty($item->author) || !empty($item->created_by_alias))
@@ -194,7 +192,7 @@ class plgFinderK2mat extends FinderIndexerAdapter
         }
 
         // Add the category taxonomy data.
-        $item->addTaxonomy('Restonic Mattresses', $item->category, $item->cat_state, $item->cat_access);
+        $item->addTaxonomy('Restonic Content', $item->category, $item->cat_state, $item->cat_access);
 
         // Add the language taxonomy data.
         $item->addTaxonomy('Language', $item->language);
@@ -265,7 +263,7 @@ class plgFinderK2mat extends FinderIndexerAdapter
         $sql->from('#__k2_items AS a');
         $sql->join('LEFT', '#__k2_categories AS c ON c.id = a.catid');
         $sql->join('LEFT', '#__users AS u ON u.id = a.created_by');
-        $sql->where('a.catid IN (' . implode(',', $parentIds) .')');
+        $sql->where('a.catid NOT IN (' . implode(',', $parentIds) .')');
 
         return $sql;
     }
@@ -315,7 +313,7 @@ class plgFinderK2mat extends FinderIndexerAdapter
         // get the base root items
         $query->select('a.id')
                 ->from('#__k2_categories as a')
-                ->where('a.parent IN (1, 24, 4)');
+                ->where('a.parent IN (1, 24, 4, 78)');
 
         // set the query and get
         $db->setQuery($query);
