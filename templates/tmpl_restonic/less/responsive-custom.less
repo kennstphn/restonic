@@ -59,6 +59,24 @@
       margin-left: 0px;
     }
   }
+
+  footer {
+    .footer-nav {
+      .makeColumn(2.3);
+      &:first-child {
+        .makeColumn(2.3, 0);
+      }
+    }
+  }
+  .snippet {
+    ul {
+      li {
+        .snippet-image {
+          .makeColumn(1.3, 0);
+        }
+      }
+    }
+  }
 }
 
 @media (min-width: 980px) {
@@ -254,6 +272,15 @@
   .mattress-item-description {
     .text-center();
   }
+
+  footer {
+    .footer-nav {
+      &:nth-child(odd) {
+        .makeColumn(2.5, .8);
+        clear:both;
+      }
+    }
+  }
 }
 
 @media (max-width: 620px) {
@@ -263,6 +290,15 @@
       .center-block();
       &:first-child {
         margin-left: auto;
+      }
+    }
+  }
+  footer {
+    .footer-nav {
+      .makeColumn(2.5, 0);
+      &:nth-child(odd) {
+        .makeColumn(2.5, 0);
+        clear:both;
       }
     }
   }

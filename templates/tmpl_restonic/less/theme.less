@@ -148,7 +148,10 @@ footer {
   position: relative;
   z-index: 999;
   .footer-nav {
-    .makeColumn(2.7);
+    .makeColumn(2.5);
+    &:first-child {
+      .makeColumn(2.5, 1.5);
+    }
   }
   .footer-row {
     .makeRow();
@@ -210,14 +213,14 @@ footer {
     margin-bottom: 3px;
     margin-top: 4px;
     .snippet-image {
-      .makeColumn(1.3);
+      .makeColumn(1.3, 1.5);
       margin-top: 6px;
       img {
         .border-radius(5px);
       }
     }
     .snippet-content {
-      .makeColumn(9.2);
+      .makeColumn(8.2);
       h2 {
         font-size: 20px;
         margin-top: 0px;
