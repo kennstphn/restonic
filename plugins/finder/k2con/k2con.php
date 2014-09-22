@@ -17,7 +17,7 @@ require_once JPATH_ADMINISTRATOR.'/components/com_finder/helpers/indexer/adapter
 class plgFinderK2con extends FinderIndexerAdapter
 {
 
-    protected $context = 'restoniccontent';
+    protected $context = 'K2con';
 
     protected $extension = 'com_k2';
 
@@ -57,6 +57,15 @@ class plgFinderK2con extends FinderIndexerAdapter
 
     public function onFinderAfterSave($context, $row, $isNew)
     {
+        $parent_ids = $this->getParentIds();
+
+        // parent ids are for blog and mattresses
+        // this is general content so we only index if we aren't in this array
+        if (in_array($row->catid, $parent_ids))
+        {
+            return false;
+        }
+
         // We only want to handle articles here
         if ($context == 'com_k2.item')
         {
@@ -89,6 +98,14 @@ class plgFinderK2con extends FinderIndexerAdapter
 
     public function onFinderBeforeSave($context, $row, $isNew)
     {
+        $parent_ids = $this->getParentIds();
+
+        // don't index unless in this array
+        if (in_array($row->catid, $parent_ids))
+        {
+            return false;
+        }
+
         // We only want to handle articles here
         if ($context == 'com_k2.item')
         {
@@ -114,6 +131,8 @@ class plgFinderK2con extends FinderIndexerAdapter
 
     public function onFinderChangeState($context, $pks, $value)
     {
+        return;
+
         // Items
         if ($context == 'com_k2.item')
         {
@@ -216,18 +235,17 @@ class plgFinderK2con extends FinderIndexerAdapter
         // Load dependent classes.
         include_once JPATH_SITE.'/components/com_k2/helpers/route.php';
 
-        return true;
-    }
-
-    protected function getListQuery($sql = null)
-    {
-
         if (! $this->parentIds)
         {
             $this->getParentIds();
         }
 
-        $parentIds = $this->parentIds;
+        return true;
+    }
+
+    protected function getListQuery($sql = null)
+    {
+        $parentIds = $this->getParentIds();
 
         $db = JFactory::getDbo();
         // Check if we can use the supplied SQL query.
@@ -320,8 +338,39 @@ class plgFinderK2con extends FinderIndexerAdapter
 
         $results = $db->loadColumn();
 
-        $this->parentIds = $results;
+        return $results;
+    }
 
-        return;
+    protected function itemStateChange($pks, $value)
+    {
+        $parent_ids = $this->getParentIds();
+
+        /*
+         * The item's published state is tied to the category
+         * published state so we need to look up all published states
+         * before we change anything.
+         */
+        foreach ($pks as $pk)
+        {
+            $query = clone($this->getStateQuery());
+            $query->where('a.id = ' . (int) $pk);
+
+            // Get the published states.
+            $this->db->setQuery($query);
+            $item = $this->db->loadObject();
+
+            // Translate the state.
+            $temp = $this->translateState($value, $item->cat_state);
+
+            // Update the item.
+            $this->change($pk, 'state', $temp);
+
+            // only index if we are in this array
+            if (! in_array($item->catid, $parent_ids))
+            {
+                // Reindex the item
+                $this->reindex($pk);
+            }
+        }
     }
 }
