@@ -16,7 +16,7 @@ body.blog {
   }
 
   #itemListPrimary {
-    .itemContainer:nth-child(3) {
+    .itemContainer:nth-child(odd) {
       clear: left;
       margin-left: 0px;
     }
@@ -26,14 +26,17 @@ body.blog {
     margin-right: 10px;
   }
 
-  .catItemBody {
-    position: relative;
-    .catItemReadMore {
-      position: absolute;
-      right: 0px;
-      bottom: 3px;
+  .groupPrimary {
+    .catItemBody {
+      position: relative;
+      .catItemReadMore {
+        position: absolute;
+        right: 0px;
+        bottom: 3px;
+      }
     }
   }
+
 }
 
 body, html {

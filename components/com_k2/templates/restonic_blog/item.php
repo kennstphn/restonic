@@ -247,12 +247,12 @@ defined('_JEXEC') or die;
 
       <?php // the social paragraph ?>
       <?php if($this->item->extra_fields[1]->value == "yes"): ?>
-          {module 117}
+          {module 213}
       <?php endif; ?>
 
       <?php // the disclaimer paragraph ?>
       <?php if($this->item->extra_fields[0]->value == "yes"): ?>
-          {module 116}
+          {module 207}
       <?php endif; ?>
 
 
@@ -277,7 +277,7 @@ defined('_JEXEC') or die;
 
 			<?php if($this->item->params->get('itemTwitterButton',1) || $this->item->params->get('itemFacebookButton',1) || $this->item->params->get('itemGooglePlusOneButton',1)): ?>
 				<!-- Social sharing -->
-				<div class="itemSocialSharing">
+				<div class="itemSocialSharing well well-small">
 
 					<?php if($this->item->params->get('itemTwitterButton',1)): ?>
 						<!-- Twitter Button -->
@@ -587,9 +587,11 @@ defined('_JEXEC') or die;
   <!-- K2 Plugins: K2AfterDisplay -->
   <?php echo $this->item->event->K2AfterDisplay; ?>
 
+    <?php echo $this->item->event->K2CommentsBlock; ?>
+
   <?php if($this->item->params->get('itemComments') && ( ($this->item->params->get('comments') == '2' && !$this->user->guest) || ($this->item->params->get('comments') == '1'))): ?>
   <!-- K2 Plugins: K2CommentsBlock -->
-  <?php echo $this->item->event->K2CommentsBlock; ?>
+
   <?php endif; ?>
 
  <?php if($this->item->params->get('itemComments') && ($this->item->params->get('comments') == '1' || ($this->item->params->get('comments') == '2')) && empty($this->item->event->K2CommentsBlock)): ?>

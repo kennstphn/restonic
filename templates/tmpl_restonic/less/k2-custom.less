@@ -137,3 +137,40 @@
     height: 100%;
   }
 }
+
+.itemSocialSharing {
+  > div {
+    float: left;
+  }
+}
+
+.itemTags {
+  .cleanList();
+  li {
+    display: inline;
+    list-style: none;
+    list-style-type: none;
+    display: inline-block;
+    padding: 2px 4px;
+    font-size: 12.69px;
+    font-weight: bold;
+    line-height: 14px;
+    color: #ffffff;
+    vertical-align: baseline;
+    white-space: nowrap;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #b8bcc3;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #3a87ad;
+    a {
+      color: @white;
+    }
+  }
+}
+
+.itemAuthorAvatar {
+  .pull-left();
+  padding: 5px;
+}
