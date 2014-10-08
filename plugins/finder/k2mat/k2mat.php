@@ -220,6 +220,9 @@ class plgFinderK2mat extends FinderIndexerAdapter
         // Get content extras.
         FinderIndexerHelper::getContentExtras($item);
 
+        // sets the priority of mattress items to be indexed and returned in the result list first.
+        $item->list_price = 1;
+
         // Index the item.
         if (method_exists('FinderIndexer', 'getInstance'))
         {
