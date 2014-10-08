@@ -322,18 +322,20 @@ defined('_JEXEC') or die;
 					<?php endif; ?>
 
 					<div class="stumble">
-						<!-- Place this tag where you want the su badge to render -->
-						<su:badge layout="1"></su:badge>
 
-						<!-- Place this snippet wherever appropriate -->
-						<script type="text/javascript">
-							(function() {
-								var li = document.createElement('script'); li.type = 'text/javascript'; li.async = true;
-								li.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + '//platform.stumbleupon.com/1/widgets.js';
-								var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(li, s);
-							})();
-						</script>
-					</div>
+                        <!-- Place this tag where you want the su badge to render -->
+                        <su:badge layout="1" location="<?php echo JUri::current(); ?>"></su:badge>
+
+                        <!-- Place this snippet wherever appropriate -->
+                        <script type="text/javascript">
+                            (function() {
+                                var li = document.createElement('script'); li.type = 'text/javascript'; li.async = true;
+                                li.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + '//platform.stumbleupon.com/1/widgets.js';
+                                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(li, s);
+                            })();
+                        </script>
+
+                    </div>
 
 					<div class="linkedin">
 						<script src="//platform.linkedin.com/in.js" type="text/javascript">
