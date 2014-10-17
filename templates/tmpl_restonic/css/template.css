@@ -7984,8 +7984,8 @@ footer .footer-nav ul li a:hover {
   margin-left: 248px;
   width: 820px;
 }
-.catItemIntroText {
-  position: relative;
+.catItemImage a {
+  display: block;
 }
 .catItemVideoEmbedded {
   position: relative;
