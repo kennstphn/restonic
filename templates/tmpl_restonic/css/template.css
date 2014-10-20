@@ -7556,6 +7556,12 @@ footer .footer-nav-wrapper .footer-nav {
 #form_2 .btn[disabled] {
   display: none;
 }
+#form_3 .input-small {
+  width: 77px;
+}
+#form_3 [class^="icon-"] {
+  display: none;
+}
 .home #bottom .container > .span5 {
   color: #ffffff;
 }

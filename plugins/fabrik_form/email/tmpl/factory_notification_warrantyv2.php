@@ -1,4 +1,9 @@
 <?php
+/**
+ * @Author  Chad Windnagle
+ * @Project restonic
+ * Date: 10/17/14
+ */
 
 require_once(__DIR__ . '/claim-logic.php');
 

@@ -1,4 +1,9 @@
 <?php
+/**
+ * @Author  Chad Windnagle
+ * @Project restonic
+ * Date: 10/17/14
+ */
 
 class warrantyLogic
 {
@@ -59,25 +64,28 @@ class warrantyLogic
         return $needsRigidSupport;
     }
 
+
     public function isValidClaim()
     {
-        // default to false
-        $isValidClaim      = false;
-        $needsRigidSupport = $this->needsRigidSupport();
-
-        // biz rules: must have rigid center support,
-        // must have receipt, must not be soiled.
-        if ($this->hasReceipt() && $this->isStainFree()) {
-            $isValidClaim = true;
+        // check first case
+        if ($this->hasReceipt() // we are stain free
+            && $this->isStainFree() // we have receipt
+            && $this->isRigidCenter() // we have rigid center
+            && $this->needsRigidSupport()) // mattress requires rigid support
+        {
+            return true;
         }
 
-        // if we have the right size mattress we must have a rigid center
-        if ($this->isRigidCenter() && $this->needsRigidSupport()) {
-            $isValidClaim = true;
-        } else {
-            $isValidClaim = false;
+        // check second case
+        if ($this->hasReceipt()  // we have receipt,
+            && $this->isStainFree()   // we are stain free
+            && ! $this->needsRigidSupport()) // we don't need rigid support
+        {
+            return true;
         }
 
-        return $isValidClaim;
+        // most likely we needed rigid support and we didn't have it.
+        // all other cases default false
+        return false;
     }
 }
