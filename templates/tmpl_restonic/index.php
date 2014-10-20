@@ -117,9 +117,9 @@ if($params->get('background')) {
         <?php endif; ?>
 	</footer>
 
-	<!-- <script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/media/jui/js/jquery.js"></script>
-	<script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/media/jui/js/jquery-noconflict.js"></script>
-	<script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/templates/<?php echo $this->template; ?>/js/bootstrap-custom.js"></script> -->
+	<!-- <script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/media/jui/js/jquery.js"></script> -->
+	<!-- <script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/media/jui/js/jquery-noconflict.js"></script> -->
+	<!-- <script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/templates/<?php echo $this->template; ?>/js/bootstrap-custom.js"></script> -->
 	<!-- <script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/templates/<?php echo $this->template; ?>/js/bootstrap-tabcollapse.js"></script> -->
 
 

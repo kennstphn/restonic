@@ -12,6 +12,15 @@
 // No direct access
 defined('_JEXEC') or die('Restricted access');
 
+JHtml::script(JUri::root() . 'components/com_fabrik/views/form/tmpl/warrantyclaim/claims.js', true);
+
+?>
+
+
+
+
+<?php
+
 $form = $this->form;
 $model = $this->getModel();
 $groupTmpl = $model->editable ? 'group' : 'group_details';
@@ -99,6 +108,18 @@ endif;
 echo $this->pluginbottom;
 echo $this->loadTemplate('actions');
 ?>
+    <!-- Modal -->
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Locate your law tag</h3>
+        </div>
+        <div class="modal-body">
+            <div class="alert alert-info"><strong>Please consult</strong> your law tag for factory information. If you do not have your law tag your claim will be received but cannot be processed.</div>
+            <p><img src="/images/restonic-law-tag.png" title="Restonic Mattress Law Tag" alt="Restonic Mattress Law Tag" /></p>
+        </div>
+    </div>
+
 </form>
 <?php
 echo $form->outro;
