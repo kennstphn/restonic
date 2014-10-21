@@ -7190,11 +7190,13 @@ section .main-body-row aside {
   margin-left: 20px;
   width: 220px;
   margin-left: 0px;
+  padding-bottom: 50px;
 }
 section .main-body-row .main-body-sidebar {
   float: left;
   margin-left: 20px;
   width: 700px;
+  padding-bottom: 50px;
 }
 .main-body > .not-found {
   float: left;
@@ -8941,7 +8943,7 @@ header .navbar .dropdown.yamm-fullwidth .nav-child {
   padding: 4px;
 }
 #newsletter-signup .signup-background {
-  background: #e1e2e4;
+  background: url('../images/newsletter-bg.png') no-repeat #e1e2e4 bottom left;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
@@ -8974,8 +8976,8 @@ header .navbar .dropdown.yamm-fullwidth .nav-child {
 }
 #newsletter-signup .signup-clock {
   position: absolute;
-  right: 0px;
-  top: 0px;
+  right: 15px;
+  top: 15px;
 }
 @media (max-width: 768px) {
   #newsletter-signup .signup-clock {
