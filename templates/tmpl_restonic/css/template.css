@@ -8933,6 +8933,88 @@ header .navbar .dropdown.yamm-fullwidth .nav-child {
     visibility: hidden;
   }
 }
+#newsletter-signup {
+  background-color: #75133a;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  padding: 4px;
+}
+#newsletter-signup .signup-background {
+  background: #e1e2e4;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  padding: 4px;
+  margin: 5px;
+  position: relative;
+  min-height: 290px;
+}
+#newsletter-signup .signup-text {
+  padding-top: 60px;
+  padding-left: 30px;
+}
+#newsletter-signup h2 {
+  font-weight: normal;
+  margin: 0px;
+  font-size: 32px;
+  line-height: 35px;
+}
+#newsletter-signup .accent {
+  color: #595a5c;
+}
+#newsletter-signup .snooze {
+  color: #75133a;
+  font-size: 48px;
+  line-height: 48px;
+  margin: 20px 0px;
+}
+#newsletter-signup .signup-fields {
+  padding: 25px;
+}
+#newsletter-signup .signup-clock {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+@media (max-width: 768px) {
+  #newsletter-signup .signup-clock {
+    display: none;
+  }
+  #newsletter-signup .signup-text {
+    padding-left: 0px;
+  }
+}
+.social-sharing {
+  width: 285px;
+  margin: 0 auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+  text-align: center;
+}
+.social-sharing .social-icons {
+  list-style: none;
+  list-style-type: none;
+  margin: 0px;
+}
+.social-sharing .social-icons li {
+  list-style: none;
+  list-style-type: none;
+}
+.social-sharing .social-icons li {
+  display: inline;
+}
+.social-sharing .social-icons li {
+  padding: 0 5px;
+}
+.social-sharing .social-icons li:first-child {
+  padding-left: 0px;
+}
+.social-sharing .social-icons li:last-child {
+  padding-right: 0px;
+}
 .center-block {
   display: block;
   margin-left: auto;
@@ -9000,4 +9082,16 @@ header .navbar .dropdown.yamm-fullwidth .nav-child {
 }
 .clr:after {
   clear: both;
+}
+.list-inline {
+  list-style: none;
+  list-style-type: none;
+  margin: 0px;
+}
+.list-inline li {
+  list-style: none;
+  list-style-type: none;
+}
+.list-inline li {
+  display: inline;
 }

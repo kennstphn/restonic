@@ -1,0 +1,76 @@
+#newsletter-signup {
+  background-color: @restonicRed;
+  .border-radius(8px);
+  padding: 4px;
+  .signup-background {
+    background: #e1e2e4;
+    .border-radius(8px);
+    padding: 4px;
+    margin: 5px;
+    position: relative;
+    min-height: 290px;
+  }
+  .signup-text {
+    padding-top: 60px;
+    padding-left: 30px;
+  }
+
+  h2 {
+    font-weight: normal;
+    margin: 0px;
+    font-size: 32px;
+    line-height: 35px;
+  }
+  .accent {
+    color: #595a5c;
+  }
+
+  .snooze {
+    color: @restonicRed;
+    font-size: 48px;
+    line-height: 48px;
+    margin: 20px 0px;
+  }
+
+  .signup-fields {
+    padding: 25px;
+  }
+
+  .signup-clock {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+
+  @media (max-width: 768px) {
+    .signup-clock {
+      display: none;
+    }
+
+    .signup-text {
+      padding-left: 0px;
+    }
+
+  }
+}
+
+.social-sharing {
+  width: 285px;
+  margin: 0 auto;
+  .center-block();
+  .text-center();
+  .social-icons {
+
+    .list-inline();
+    li {
+      padding: 0 5px;
+      &:first-child {
+        padding-left: 0px;
+      }
+      &:last-child {
+        padding-right: 0px;
+      }
+    }
+  }
+}
+
