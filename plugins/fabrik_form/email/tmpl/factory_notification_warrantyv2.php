@@ -77,9 +77,42 @@ if ($isValidClaim): ?>
         A warranty claim is not valid for this submission.
     </p>
     <p>
+        <strong>
+            Customer Information
+        </strong>
+    </p>
+    <p>
+        First Name: {tbl_warranty_claim_oct___first_name} <br />
+        Last Name: {tbl_warranty_claim_oct___last_name}<br />
+        Phone Number: {tbl_warranty_claim_oct___phone}<br />
+        Street Address: {tbl_warranty_claim_oct___street_address}<br />
+        City: {tbl_warranty_claim_oct___city}<br />
+        State: {tbl_warranty_claim_oct___state}<br />
+        Zip: {tbl_warranty_claim_oct___zip}<br />
+        Email Address: {tbl_warranty_claim_oct___email_address}<br />
+        Contact Preference: {tbl_warranty_claim_oct___contact_preference}
+
+    </p>
+    <p>
+        <strong>Purchase Information</strong>
+    </p>
+    <p>
+        Mattress Model Number: {tbl_warranty_claim_oct___mattress_model_number}<br />
+        Original Receipt: {tbl_warranty_claim_oct___original_receipt}<br />
+        Soils or stains? {tbl_warranty_claim_oct___soils_stains}<br />
+        Store Name: {tbl_warranty_claim_oct___store_name}<br />
+        Mattress Model Name: {tbl_warranty_claim_oct___mattress_model_name} <br />
+        Purchase Date: {tbl_warranty_claim_oct___purchase_date}<br />
+        Purchased: {tbl_warranty_claim_oct___what_did_you_purchase}<br />
         Mattress Size: {tbl_warranty_claim_oct___mattress_size}<br />
-        Have Original Store Receipt? {tbl_warranty_claim_oct___original_receipt}<br />
-        Rigid Center Support: {tbl_warranty_claim_oct___rigid_center_support}<br />
-        Free of Soil/Stains: {tbl_warranty_claim_oct___soils_stains}<br />
+        Rigid Center Support? {tbl_warranty_claim_oct___rigid_center_support}<br />
+        Factory Location {tbl_warranty_claim_oct___factory_locations_db}<br />
+    </p>
+
+    <p>
+        <strong>Claim Information</strong>
+    </p>
+    <p>
+        {tbl_warranty_claim_oct___explain_claim}
     </p>
 <?php endif; ?>
