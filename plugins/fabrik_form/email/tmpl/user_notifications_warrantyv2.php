@@ -52,8 +52,7 @@ if ($factoryName == 'Other')
     <p>Thank you for submitting a warranty claim with Restonic Mattress Company.</p>
 
     <p>
-        We noticed that you’re missing your original receipt or law tag on
-        your claim form, which means your claim cannot be processed.
+        We noticed that you’re missing your original receipt or law tag on your claim form or your mattress is soiled, which means your claim cannot be processed. 
     </p>
     <p>
         While Restonic maintains the registry, the law label affords you warranty rights and the sales
