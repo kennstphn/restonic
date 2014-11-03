@@ -80,6 +80,43 @@ jQuery(document).ready(function($){
 
     /* end rigid support */
 
+    /*  Soiled free */
+
+    // get the container element to build the popopver
+    soiledFree = $('#tbl_warranty_claim_oct___soils_stains');
+
+    // popover object created with bootstrap
+    soiledFree.popover({
+        html: true,
+        trigger: 'manual',
+        placement: 'bottom',
+        title: 'Please note',
+        content: 'Mattress must be free from soils and stains for a warranty claim to be processed.'
+    });
+
+    // on change check value and show popover
+    $('input[name="tbl_warranty_claim_oct___soils_stains[]"]').change(function(){
+
+        // convert the input to boolean
+        var inputValue = parseBool(this.value);
+
+        if (! inputValue)
+        {
+            soiledFree.popover('show');
+            setTimeout(function() {
+                soiledFree.popover('hide')
+            }, 5000); // auto hide after 5 seconds
+        }
+
+        // if we have a popover go ahead and hide it
+        if (inputValue)
+        {
+            soiledFree.popover('hide');
+        }
+    }); // soiledFree popover
+
+    /* end soiledFree support */
+
     // law tag modal popup - markup found in default.php
     $('.fb_el_tbl_warranty_claim_oct___mattress_model_number label').append('<a id="lawtag">(located on label)</a>'); // add the link
 
