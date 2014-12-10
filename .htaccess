@@ -22,6 +22,7 @@ Options +FollowSymLinks
 
 RewriteEngine On
 php_value mbstring.language neutral
+php_value memory_limit 64M
 
 ## Begin - Rewrite rules to block out some common exploits.
 # If you experience problems on your site block out the operations listed below
@@ -54,7 +55,16 @@ RewriteRule .* index.php [F]
 # Update Your Joomla! Directory (just / for root).
 ##
 
-# RewriteBase /
+#RewriteBase /
+
+
+# force WWWW
+RewriteCond %{HTTP_HOST} !^$
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteCond %{HTTPS}s ^on(s)|
+RewriteRule ^ http%1://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+
 
 ## Begin - Joomla! core SEF Section.
 #
@@ -79,53 +89,471 @@ RewriteRule .* index.php [L]
 ## Redirects
 
 ## mattress page
-Redirect 301 http://www.restonic.com/Mattresses/Mattresses.html http://www.restonic.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=1&Itemid=289
+Redirect 301 /Mattresses/Mattresses.html http://www.restonic.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=1&Itemid=289
 
 ## comfort care collection page
-Redirect 301 http://www.restonic.com/Mattresses/ComfortCare-Collection/ComfortCare®-Collection.html http://www.restonic.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=24&Itemid=270
+Redirect 301 /Mattresses/ComfortCare-Collection/ComfortCare®-Collection.html http://www.restonic.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=24&Itemid=270
 
 ## comfortcare mattress
-Redirect 301 http://www.restonic.com/Mattresses/ComfortCare-Collection/ComfortCare/ComfortCare®-Mattress.html http://www.restonic.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=2&Itemid=283
+Redirect 301 /Mattresses/ComfortCare-Collection/ComfortCare/ComfortCare®-Mattress.html http://www.restonic.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=2&Itemid=283
 
 ## comfortcare select
-Redirect 301 http://www.restonic.com/Mattresses/ComfortCare-Collection/Select/ComfortCare®-Select-Mattress.html http://www.restonic.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=25&Itemid=282
+Redirect 301 /Mattresses/ComfortCare-Collection/Select/ComfortCare®-Select-Mattress.html http://www.restonic.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=25&Itemid=282
 
 ## comfortcare signature
-Redirect 301 http://www.restonic.com/mattresses/comfortcare-collection/signature/comfortcare®-signature.html http://www.restonic.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=39&Itemid=281
+Redirect 301 /mattresses/comfortcare-collection/signature/comfortcare®-signature.html http://www.restonic.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=39&Itemid=281
 
 ## Healthrest Collection
-Redirect 301 http://www.restonic.com/Mattresses/HealthRest-Collection/HealthRest®-Collection.html http://www.restonic.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=4&Itemid=271
+Redirect 301 /Mattresses/HealthRest-Collection/HealthRest®-Collection.html http://www.restonic.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=4&Itemid=271
 
 ## Healthrest Latex
-Redirect 301 http://www.restonic.com/Mattresses/HealthRest-Collection/Latex/HealthRest®-Latex-Mattress.html http://www.restonic.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=7&Itemid=285
+Redirect 301 /Mattresses/HealthRest-Collection/Latex/HealthRest®-Latex-Mattress.html http://www.restonic.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=7&Itemid=285
 
 ## Healthrest Memory Foam
-Redirect 301 http://www.restonic.com/Mattresses/HealthRest-Collection/Memory-Foam/HealthRest®-Memory-Foam-Mattress.html http://www.restonic.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=28&Itemid=286
+Redirect 301 /Mattresses/HealthRest-Collection/Memory-Foam/HealthRest®-Memory-Foam-Mattress.html http://www.restonic.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=28&Itemid=286
 
 ## Healthrest TempaGel
-Redirect 301 http://www.restonic.com/Mattresses/HealthRest-Collection/TempaGel/HealthRest®-TempaGel-Mattress.html http://www.restonic.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=32&Itemid=284
+Redirect 301 /Mattresses/HealthRest-Collection/TempaGel/HealthRest®-TempaGel-Mattress.html http://www.restonic.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=32&Itemid=284
 
 # About Pages
-Redirect 301 http://www.restonic.com/About-Us.html http://www.restonic.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=31&Itemid=305 
+Redirect 301 /About-Us.html http://www.restonic.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=31&Itemid=305 
 
-Redirect 301 http://www.restonic.com/About-Us/Our-History/Our-History.html http://www.restonic.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=31&Itemid=305
+Redirect 301 /About-Us/Our-History/Our-History.html http://www.restonic.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=31&Itemid=305
 
-Redirect 301 http://www.restonic.com/About-Us/Contests.html http://www.restonic.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=31&Itemid=305
+Redirect 301 /About-Us/Contests.html http://www.restonic.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=31&Itemid=305
 
-Redirect 301 http://www.restonic.com/About-Us/Brand-Promise/Brand-Promise.html http://www.restonic.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=31&Itemid=305
+Redirect 301 /About-Us/Brand-Promise/Brand-Promise.html http://www.restonic.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=31&Itemid=305
 
 ## History
-Redirect 301 http://www.restonic.com/About-Us/Our-History/Our-History.html http://www.restonic.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=31&Itemid=305
+Redirect 301 /About-Us/Our-History/Our-History.html http://www.restonic.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=31&Itemid=305
 
 ## Contests
-Redirect 301 http://www.restonic.com/About-Us/Contests.html http://www.restonic.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=47&Itemid=294
+Redirect 301 /About-Us/Contests.html http://www.restonic.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=47&Itemid=294
 
 ## Awards
-Redirect 301 http://www.restonic.com/About-Us/Awards.html http://www.restonic.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=16&Itemid=293
+Redirect 301 /About-Us/Awards.html http://www.restonic.com/index.php?option=com_k2&view=itemlist&layout=category&task=category&id=16&Itemid=293
 
 ## contact pages
-Redirect 301 http://www.restonic.com/Contact-Us/Contact-Us.html http://www.restonic.com/contact
-Redirect 301 http://www.restonic.com/customer-service/customer-service.html http://www.restonic.com/contact
+Redirect 301 /Contact-Us/Contact-Us.html http://www.restonic.com/contact
+Redirect 301 /customer-service/customer-service.html http://www.restonic.com/contact
 
+## Redirects from Sep 2104 Review with Julia & Jeremy
+## 410 Gone
+
+Redirect 410 /news/1095110175.html 
+
+Redirect 410 /downloads/press2_09.pdf 
+
+Redirect 410 /blog/Chad-Windnagle/Page-1.html
+
+Redirect 410 /Log-in.html 
+
+Redirect 410 /pin/127578601916612616/ 
+
+Redirect 410 /blog/images/banners/Blog 
+
+Redirect 410 /pin/151574343681673119/ 
+
+Redirect 410 /pin/258464466087398511/ 
+
+Redirect 410 /pin/71776187783821365/ 
+
+Redirect 410 /blog/Chad-Windnagle/feed/rss.html 
+
+Redirect 410 /timeline.swf 
+
+Redirect 410 /ab_content.swf 
+
+Redirect 410 /index.php?option=com_k2&view=item&id=53&tmpl=component 
+
+Redirect 410 /blog/Chad-Windnagle/Page-1.html?limitstart10=10 
+
+Redirect 410 /mc_content.swf 
+
+Redirect 410 /products/spmenu.swf 
+
+Redirect 410 /weeblylink_new_window 
+
+Redirect 410 /healthrest/ov1c.swf 
+
+ErrorDocument 410 /404.html
+
+## 301
+Redirect 301 /index.asp http://www.restonic.com
+
+Redirect 301 /Customer-Service/Warranty/Warranty.html http://www.restonic.com/about/mattress-warranty
+
+Redirect 301 /promotions/lei-down-sweepstakes/lei-down-sweepstakes.html http://www.restonic.com/
+
+Redirect 301 /reviews/view-reviews.html http://www.restonic.com/about/customer-reviews
+
+Redirect 301 /Contact-Us/Manufacturer-List/Factory-locations.html http://www.restonic.com/find-manufacturer
+
+Redirect 301 /Customer-Service/Mattress-Care/Mattress-care-instructions.html http://www.restonic.com/faq
+
+Redirect 301 /contest/rules.php http://www.restonic.com/
+
+Redirect 301 /promotions/rules/lei-down-sweepstakes-rules.html?tmpl=component http://www.restonic.com/
+
+Redirect 301 /promotions/marvelous-middle/marvelous-middle-information.html http://www.restonic.com/
+
+Redirect 301 /About-Us/Awards/Seven-time-award-winning-comfort.html http://restonic.com/about/awards
+
+Redirect 301 /promotions/winners/contest-winners.html http://www.restonic.com/
+
+Redirect 301 /promotions/dare-to-dream-giveaway/dare-to-dream-contest.html http://www.restonic.com/
+
+Redirect 301 /Mattresses/ComfortCare-Collection/Airflow/ComfortCare%C2%AE-Mattress-with-Air-Flow%E2%84%A2-and-Dream-Beam%E2%84%A2-Technology.html http://restonic.com/mattresses/comfortcare
+
+Redirect 301 /contest/ http://www.restonic.com
+
+Redirect 301 /reviews/view-reviews.html?clearfilters=0&clearordering=0&resetfilters=0&limitstart10=10 http://restonic.com/about/customer-reviews
+
+Redirect 301 /contest/index.php http://www.restonic.com
+
+Redirect 301 /blog/family-bed-345.html http://www.restonic.com/blog
+
+Redirect 301 /healthrest/latex.php http://www.restonic.com/mattresses/healthrest
+
+Redirect 301 /promotions/rules/dare-to-dream-contest-rules.html http://www.restonic.com
+
+Redirect 301 /contest http://www.restonic.com
+
+Redirect 301 /promotions/marvelous-moments.html http://www.restonic.com/
+
+Redirect 301 /Sleep-Facts/Sleep-Facts.html http://www.restonic.com/faq
+
+Redirect 301 /promotions/lei-down-sweepstakes/thank-you.html http://www.restonic.com/
+
+Redirect 301 /about-us/75th-diamond-anniversary/celebrating-75-years-of-good-nights.html http://www.restonic.com/about/75th-diamond-anniversary
+
+Redirect 301 /promotions/dare-to-dream-giveaway/dare-to-dream-favorites.html http://www.restonic.com/
+
+Redirect 301 /warranty.asp http://www.restonic.com/about/mattress-warranty
+
+Redirect 301 /promotions/rules/lei-down-sweepstakes-rules.html http://www.restonic.com/
+
+Redirect 301 /promotions/marvelous-middle/marvelous-middle-favorites.html http://www.restonic.com/
+
+Redirect 301 /promotions/rules/twinkle-twinkle-rules.html?tmpl=component http://www.restonic.com/
+
+Redirect 301 /memory-foam.asp http://www.restonic.com/mattresses/healthrest-tempagel
+
+Redirect 301 /promotions/rules/marvelous-middle-rules.html?tmpl=component http://www.restonic.com/
+
+Redirect 301 /promotions/marvelous-moments-information/promotion-information.html http://www.restonic.com/
+
+Redirect 301 /promotions/twinkle-twinkle-contest/twinkle-favorites.html?clearfilters=0&clearordering=0&resetfilters=0&limitstart13=40 http://www.restonic.com/
+
+Redirect 301 /promotions/twinkle-twinkle-contest/twinkle-favorites.html?clearfilters=0&clearordering=0&resetfilters=0&limitstart13=60 http://www.restonic.com/
+
+Redirect 301 /warranty-claim-form http://www.restonic.com/warranty-claim-form-submit
+
+Redirect 301 /quality-sleep.asp http://www.restonic.com/faq
+
+Redirect 301 /mattress-tips-care.asp http://www.restonic.com/faq
+
+Redirect 301 /promotions/marvelous-middle/marvelous-middle-winners.html http://www.restonic.com/
+
+Redirect 301 /mattresses/comfortcare-collection/signature.html http://www.restonic.com/mattresses/comfortcare-signature
+
+Redirect 301 /promotions/dare-to-dream-giveaway/dare-to-dream-favorites.html?clearfilters=0&clearordering=0&resetfilters=0&limitstart14=10 http://www.restonic.com/
+
+Redirect 301 /promotions/twinkle-twinkle-contest/twinkle-favorites.html?clearfilters=0&clearordering=0&resetfilters=0&limitstart13=20 http://www.restonic.com/
+
+Redirect 301 /Mattresses/HealthRest-Collection.html http://www.restonic.com/mattresses/healthrest
+
+Redirect 301 /blog/index.php/itemlist/category/5-healthy-sleep http://www.restonic.com/blog/search?q=healthy+sleep&Itemid=101
+
+Redirect 301 /healthrest.html http://www.restonic.com/mattresses/healthrest
+
+Redirect 301 /Mattresses/HealthRest-Collection/TempaGel/HealthRest%C3%82%C2%AE-TempaGel-Mattress.html http://www.restonic.com/mattresses/healthrest-tempagel
+
+Redirect 301 /www.restonic.com/Sleep-Facts/Sleep-Facts.html http://www.restonic.com/faq
+
+Redirect 301 /comfortcare.html http://www.restonic.com/mattresses/comfortcare
+
+Redirect 301 /customer-service http://www.restonic.com/about/mattress-warranty
+Redirect 301 /blog/best http://www.restonic.com/blog/search?q=best&Itemid=101
+
+Redirect 301 /promotions/lei-down-sweepstakes/lei-down http://www.restonic.com/
+
+Redirect 301 /about-us/75th-diamond-anniversary/celebrating-75-years-of-good-nights.html http://www.restonic.com/about/75th-diamond-anniversary
+
+Redirect 301 /mattresses/comfortcare/comfortcare%C2%AE-collection http://www.restonic.com/about/75th-diamond-anniversary
+
+Redirect 301 /blog/temperature-managed-mattress http://www.restonic.com/blog/search?q=temperature&Itemid=101
+
+## Redirects from Nov 2104 Review with Julia & Jeremy
+## 410 Gone
+
+Redirect 410	/ab_content.swf
+Redirect 410	/blog/component/com_jmap/format,gnews/view,sitemap/
+Redirect 410	/blog/component/com_jmap/format,gnews/view,sitemap/
+Redirect 410	/blog/component/com_mailto/link,d9acc20b604bf84ea41cfa7861c5254cef6b0f71/template,tmpl_restonic_blog/tmpl,component/
+Redirect 410	/blog/create-an-account/
+Redirect 410	/blog/lost-password/
+Redirect 410	/blog/privacy-policy/
+Redirect 410	/blog/privacy-policy/feed/index.php?option=com_contact&view=contact&catid=4&id=1-ithaca-chiropractic
+Redirect 410	/blog/privacy-policy/privacy-policy
+Redirect 410	/blog/table/about-us/
+Redirect 410	/blog/table/privacy-policy
+Redirect 410	/blog/table/privacy-policy/feed/index.php?option=com_contact&view=contact&catid=4&id=1-ithaca-chiropractic
+Redirect 410	/grandpalais/spmenu.swf
+Redirect 410	/healthrest/hr_a_content.swf
+Redirect 410	/healthrest/hr_c_content.swf
+Redirect 410	/mattresscare.php
+Redirect 410	/mc_content.swf
+Redirect 410	/mn_txt.swf
+Redirect 410	/news/1095110175.html
+Redirect 410	/Pinterest
+Redirect 410	/sleeplinks.php
+Redirect 410	/slp_content.swf
+Redirect 410	/tel:+886-2-2299-2222
+Redirect 410	/timeline.swf
+Redirect 410	/tmenu.swf
+Redirect 410	/w_content.swf
+Redirect 410	/weeblylink_new_window
+
+## 301
+Redirect 301	/7-ways-better-night-sleep	http://www.restonic.com/blog/
+Redirect 301	/About-Us/Awards/Women-s-Certified.html	http://www.restonic.com/blog/
+Redirect 301	/bedroom-therapy	http://www.restonic.com/blog/
+Redirect 301	/bedroom-tour-with-jason-loper	http://www.restonic.com/blog/
+Redirect 301	/better-sleep-month	http://www.restonic.com/blog/
+Redirect 301	/blog/about-us/	http://www.restonic.com/blog/
+Redirect 301	/blog/banners/click1	http://www.restonic.com/blog/
+Redirect 301	/blog/bed	http://www.restonic.com/blog/
+Redirect 301	/blog/bedroom-therapy/bedroom-therapy-amanda-kinney	http://www.restonic.com/blog/better-sleep
+Redirect 301	/blog/bedroom-therapy/bedroom-therapy-franki-durbin	http://www.restonic.com/blog/better-sleep
+Redirect 301	/blog/bedroom-therapy/bedroom-therapy-heather-vieira	http://www.restonic.com/blog/better-sleep
+Redirect 301	/blog/bedroom-therapy/bedroom-therapy-pat-mcmillan	http://www.restonic.com/blog/better-sleep
+Redirect 301	/blog/bedroom-therapy/bedroom-therapy-stephen-dimmick	http://www.restonic.com/blog/better-sleep
+Redirect 301	/blog/bedroom-therapy/bedroom-therapy-wanda-horton	http://www.restonic.com/blog/better-sleep
+Redirect 301	/blog/bedroom-therapy/bedroom-therapy-wendy-patrick	http://www.restonic.com/blog/better-sleep
+Redirect 301	/blog/beds-bedding-bedrooms/key-good-sleep	http://www.restonic.com/blog/better-sleep
+Redirect 301	/blog/beds-bedding-bedrooms/parents-desperately-seeking-sleep	http://www.restonic.com/blog/better-sleep
+Redirect 301	/blog/better-sleep/2013-year-review	http://www.restonic.com/blog/better-sleep
+Redirect 301	/blog/better-sleep/enough-sleep-in-college	http://www.restonic.com/blog/better-sleep
+Redirect 301	/blog/better-sleep/fathers-day-gifts	http://www.restonic.com/blog/better-sleep
+Redirect 301	/blog/better-sleep/retail-partner	http://www.restonic.com/blog/better-sleep
+Redirect 301	/blog/better-sleep/sleep-during-pregnancy-part1	http://www.restonic.com/blog/better-sleep
+Redirect 301	/blog/better-sleep/sleep-during-pregnancy-part2	http://www.restonic.com/blog/better-sleep
+Redirect 301	/blog/better-sleep/sleep-during-pregnancy-part3	http://www.restonic.com/blog/better-sleep
+Redirect 301	/blog/better-sleep/sleep-hack-habits	http://www.restonic.com/blog/better-sleep
+Redirect 301	/blog/better-sleep/sleep-health-success	http://www.restonic.com/blog/better-sleep
+Redirect 301	/blog/better-sleep/smell-of-sleep	http://www.restonic.com/blog/better-sleep
+Redirect 301	/blog/better-sleep/the-art-of-napping	http://www.restonic.com/blog/better-sleep
+Redirect 301	/blog/better-sleep/why-cant-i-sleep	http://www.restonic.com/blog/better-sleep
+Redirect 301	/blog/better-sleep/women-choice-award	http://www.restonic.com/blog/better-sleep
+Redirect 301	/blog/blog/julia-rosien	http://www.restonic.com/blog/julia-rosien
+Redirect 301	/blog/blog/julia-rosien/Page-2	http://www.restonic.com/blog/julia-rosien
+Redirect 301	/blog/blog/julia-rosien/Page-3	http://www.restonic.com/blog/julia-rosien
+Redirect 301	/blog/blog/julia-rosien/Page-4	http://www.restonic.com/blog/julia-rosien
+Redirect 301	/blog/blog/julia-rosien/Page-5	http://www.restonic.com/blog/julia-rosien
+Redirect 301	/blog/blog/julia-rosien/Page-6	http://www.restonic.com/blog/julia-rosien
+Redirect 301	/blog/blog/julia-rosien/Page-7	http://www.restonic.com/blog/julia-rosien
+Redirect 301	/blog/blog/melissa-mosgeller	http://www.restonic.com/blog/melissa-mosgeller
+Redirect 301	/blog/blog/sleep-wire	http://www.restonic.com/blog/
+Redirect 301	/blog/Chad-Windnagle.html?limitstart13=10	http://www.restonic.com/blog/
+Redirect 301	/blog/Chad-Windnagle/feed/rss.html?limitstart13=0&type=rss	http://www.restonic.com/blog/
+Redirect 301	/blog/Chad-Windnagle/Page-1.html	http://www.restonic.com/blog/
+Redirect 301	/blog/coffee-sleep-and-you	http://www.restonic.com/blog/coffee-sleep-effects
+Redirect 301	/blog/coffee-sleep-and-you	http://www.restonic.com/blog/coffee-sleep-effects
+Redirect 301	/blog/diamonds-are-restonic-s-2nd-best-friend	http://www.restonic.com/blog/
+Redirect 301	/blog/health-watch/benefit-sleep	http://www.restonic.com/blog/
+Redirect 301	/blog/health-watch/sleep-heart-health	http://www.restonic.com/blog/
+Redirect 301	/blog/hybrid	http://www.restonic.com/blog/
+Redirect 301	/blog/images/banners/Blog	http://www.restonic.com/blog/
+Redirect 301	/blog/index.php?option=com_contact&view=contact&catid=4&id=1-ithaca-chiropractic	http://www.restonic.com/blog/
+Redirect 301	/blog/international	http://www.restonic.com/blog/
+Redirect 301	/blog/julia-rosien/7-ways-better-night-sleep	http://www.restonic.com/blog/julia-rosien
+Redirect 301	/blog/julia-rosien/bedroom-therapy	http://www.restonic.com/blog/julia-rosien
+Redirect 301	/blog/julia-rosien/feed/7-ways-better-night-sleep	http://www.restonic.com/blog/julia-rosien
+Redirect 301	/blog/julia-rosien/feed/bedroom-therapy	http://www.restonic.com/blog/julia-rosien
+Redirect 301	/blog/julia-rosien/feed/hybrid-mattress	http://www.restonic.com/blog/julia-rosien
+Redirect 301	/blog/julia-rosien/feed/mattress-buying-tips	http://www.restonic.com/blog/julia-rosien
+Redirect 301	/blog/julia-rosien/feed/mattresses/comfortcare-signature	http://www.restonic.com/blog/julia-rosien
+Redirect 301	/blog/julia-rosien/hybrid-mattress	http://www.restonic.com/blog/julia-rosien
+Redirect 301	/blog/julia-rosien/mattress-buying-tips	http://www.restonic.com/blog/julia-rosien
+Redirect 301	/blog/julia-rosien/mattresses/comfortcare-signature	http://www.restonic.com/blog/julia-rosien
+Redirect 301	/blog/live-longer	http://www.restonic.com/blog/
+Redirect 301	/blog/mattresses-more/buy-new-mattress	http://www.restonic.com/blog/
+Redirect 301	/blog/mattresses-more/hybrid-mattress	http://www.restonic.com/blog/
+Redirect 301	/blog/mattresses-more/latex-foam-mattress	http://www.restonic.com/blog/
+Redirect 301	/blog/mattresses-more/temperature-controlled-mattress	http://www.restonic.com/blog/temperature-controlled-mattress
+Redirect 301	/blog/melissa-mosgeller/feed/key-good-sleep	http://www.restonic.com/blog/melissa-mosgeller
+Redirect 301	/blog/melissa-mosgeller/feed/Page-1?type=atom	http://www.restonic.com/blog/melissa-mosgeller
+Redirect 301	/blog/melissa-mosgeller/feed/Page-1?type=rss	http://www.restonic.com/blog/melissa-mosgeller
+Redirect 301	/blog/melissa-mosgeller/feed/yoga-sleep	http://www.restonic.com/blog/melissa-mosgeller
+Redirect 301	/blog/melissa-mosgeller/key-good-sleep	http://www.restonic.com/blog/melissa-mosgeller
+Redirect 301	/blog/melissa-mosgeller/yoga-sleep	http://www.restonic.com/blog/melissa-mosgeller
+Redirect 301	/blog/memory-foam-mattress	http://www.restonic.com/blog/
+Redirect 301	/blog/memory-foam-mattress%20	http://www.restonic.com/blog/
+Redirect 301	/blog/new-year-s-resolutions-for-2014-get-more-sleep	http://www.restonic.com/blog/
+Redirect 301	/blog/new-year-s-resolutions-for-2014-get-more-sleep	http://www.restonic.com/blog/
+Redirect 301	/blog/primary	http://www.restonic.com/blog/
+Redirect 301	/blog/rss?cid=103&component=com_k2&format=feed	http://www.restonic.com/blog/
+Redirect 301	/blog/rss?cid=110&component=com_k2&format=feed	http://www.restonic.com/blog/
+Redirect 301	/blog/rss?cid=116&component=com_k2&format=feed	http://www.restonic.com/blog/
+Redirect 301	/blog/sleep-blog	http://www.restonic.com/blog/
+Redirect 301	/blog/sleep-blog/Page-10	http://www.restonic.com/blog/
+Redirect 301	/blog/sleep-blog/Page-11	http://www.restonic.com/blog/
+Redirect 301	/blog/sleep-blog/Page-12	http://www.restonic.com/blog/
+Redirect 301	/blog/sleep-blog/Page-17	http://www.restonic.com/blog/
+Redirect 301	/blog/sleep-blog/Page-2	http://www.restonic.com/blog/
+Redirect 301	/blog/sleep-blog/Page-3	http://www.restonic.com/blog/
+Redirect 301	/blog/sleep-in-college	http://www.restonic.com/blog/
+Redirect 301	/blog/sleep-lessons	http://www.restonic.com/blog/
+Redirect 301	/blog/sleep-virus-pandemic	http://www.restonic.com/blog/
+Redirect 301	/blog/tag/bad-back-mattress	http://www.restonic.com/tag/bad-back-mattress
+Redirect 301	/blog/tag/better-sleep	http://www.restonic.com/tag/better-sleep
+Redirect 301	/blog/tag/better-sleep/Page-2	http://www.restonic.com/tag/better-sleep/Page-2
+Redirect 301	/blog/tag/better-sleep/Page-4	http://www.restonic.com/tag/better-sleep/Page-4
+Redirect 301	/blog/tag/community	http://www.restonic.com/tag/community
+Redirect 301	/blog/tag/contest	http://www.restonic.com/tag/contest
+Redirect 301	/blog/tag/good-night-s-sleep	http://www.restonic.com/tag/good-night-s-sleep
+Redirect 301	/blog/tag/good-night-s-sleep/Page-2	http://www.restonic.com/tag/good-night-s-sleep/Page-2
+Redirect 301	/blog/tag/good-night-s-sleep/Page-3	http://www.restonic.com/tag/good-night-s-sleep/Page-3
+Redirect 301	/blog/tag/health-watch	http://www.restonic.com/tag/health-watch
+Redirect 301	/blog/tag/health-watch/Page-2	http://www.restonic.com/tag/health-watch/Page-2
+Redirect 301	/blog/tag/i-love-my-bed	http://www.restonic.com/tag/i-love-my-bed
+Redirect 301	/blog/tag/i-love-my-bed/Page-2	http://www.restonic.com/tag/i-love-my-bed/Page-2
+Redirect 301	/blog/tag/insomnia	http://www.restonic.com/tag/insomnia
+Redirect 301	/blog/tag/insomnia/Page-2	http://www.restonic.com/tag/insomnia/Page-2
+Redirect 301	/blog/tag/interior-design	http://www.restonic.com/tag/interior-design
+Redirect 301	/blog/tag/learn-to-sleep	http://www.restonic.com/tag/learn-to-sleep
+Redirect 301	/blog/tag/learn-to-sleep/Page-2	http://www.restonic.com/tag/learn-to-sleep/Page-2
+Redirect 301	/blog/tag/learn-to-sleep/Page-3	http://www.restonic.com/tag/learn-to-sleep/Page-3
+Redirect 301	/blog/tag/mattress	http://www.restonic.com/tag/mattress
+Redirect 301	/blog/tag/mattress-shopping	http://www.restonic.com/tag/mattress-shopping
+Redirect 301	/blog/tag/men-s-health	http://www.restonic.com/tag/men-s-health
+Redirect 301	/blog/tag/new-matteress	http://www.restonic.com/tag/new-matteress
+Redirect 301	/blog/tag/recipe	http://www.restonic.com/tag/recipe
+Redirect 301	/blog/tag/sleep	http://www.restonic.com/tag/sleep
+Redirect 301	/blog/tag/sleep-aids	http://www.restonic.com/tag/sleep-aids
+Redirect 301	/blog/tag/sleep-aids/Page-2	http://www.restonic.com/tag/sleep-aids/Page-2
+Redirect 301	/blog/tag/sleep-deprivation	http://www.restonic.com/tag/sleep-deprivation
+Redirect 301	/blog/tag/sleep-deprivation/Page-2	http://www.restonic.com/tag/sleep-deprivation/Page-2
+Redirect 301	/blog/tag/sleep-deprivation/Page-3	http://www.restonic.com/tag/sleep-deprivation/Page-3
+Redirect 301	/blog/tag/sleep-technology	http://www.restonic.com/tag/sleep-technology
+Redirect 301	/blog/tag/sleep-tips	http://www.restonic.com/tag/sleep-tips
+Redirect 301	/blog/tag/sleep-tips/Page-2	http://www.restonic.com/tag/sleep-tips/Page-2
+Redirect 301	/blog/tag/sleep-tips/Page-3	http://www.restonic.com/tag/sleep-tips/Page-3
+Redirect 301	/blog/tag/sleep-tips/Page-4	http://www.restonic.com/tag/sleep-tips/Page-4
+Redirect 301	/blog/tag/why-can-t-i-sleep	http://www.restonic.com/tag/why-can-t-i-sleep
+Redirect 301	/blog/tag/why-can-t-i-sleep/Page-2	http://www.restonic.com/tag/why-can-t-i-sleep/Page-2
+Redirect 301	/blog/tag/why-can-t-i-sleep/Page-3	http://www.restonic.com/tag/why-can-t-i-sleep/Page-3
+Redirect 301	/blog/tag/whycan-t-i-sleep	http://www.restonic.com/tag/whycan-t-i-sleep
+Redirect 301	/blog/tag/whycan-t-i-sleep	http://www.restonic.com/tag/whycan-t-i-sleep
+Redirect 301	/blog/tag/world-s-best-mattress	http://www.restonic.com/tag/world-s-best-mattress
+Redirect 301	/blog/tag/world-s-best-mattress/Page-2	http://www.restonic.com/tag/world-s-best-mattress/Page-2
+Redirect 301	/blog/temperature-controlled-mattress	http://www.restonic.com/blog/
+Redirect 301	/coffee-sleep-effects	http://www.restonic.com/blog/
+Redirect 301	/comfortcare/index.php	http://www.restonic.com/mattresses/comfortcare
+Redirect 301	/Customer-Service/Customer-Service.html	http://www.restonic.com/about/mattress-warranty
+Redirect 301	/Customer-Service/Warranty.html?format=feed&type=atom	http://www.restonic.com/about/mattress-warranty
+Redirect 301	/Customer-Service/Warranty.html?format=feed&type=rss	http://www.restonic.com/about/mattress-warranty
+Redirect 301	/diamonds-anniversary	http://www.restonic.com/
+Redirect 301	/family-bed-345.html	http://www.restonic.com/
+Redirect 301	/feed/rss.html	http://www.restonic.com/
+Redirect 301	/hybrid-mattress	http://www.restonic.com/
+Redirect 301	/international-day-happy	http://www.restonic.com/
+Redirect 301	/key-good-sleep	http://www.restonic.com/
+Redirect 301	/Log-in.html	http://www.restonic.com/log-in/
+Redirect 301	/mattress-buying-tips	http://www.restonic.com/blog/
+Redirect 301	/mattresses/comfortcare/comfortcare	http://www.restonic.com/mattresses/comfortcare
+Redirect 301	/mattresses/comfortcare/comfortcare-signature/view-video	http://www.restonic.com/mattresses/comfortcare-signature
+Redirect 301	/mattresses/comfortcare/comfortcare%C2%AE-collection	http://www.restonic.com/mattresses/comfortcare
+Redirect 301	/mattresses/feed/atom.html	http://www.restonic.com/blog/
+Redirect 301	/Mattresses/HealthRest-Collection/Latex/HealthRest-Latex-Mattress.html	http://www.restonic.com/mattresses/healthrest-latex
+Redirect 301	/Mattresses/HealthRest-Collection/Memory-Foam/HealthRest-Memory-Foam-Mattress.html	http://www.restonic.com/mattresses/healthrest-memory-foam
+Redirect 301	/Mattresses/HealthRest-Collection/TempaGel/HealthRest%C3%82%C2%AE-TempaGel-Mattress.html	http://www.restonic.com/mattresses/healthrest/healthrest-tempagel
+Redirect 301	/mattresses/healthrest/healthrest-latex/tempadvantage	http://www.restonic.com/mattresses/healthrest/healthrest-tempagel
+Redirect 301	/mattresses/healthrest/healthrest-tempagel/outlast-technology	http://www.restonic.com/mattresses/healthrest/healthrest-tempagel
+Redirect 301	/mattresses/healthrest/healthrest-tempagel/restonic-tempagel	http://www.restonic.com/mattresses/healthrest/healthrest-tempagel
+Redirect 301	/mattresses/healthrest/healthrest-tempagel/tempadvantage	http://www.restonic.com/mattresses/healthrest/healthrest-tempagel
+Redirect 301	/mattresses/healthrest/healthrest-tempagel/thermocules-from-outlast	http://www.restonic.com/mattresses/healthrest/healthrest-tempagel
+Redirect 301	/mattresses/healthrest/healthrest-tempagel/view-video	http://www.restonic.com/mattresses/healthrest/healthrest-tempagel
+Redirect 301	/memory-foam-mattress	http://www.restonic.com/mattresses/healthrest-memory-foam
+Redirect 301	/products/index.php	http://www.restonic.com/
+Redirect 301	/promotions.html	http://www.restonic.com/
+Redirect 301	/promotions/lei-down-sweepstakes/lei-down	http://www.restonic.com/
+Redirect 301	/promotions/lei-down-sweepstakes/thank-you.html	http://www.restonic.com/
+Redirect 301	/promotions/marvelous-middle/marvelous-middle-entry.html	http://www.restonic.com/
+Redirect 301	/promotions/marvelous-middle/marvelous-middle-favorites.html	http://www.restonic.com/
+Redirect 301	/promotions/marvelous-moments-information/promotion-information.html	http://www.restonic.com/
+Redirect 301	/promotions/rules/lei-down-sweepstakes-rules.html	http://www.restonic.com/
+Redirect 301	/promotions/rules/marvelous-middle-rules.html?tmpl=component	http://www.restonic.com/
+Redirect 301	/promotions/rules/twinkle-twinkle-rules.html	http://www.restonic.com/
+Redirect 301	/promotions/rules/twinkle-twinkle-rules.html?tmpl=component	http://www.restonic.com/
+Redirect 301	/promotions/support-your-dreams.html	http://www.restonic.com/
+Redirect 301	/promotions/twinkle-twinkle-contest.html?clearfilters=0&clearordering=0&resetfilters=0&limitstart13=10	http://www.restonic.com/
+Redirect 301	/promotions/twinkle-twinkle-contest/twinkle-favorites.html	http://www.restonic.com/
+Redirect 301	/promotions/twinkle-twinkle-contest/twinkle-favorites.html?clearfilters=0&clearordering=0&resetfilters=0&limitstart13=40	http://www.restonic.com/
+Redirect 301	/promotions/twinkle-twinkle-contest/twinkle-favorites.html?clearfilters=0&clearordering=0&resetfilters=0&limitstart13=50	http://www.restonic.com/
+Redirect 301	/promotions/twinkle-twinkle-contest/twinkle-favorites.html?clearfilters=0&clearordering=0&resetfilters=0&limitstart13=60	http://www.restonic.com/
+Redirect 301	/promotions/twinkle-twinkle-contest/twinkle-twinkle-contest.html	http://www.restonic.com/
+Redirect 301	/promotions/twinkle-twinkle-contest/twinkle-twinkle-entry.html	http://www.restonic.com/
+Redirect 301	/restonic-claim-form-v2-submit	http://www.restonic.com/about/mattress-warranty
+Redirect 301	/reviews/submit-a-review.html	http://www.restonic.com/
+Redirect 301	/Sitemap-1.html	component/com_jmap/Itemid,312/view,sitemap/
+Redirect 301	/sleep-facts/feed/rss.html?type=atom	http://www.restonic.com/
+Redirect 301	/Sleep-Facts/Sleep-Partner-Links/Sleep-Partner-Links.html	http://www.restonic.com/blog/sleep-facts
+Redirect 301	/sleep-virus-pandemic	http://www.restonic.com/blog/
+Redirect 301	/snippet-content/restonic-tempagel-mattress	http://www.restonic.com/mattresses/healthrest/healthrest-tempagel
+Redirect 301	/supporting-dreams-buffalo-brazil	http://www.restonic.com/
+Redirect 301	/tag/bad-back-mattress/feed/mattress-buying-tips	http://www.restonic.com/
+Redirect 301	/tag/mattress-buying-tips	http://www.restonic.com/
+Redirect 301	/tag/better-sleep/feed/key-good-sleep	http://www.restonic.com/tag/better-sleep
+Redirect 301	/tag/better-sleep/feed/yoga-sleep	http://www.restonic.com/tag/better-sleep
+Redirect 301	/tag/better-sleep/key-good-sleep	http://www.restonic.com/tag/better-sleep
+Redirect 301	/tag/better-sleep/yoga-sleep	http://www.restonic.com/tag/better-sleep
+Redirect 301	/tag/find-retailer	http://www.restonic.com/find-retailer
+Redirect 301	/tag/health-watch/feed/temperature-controlled-mattress	http://www.restonic.com/
+Redirect 301	/tag/health-watch/find-retailer	http://www.restonic.com/find-retailer
+Redirect 301	/tag/health-watch/mattresses	http://www.restonic.com/
+Redirect 301	/tag/health-watch/temperature-controlled-mattress	http://www.restonic.com/
+Redirect 301	/tag/insomnia/feed/key-good-sleep	http://www.restonic.com/tag/insomnia
+Redirect 301	/tag/insomnia/feed/yoga-sleep	http://www.restonic.com/tag/insomnia
+Redirect 301	/tag/insomnia/key-good-sleep	http://www.restonic.com/tag/insomnia
+Redirect 301	/tag/insomnia/yoga-sleep	http://www.restonic.com/tag/insomnia
+Redirect 301	/tag/learn-to-sleep/feed/key-good-sleep	http://www.restonic.com/tag/better-sleep
+Redirect 301	/tag/learn-to-sleep/feed/temperature-controlled-mattress	http://www.restonic.com/tag/better-sleep
+Redirect 301	/tag/learn-to-sleep/feed/yoga-sleep	http://www.restonic.com/tag/better-sleep
+Redirect 301	/tag/learn-to-sleep/find-retailer	http://www.restonic.com/tag/better-sleep
+Redirect 301	/tag/learn-to-sleep/key-good-sleep	http://www.restonic.com/tag/better-sleep
+Redirect 301	/tag/learn-to-sleep/mattresses	http://www.restonic.com/tag/better-sleep
+Redirect 301	/tag/learn-to-sleep/temperature-controlled-mattress	http://www.restonic.com/tag/better-sleep
+Redirect 301	/tag/learn-to-sleep/yoga-sleep	http://www.restonic.com/tag/better-sleep
+Redirect 301	/tag/mattresses	http://www.restonic.com/
+Redirect 301	/tag/sleep-aids/feed/temperature-controlled-mattress	http://www.restonic.com/tag/better-sleep
+Redirect 301	/tag/sleep-aids/find-retailer	http://www.restonic.com/tag/better-sleep
+Redirect 301	/tag/sleep-aids/mattresses	http://www.restonic.com/tag/better-sleep
+Redirect 301	/tag/sleep-aids/temperature-controlled-mattress	http://www.restonic.com/tag/better-sleep
+Redirect 301	/tag/world-s-best-mattress/feed/temperature-controlled-mattress	http://www.restonic.com/
+Redirect 301	/tag/world-s-best-mattress/find-retailer	http://www.restonic.com/
+Redirect 301	/tag/world-s-best-mattress/mattresses	http://www.restonic.com/
+Redirect 301	/tag/world-s-best-mattress/temperature-controlled-mattress	http://www.restonic.com/
+Redirect 301	/temperature-controlled-mattress	http://www.restonic.com/mattresses/healthrest/healthrest-tempagel
+Redirect 301	/yoga-sleep	http://www.restonic.com/blog/yoga-sleep
+
+## Redirects from Dec 2104 Review with Julia & Jeremy
+##301
+
+RewriteRule ^blog/tag/(.*)$ http://www.restonic.com/tag/$1 [R=301,NC,L]
+RewriteRule ^[promotions]/(.*)$ /$1 [R=301,NC,L]
+RewriteRule ^[rules]/(.*)$ /$1 [R=301,NC,L]
+RewriteRule ^[twinkle-twinkle-contest]/(.*)$ /$1 [R=301,NC,L]
+
+Redirect 301	/Mattresses/ComfortCare-Collection/ComfortCare/ComfortCare%C2%AE-Mattress.html15	http://www.restonic.com/
+Redirect 301	/contest_winners/	http://www.restonic.com/
+Redirect 301    /index.php?option=com_k2&view=item&id=53&tmpl=component    http://www.restonic.com/
+
+#410
+Redirect 410	/mn_ct4.swf
+Redirect 410	/mn_txt.swf
+Redirect 410	/viewTable.html?cid=12
+Redirect 410	/slinks_content.swf
 
 
