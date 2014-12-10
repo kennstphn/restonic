@@ -53,6 +53,14 @@ defined('_JEXEC') or die;
 			</div>
 			<?php endif; ?>
 
+        <?php $user = JFactory::getUser(); ?>
+
+
+
+
+
+        <?php $extraFieldAliases = array(); ?>
+
         <?php if($params->get('itemExtraFields') && count($item->extra_fields)): ?>
             <?php foreach ($item->extra_fields as $extraField): ?>
                 <?php if($extraField->alias == 'readmorelink'): ?>
@@ -60,6 +68,25 @@ defined('_JEXEC') or die;
                 <?php endif; ?>
             <?php endforeach; ?>
         <?php endif; ?>
+
+        <?php $showTrackingLink = false; ?>
+
+        <?php foreach ($item->extra_fields as $field)
+        {
+            // push the extra field data to a keyed array
+            $extraFieldAliases[$field->alias] = $field;
+        }
+
+        // check that the array key exists
+        if (array_key_exists('addtrackinglink', $extraFieldAliases))
+        {
+            if ($extraFieldAliases['addtrackinglink']->value == 'yes')
+            {
+                $showTrackingLink = true;
+            }
+        }
+
+        ?>
 
         <?php if (isset($readmoreHtml))
         {
@@ -78,9 +105,31 @@ defined('_JEXEC') or die;
       <?php if($params->get('itemImage') && isset($item->image)): ?>
           <div class="snippet-image">
               <?php if(isset($rawReadmore)) : ?>
-                  <a href="<?php echo $rawReadmore['href']; ?>" target="<?php echo $rawReadmore['target']; ?>">
-                     <img src="<?php echo $item->image; ?>" alt="<?php echo K2HelperUtilities::cleanHtml($item->title); ?>"/>
-                  </a>
+                  <?php // add GA tracking script ?>
+                  <?php if ($showTrackingLink): ?>
+
+                      <?php if (array_key_exists('analyticseventname',$extraFieldAliases) &&
+                                array_key_exists('analyticscat',$extraFieldAliases) &&
+                                array_key_exists('analyticsaction',$extraFieldAliases)) : ?>
+
+                          <a class="ga" href="<?php echo $rawReadmore['href']; ?>" target="<?php echo $rawReadmore['target']; ?>"
+                          onclick="_gaq.push([
+                                            '_trackevent',
+                                            '<?php echo $extraFieldAliases['analyticscat']->value; // category ?>',
+                                            '<?php echo $extraFieldAliases['analyticsaction']->value; // action name ?>',
+                                            '<?php echo $extraFieldAliases['analyticseventname']->value; // label name ?>',
+
+                              ]);"
+                          >
+                              <img src="<?php echo $item->image; ?>" alt="<?php echo K2HelperUtilities::cleanHtml($item->title); ?>"/>
+                          </a>
+                      <?php endif; ?>
+
+                  <?php else: ?>
+                      <a href="<?php echo $rawReadmore['href']; ?>" target="<?php echo $rawReadmore['target']; ?>">
+                         <img src="<?php echo $item->image; ?>" alt="<?php echo K2HelperUtilities::cleanHtml($item->title); ?>"/>
+                      </a>
+                  <?php endif; ?>
               <?php else: ?>
                   <img src="<?php echo $item->image; ?>" alt="<?php echo K2HelperUtilities::cleanHtml($item->title); ?>"/>
               <?php endif ?>
@@ -107,9 +156,29 @@ defined('_JEXEC') or die;
 
       </div>
 
+
+
     <div class="readmore-container">
-        <?php if (isset($readmoreHtml)): ?>
-            <?php echo $readmoreHtml; ?>
+
+        <?php if ($showTrackingLink): // we want to use tracking ?>
+            <?php if (array_key_exists('analyticseventname',$extraFieldAliases) &&
+                array_key_exists('analyticscat',$extraFieldAliases) &&
+                array_key_exists('analyticsaction',$extraFieldAliases)) : ?>
+                    <a class="ga" href="<?php echo $rawReadmore['href']; ?>" target="<?php echo $rawReadmore['target']; ?>"
+                       onclick="_gaq.push([
+                           '_trackevent',
+                           '<?php echo $extraFieldAliases['analyticscat']->value; // category ?>',
+                           '<?php echo $extraFieldAliases['analyticsaction']->value; // action name ?>',
+                           '<?php echo $extraFieldAliases['analyticseventname']->value; // label name ?>',
+
+                           ]);">
+                        <?php echo $extraFieldAliases['readmorelink']->text; ?>
+                    </a>
+            <?php endif; // end array key ?>
+        <?php else: ?>
+            <a class="" href="<?php echo $rawReadmore['href']; ?>" target="<?php echo $rawReadmore['target']; ?>">
+                <?php echo $extraFieldAliases['readmorelink']->text; ?>
+            </a>
         <?php endif; ?>
     </div>
 
