@@ -21,8 +21,8 @@ Options +FollowSymLinks
 ## Mod_rewrite in use.
 
 RewriteEngine On
-php_value mbstring.language neutral
-php_value memory_limit 64M
+#php_value mbstring.language neutral
+#php_value memory_limit 64M
 
 ## Begin - Rewrite rules to block out some common exploits.
 # If you experience problems on your site block out the operations listed below
@@ -64,7 +64,7 @@ RewriteCond %{HTTP_HOST} !^www\. [NC]
 RewriteCond %{HTTPS}s ^on(s)|
 RewriteRule ^ http%1://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
-
+#RedirectMatch 301 ^/~restonic/.*$ http://www.restonic.com/
 
 ## Begin - Joomla! core SEF Section.
 #
@@ -541,13 +541,29 @@ Redirect 301	/yoga-sleep	http://www.restonic.com/blog/yoga-sleep
 ## Redirects from Dec 2104 Review with Julia & Jeremy
 ##301
 
-RewriteRule ^blog/tag/(.*)$ http://www.restonic.com/tag/$1 [R=301,NC,L]
-RewriteRule ^[promotions]/(.*)$ /$1 [R=301,NC,L]
-RewriteRule ^[rules]/(.*)$ /$1 [R=301,NC,L]
-RewriteRule ^[twinkle-twinkle-contest]/(.*)$ /$1 [R=301,NC,L]
+#RewriteRule ^blog/tag/(.*)$ http://www.restonic.com/tag/$1 [R=301,NC,L]
+#RewriteRule ^[promotions]/(.*)$ /$1 [R=301,NC,L]
+#RewriteRule ^[rules]/(.*)$ /$1 [R=301,NC,L]
+#RewriteRule ^[twinkle-twinkle-contest]/(.*)$ /$1 [R=301,NC,L]
+## Old RewriteRule ^\~restonic/(.*)$ http://www.restonic.com/$1 [R=301,NC,L]
+RedirectMatch 301 ^/~restonic/(.*) http://www.restonic.com/$1
+## works Redirect 301 /~restonic/blog/holiday-stess-tips-3957 http://www.restonic.com/blog/holiday-stess-tips-3957
 
+## RewriteCond %{REQUEST_URI} ^/~restonic/
+## RewriteRule ^(.*)$ http://www.restonic.com/$1 [R=301,L]
+
+
+
+
+# Note from Chad - this should go to comfort care collection page
 Redirect 301	/Mattresses/ComfortCare-Collection/ComfortCare/ComfortCare%C2%AE-Mattress.html15	http://www.restonic.com/
+
+# this should 404?? Content is not at the homepage.
 Redirect 301	/contest_winners/	http://www.restonic.com/
+
+
+
+# not sure what content this is but I wouldn't 301 it. 
 Redirect 301    /index.php?option=com_k2&view=item&id=53&tmpl=component    http://www.restonic.com/
 
 #410
@@ -555,5 +571,4 @@ Redirect 410	/mn_ct4.swf
 Redirect 410	/mn_txt.swf
 Redirect 410	/viewTable.html?cid=12
 Redirect 410	/slinks_content.swf
-
 
