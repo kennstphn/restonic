@@ -117,12 +117,6 @@ if($params->get('background')) {
         <?php endif; ?>
 	</footer>
 
-	<!-- <script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/media/jui/js/jquery.js"></script> -->
-	<!-- <script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/media/jui/js/jquery-noconflict.js"></script> -->
-	<!-- <script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/templates/<?php echo $this->template; ?>/js/bootstrap-custom.js"></script> -->
-	<!-- <script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/templates/<?php echo $this->template; ?>/js/bootstrap-tabcollapse.js"></script> -->
-
-
 	<script type="text/javascript">
 		jQuery().ready(function () {
 			jQuery(".navbar-nav li a").each(function(n) {
@@ -145,19 +139,16 @@ if($params->get('background')) {
 	<?php endif; ?>
 
 
-	<script type="text/javascript">
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-10432300-1']);
-		_gaq.push(['_trackPageview']);
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+        ga('create', 'UA-10432300-1', 'auto');
+        ga('send', 'pageview');
 
-		(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
-
-	</script>
+    </script>
 
     <script language="JavaScript1.1" src="//pixel.mathtag.com/event/js?mt_id=511793&mt_adid=126670&v1=&v2=&v3=&s1=&s2=&s3="></script>
 	</body>
