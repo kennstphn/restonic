@@ -35,9 +35,20 @@ if($params->get('background')) {
     <jdoc:include type="head" />
 
 	<script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/templates/<?php echo $this->template; ?>/js/bootstrap-custom.js"></script>
-	<script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/templates/<?php echo $this->template; ?>/js/bootstrap-tabcollapse.js">
+	<script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/templates/<?php echo $this->template; ?>/js/bootstrap-tabcollapse.js"></script>
 	<script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/media/jui/js/jquery-noconflict.js"></script>
 	<script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/media/jui/js/html5.js"></script>
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics_debug.js','ga');
+
+        ga('create', 'UA-10432300-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
 </head>
 
 <body class="<?php echo $page_type . $background_id ; ?><?php echo tmpHelper::getPageSuffix(); ?>">
@@ -139,16 +150,10 @@ if($params->get('background')) {
 	<?php endif; ?>
 
 
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-10432300-1', 'auto');
-        ga('send', 'pageview');
 
-    </script>
+    <script type="text/javascript" charset="utf-8" src="<?php echo JUri::root(); ?>/templates/<?php echo $this->template; ?>/js/ga-tracking.js"></script>
+
 
     <script language="JavaScript1.1" src="//pixel.mathtag.com/event/js?mt_id=511793&mt_adid=126670&v1=&v2=&v3=&s1=&s2=&s3="></script>
 	</body>

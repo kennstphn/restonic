@@ -113,13 +113,10 @@ defined('_JEXEC') or die;
                                 array_key_exists('analyticsaction',$extraFieldAliases)) : ?>
 
                           <a class="ga" href="<?php echo $rawReadmore['href']; ?>" target="<?php echo $rawReadmore['target']; ?>"
-                          onclick="_gaq.push([
-                                            '_trackevent',
-                                            '<?php echo $extraFieldAliases['analyticscat']->value; // category ?>',
-                                            '<?php echo $extraFieldAliases['analyticsaction']->value; // action name ?>',
-                                            '<?php echo $extraFieldAliases['analyticseventname']->value; // label name ?>',
-
-                              ]);"
+                             data-analytics-event="<?php echo $extraFieldAliases['analyticseventname']->value; ?>"
+                             data-analytics-category="<?php echo $extraFieldAliases['analyticscat']->value; // category ?>"
+                             data-analytics-action="<?php echo $extraFieldAliases['analyticsaction']->value; // action name ?>"
+                             data-analytics-alias="<?php echo $extraFieldAliases['analyticseventname']->value; // label name ?>"
                           >
                               <img src="<?php echo $item->image; ?>" alt="<?php echo K2HelperUtilities::cleanHtml($item->title); ?>"/>
                           </a>
@@ -165,13 +162,11 @@ defined('_JEXEC') or die;
                 array_key_exists('analyticscat',$extraFieldAliases) &&
                 array_key_exists('analyticsaction',$extraFieldAliases)) : ?>
                     <a class="ga" href="<?php echo $rawReadmore['href']; ?>" target="<?php echo $rawReadmore['target']; ?>"
-                       onclick="_gaq.push([
-                           '_trackevent',
-                           '<?php echo $extraFieldAliases['analyticscat']->value; // category ?>',
-                           '<?php echo $extraFieldAliases['analyticsaction']->value; // action name ?>',
-                           '<?php echo $extraFieldAliases['analyticseventname']->value; // label name ?>',
-
-                           ]);">
+                       data-analytics-event="<?php echo $extraFieldAliases['analyticseventname']->value; ?>"
+                       data-analytics-category="<?php echo $extraFieldAliases['analyticscat']->value; // category ?>"
+                       data-analytics-action="<?php echo $extraFieldAliases['analyticsaction']->value; // action name ?>"
+                       data-analytics-alias="<?php echo $extraFieldAliases['analyticseventname']->value; // label name ?>"
+                        >
                         <?php echo $extraFieldAliases['readmorelink']->text; ?>
                     </a>
             <?php endif; // end array key ?>
