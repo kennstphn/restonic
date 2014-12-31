@@ -13,6 +13,10 @@ defined('_JEXEC') or die;
 // Define default image size (do not change)
 K2HelperUtilities::setDefaultImage($this->item, 'itemlist', $this->params);
 
+JHtml::script(JUri::root() . '/media/pinit/restonicpins.js');
+
+$doc = JFactory::getDocument();
+$doc->addScriptDeclaration('_pinurl    = "' . JUri::root() . $this->item->link . '";');
 
 
 ?>
@@ -146,8 +150,10 @@ K2HelperUtilities::setDefaultImage($this->item, 'itemlist', $this->params);
 			  </div>
 		  </div>
           <?php if (array_key_exists(90, $extrafields)): ?>
-              <div class="mattress-item-image">
+              <div class="mattress-item-image ">
+
                 <?php echo $extrafields[90]; ?>
+
 
 	              <div class="clr"></div>
 	              <?php if (array_key_exists(94, $extrafields)): ?>
