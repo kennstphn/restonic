@@ -4,9 +4,13 @@ jQuery(document).ready(function($) {
 
     var mattresses = $('.mattress-item-image img');
 
+    var toolbar = $('.share-item');
+
     addPinit(blog);
     addPinit(mattresses);
-    buildImageShareToolbar(blog);
+    // buildImageShareToolbar(toolbar);
+
+
 
     function addPinit(selector) {
 
@@ -18,7 +22,7 @@ jQuery(document).ready(function($) {
             var position = getPosition(float);
 
             // wrap the image in a div so we can float it
-            $(this).wrap('<div class="' + position + '"></div>');
+            $(this).wrap('<div class="share-item ' + position + '"></div>');
 
             // get root path
             if (!window.location.origin)
@@ -29,18 +33,33 @@ jQuery(document).ready(function($) {
             var pinmedia    = encodeURIComponent(window.location.origin + $(this).attr('src')); // we get this from global
             var alt         = encodeURIComponent($(this).attr('alt'));
 
+            var pinButton   = buildPinitButton(pinurl, pinmedia, alt);
+
             // build the final share markup
             var shareMarkup = '<div class="pinit-btn">';
 
+
+
             // get the pin markup
-            shareMarkup += buildPinitButton(pinurl, pinmedia, alt);
+            shareMarkup += pinButton;
 
             // close link
             shareMarkup += '</div>';
 
+            toolbar = buildImageShareToolbar(pinButton);
+
             // prepend before the image
             $(this).before(shareMarkup);
 
+            /* $(this).before(toolbar);
+
+            // on hover in out show / hide the toolbar
+            $('.share-item').hover(function(){
+                $('.image-share-toolbar').show();
+            }, function(){
+                $('.image-share-toolbar').hide();
+            });
+            */
         }); // end each
 
         // execute pinit after we're done with our markup
@@ -74,14 +93,20 @@ jQuery(document).ready(function($) {
         return position;
     }
 
-    function buildImageShareToolbar(selector)
+    function buildImageShareToolbar(pinButton)
     {
-        // var pinit = buildPinitButton(link, image, description);
-        selector.each(function () {
-            console.log(selector);
-        });
+        var shareToolbar = '<div class="image-share-toolbar">';
 
-        //return '<div class="image-share-toolbar"></div>';
+        shareToolbar += pinButton;
+
+        shareToolbar += '</div>';
+
+        return shareToolbar;
+    }
+
+    function buildFacebookShare(link, image, description)
+    {
+
     }
 
     /*

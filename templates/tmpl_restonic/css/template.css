@@ -7629,6 +7629,13 @@ footer .footer-nav-wrapper .footer-nav {
 .mattress-item-image .share-img-none .pinit-btn {
   top: 35px;
 }
+.image-share-toolbar {
+  display: none;
+  position: absolute;
+  background: #fff;
+  bottom: 0px;
+  height: 50px;
+}
 .home #bottom .container > .span5 {
   color: #ffffff;
 }
