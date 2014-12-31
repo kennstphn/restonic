@@ -282,7 +282,12 @@ defined('_JEXEC') or die;
 					<?php if($this->item->params->get('itemTwitterButton',1)): ?>
 						<!-- Twitter Button -->
 						<div class="itemTwitterButton">
-							<a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal"<?php if($this->item->params->get('twitterUsername')): ?> data-via="<?php echo $this->item->params->get('twitterUsername'); ?>"<?php endif; ?>>
+							<a href="https://twitter.com/share" 
+								class="twitter-share-button" 
+								data-text="<?php echo $this->item->title; ?>"
+								data-count="horizontal"
+								data-via="restonicbeds"
+								data-hashtags="sleepblog">
 								<?php echo JText::_('K2_TWEET'); ?>
 							</a>
 							<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
