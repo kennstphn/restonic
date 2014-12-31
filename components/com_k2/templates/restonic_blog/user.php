@@ -1,4 +1,4 @@
-<?php
+gi<?php
 /**
  * @version		$Id: user.php 1812 2013-01-14 18:45:06Z lefteris.kavadas $
  * @package		K2
