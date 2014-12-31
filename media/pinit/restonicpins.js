@@ -6,23 +6,16 @@ jQuery(document).ready(function($) {
 
     addPinit(blog);
     addPinit(mattresses);
+    buildImageShareToolbar(blog);
 
     function addPinit(selector) {
 
         selector.each(function () {
-            var position = 'share-img-';
-
+            // get the image float
             var float = $(this).css("float");
 
-            // determine our float for the container div
-            if (float == 'left' || float == 'right') {
-                // if our position is right or left add it
-                position += float;
-            }
-            else {
-                // no position specified so default to none
-                position += 'none';
-            }
+            // determine our position
+            var position = getPosition(float);
 
             // wrap the image in a div so we can float it
             $(this).wrap('<div class="' + position + '"></div>');
@@ -31,32 +24,21 @@ jQuery(document).ready(function($) {
             if (!window.location.origin)
                 window.location.origin = window.location.protocol + "//" + window.location.host;
 
-            var pinurl = encodeURIComponent(_pinurl); // we get the global
-            var pinmedia = encodeURIComponent(window.location.origin + $(this).attr('src')); // we get this from global
-            var alt = encodeURIComponent($(this).attr('alt'));
+            // get pin media info
+            var pinurl      = encodeURIComponent(_pinurl); // we get the global
+            var pinmedia    = encodeURIComponent(window.location.origin + $(this).attr('src')); // we get this from global
+            var alt         = encodeURIComponent($(this).attr('alt'));
 
+            // build the final share markup
+            var shareMarkup = '<div class="pinit-btn">';
 
-            var shareMarkup = '<div class="pinit-btn"><a href="//www.pinterest.com/pin/create/button/?';
-
-            // add url params
-            shareMarkup += 'url=' + pinurl;
-            shareMarkup += '&media=' + pinmedia;
-            shareMarkup += '&description=' + alt;
-
-            shareMarkup += '"'; // close href
-
-            // additional href options
-            shareMarkup += 'data-pin-do="buttonPin" data-pin-config="none">';
-
-            // insert image
-            shareMarkup += '<img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" />';
+            // get the pin markup
+            shareMarkup += buildPinitButton(pinurl, pinmedia, alt);
 
             // close link
-            shareMarkup += '</a></div>';
-            console.log(shareMarkup);
+            shareMarkup += '</div>';
 
             // prepend before the image
-            //$(this).before('<div class="share-image">');
             $(this).before(shareMarkup);
 
         }); // end each
@@ -70,4 +52,61 @@ jQuery(document).ready(function($) {
             f.parentNode.insertBefore(p, f);
         }(document));
     } // end addpinit
+
+    /*
+     * Float our image container div as needed. Gets this from the image style.
+     */
+
+    function getPosition(float)
+    {
+        var position = 'share-img-';
+
+        // determine our float for the container div
+        if (float == 'left' || float == 'right') {
+            // if our position is right or left add it
+            position += float;
+        }
+        else {
+            // no position specified so default to none
+            position += 'none';
+        }
+
+        return position;
+    }
+
+    function buildImageShareToolbar(selector)
+    {
+        // var pinit = buildPinitButton(link, image, description);
+        selector.each(function () {
+            console.log(selector);
+        });
+
+        //return '<div class="image-share-toolbar"></div>';
+    }
+
+    /*
+     * Create a pinterest share button markup.
+     */
+    function buildPinitButton(link, image, description)
+    {
+        var pinitMarkup = '<a href="//www.pinterest.com/pin/create/button/?';
+
+        // add url params
+        pinitMarkup += 'url=' + link;
+        pinitMarkup += '&media=' + image;
+        pinitMarkup += '&description=' + description;
+
+        pinitMarkup += '"'; // close href
+
+        // additional href options
+        pinitMarkup += 'data-pin-do="buttonPin" data-pin-config="none">';
+
+        // insert image
+        pinitMarkup += '<img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" />';
+
+        // close link
+        pinitMarkup += '</a>';
+
+        return pinitMarkup;
+    }
 });
