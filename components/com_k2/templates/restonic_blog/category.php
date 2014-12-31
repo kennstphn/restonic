@@ -10,6 +10,9 @@
 // no direct access
 defined('_JEXEC') or die;
 
+$doc = JFactory::getDocument();
+$doc->addScript('//assets.pinterest.com/js/pinit.js');
+
 ?>
 
 <!-- Start K2 Category Layout -->

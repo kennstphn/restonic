@@ -10,6 +10,13 @@
 // no direct access
 defined('_JEXEC') or die;
 
+JHtml::script(JUri::root() . '/media/pinit/restonicpins.js');
+
+$doc = JFactory::getDocument();
+$doc->addScriptDeclaration('_pinurl    = "' . JUri::root() . $this->item->link . '";');
+$doc->addScriptDeclaration('_pinmedia  = "' . JUri::root() . $this->item->imageXLarge . '";');
+
+
 ?>
 
 <?php if(JRequest::getInt('print')==1): ?>
