@@ -282,6 +282,7 @@ class plgFinderK2con extends FinderIndexerAdapter
         $sql->join('LEFT', '#__k2_categories AS c ON c.id = a.catid');
         $sql->join('LEFT', '#__users AS u ON u.id = a.created_by');
         $sql->where('a.catid NOT IN (' . implode(',', $parentIds) .')');
+        $sql->where('a.catid != 54'); // excludes the snippets
 
         return $sql;
     }
