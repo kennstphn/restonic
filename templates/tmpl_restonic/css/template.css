@@ -7808,6 +7808,50 @@ label,
   padding-left: 30px;
   color: #75133a;
 }
+#top-menu .nav > li #menu-comfort-care-signature {
+  background: url('../images/mattress-images/menu-comfortcare-signature.png');
+}
+#top-menu .nav > li #menu-comfort-care-select {
+  background: url('../images/mattress-images/menu-comfortcare-select.png');
+}
+#top-menu .nav > li #menu-comfort-care {
+  background: url('../images/mattress-images/menu-comfortcare.png');
+}
+#top-menu .nav > li #menu-healthrest-tempagel {
+  background: url('../images/mattress-images/menu-healthrest-tempagel.png');
+}
+#top-menu .nav > li #menu-healthrest-latex {
+  background: url('../images/mattress-images/menu-healthrest-latex.png');
+}
+#top-menu .nav > li #menu-healthrest-memory-foam {
+  background: url('../images/mattress-images/menu-healthrest-memory-foam.png');
+}
+#top-menu .nav > li #menu-comfort-care-signature,
+#top-menu .nav > li #menu-comfort-care-select,
+#top-menu .nav > li #menu-comfort-care,
+#top-menu .nav > li #menu-healthrest-tempagel,
+#top-menu .nav > li #menu-healthrest-latex,
+#top-menu .nav > li #menu-healthrest-memory-foam {
+  width: 126px;
+  height: 117px;
+  display: block;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  background-size: cover;
+}
+#top-menu .nav > li #menu-comfort-care-signature:hover,
+#top-menu .nav > li #menu-comfort-care-select:hover,
+#top-menu .nav > li #menu-comfort-care:hover,
+#top-menu .nav > li #menu-healthrest-tempagel:hover,
+#top-menu .nav > li #menu-healthrest-latex:hover,
+#top-menu .nav > li #menu-healthrest-memory-foam:hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.item-255 {
+  margin-right: 40px;
+}
 #top-menu .nav > li {
   padding: 0 33px;
 }
@@ -8197,6 +8241,15 @@ footer .footer-nav ul li a:hover {
   }
   body.blog #itemListPrimary .catItemReadMore {
     position: relative;
+  }
+  #top-menu .nav > li #menu-comfort-care-signature,
+  #top-menu .nav > li #menu-comfort-care-select,
+  #top-menu .nav > li #menu-comfort-care,
+  #top-menu .nav > li #menu-healthrest-tempagel,
+  #top-menu .nav > li #menu-healthrest-latex,
+  #top-menu .nav > li #menu-healthrest-memory-foam {
+    width: 106px;
+    height: 104px;
   }
 }
 @media (min-width: 980px) {
