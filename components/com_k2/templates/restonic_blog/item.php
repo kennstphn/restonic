@@ -10,7 +10,9 @@
 // no direct access
 defined('_JEXEC') or die;
 
+JHtml::script('http://platform.tumblr.com/v1/share.js');
 JHtml::script(JUri::root() . '/media/pinit/restonicpins.js');
+
 
 $doc = JFactory::getDocument();
 $doc->addScriptDeclaration('_pinurl    = "' . JUri::root() . $this->item->link . '";');

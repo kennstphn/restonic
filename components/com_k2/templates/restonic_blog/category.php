@@ -11,7 +11,6 @@
 defined('_JEXEC') or die;
 
 $doc = JFactory::getDocument();
-$doc->addScript('//assets.pinterest.com/js/pinit.js');
 
 ?>
 

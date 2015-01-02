@@ -7603,38 +7603,33 @@ footer .footer-nav-wrapper .footer-nav {
 .share-img-none {
   position: relative;
 }
-.share-img-none .pinit-btn {
+.pinit-btn {
   position: absolute;
   top: 6px;
-  left: 6px;
+  right: 6px;
 }
 .share-img-left {
   position: relative;
   float: left;
 }
-.share-img-left .pinit-btn {
-  position: absolute;
-  top: 6px;
-  left: 6px;
-}
 .share-img-right {
   position: relative;
   float: right;
-}
-.share-img-right .pinit-btn {
-  position: absolute;
-  top: 6px;
-  right: 6px;
 }
 .mattress-item-image .share-img-none .pinit-btn {
   top: 35px;
 }
 .image-share-toolbar {
-  display: none;
+  display: block;
   position: absolute;
-  background: #fff;
+  background: url('../images/transparent.png');
   bottom: 0px;
-  height: 50px;
+  height: 30px;
+  padding: 5px 0;
+  text-align: right;
+}
+.image-share-toolbar a {
+  padding: 0 1px;
 }
 .home #bottom .container > .span5 {
   color: #ffffff;

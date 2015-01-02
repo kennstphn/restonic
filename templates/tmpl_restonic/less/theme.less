@@ -324,31 +324,22 @@ footer {
 
 .share-img-none {
   position: relative;
-  .pinit-btn {
-    position: absolute;
-    top: 6px;
-    left: 6px;
-  }
+}
+
+.pinit-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
 }
 
 .share-img-left {
   position: relative;
   float: left;
-  .pinit-btn {
-    position: absolute;
-    top: 6px;
-    left: 6px;
-  }
 }
 
 .share-img-right {
   position: relative;
   float: right;
-  .pinit-btn {
-    position: absolute;
-    top: 6px;
-    right: 6px;
-  }
 }
 
 .mattress-item-image {
@@ -361,9 +352,14 @@ footer {
 
 // sharing toolbar
 .image-share-toolbar {
-  display: none;
+  display: block;
   position: absolute;
-  background: #fff;
+  background: url('../images/transparent.png');
   bottom: 0px;
-  height: 50px;
+  height: 30px;
+  padding: 5px 0;
+  text-align: right;
+  a {
+    padding: 0 1px;
+  }
 }

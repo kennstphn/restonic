@@ -115,12 +115,6 @@ K2HelperUtilities::setDefaultImage($this->item, 'itemlist', $this->params);
         <div class="catItemImageBlock">
             <div class="share-img-left">
               <span class="catItemImage">
-                  <div class="pinit-btn">
-                      <a href="//www.pinterest.com/pin/create/button/?url=<?php echo urlencode(JUri::root() . '/' . $this->item->link); ?>&media=<?php echo urlencode(JUri::root() . '/' .$this->item->imageXLarge); ?>&description=<?php echo urlencode($this->item->title); ?>"
-                         data-pin-do="buttonPin" data-pin-config="none">
-                          <img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" />
-                      </a>
-                  </div>
                 <a href="<?php echo $this->item->link; ?>" title="<?php if(!empty($this->item->image_caption)) echo K2HelperUtilities::cleanHtml($this->item->image_caption); else echo K2HelperUtilities::cleanHtml($this->item->title); ?>">
                     <img src="<?php echo $this->item->image; ?>" alt="<?php if(!empty($this->item->image_caption)) echo K2HelperUtilities::cleanHtml($this->item->image_caption); else echo K2HelperUtilities::cleanHtml($this->item->title); ?>" style="width:<?php echo $this->item->imageWidth; ?>px; height:auto;" />
                 </a>
