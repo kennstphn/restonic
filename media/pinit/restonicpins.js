@@ -207,15 +207,17 @@ jQuery(document).ready(function($) {
 
     function buildTwitterButton(link)
     {
-        var facebookImage   =  '<img src="/images/social-icons/twitter.png" />';
+        var twitterImage   =  '<img src="/images/social-icons/twitter.png" />';
 
-        var facebookMarkup  =  '<a href="https://twitter.com/intent/tweet?';
-        facebookMarkup      += 'text=' + $("meta[property='og:title']").attr("content");
-        facebookMarkup      += '&url='  +  link;
+        var twitterMarkup  =  '<a href="https://twitter.com/intent/tweet?';
+        twitterMarkup      += 'text=' + $("meta[property='og:title']").attr("content");
+        twitterMarkup      += '&url='  +  link;
+        twitterMarkup      += '&hashtags=sleepBlog';
+        twitterMarkup      += '&via=restonicbeds';
 
-        facebookMarkup      += '">' + facebookImage +'</a>';
+        twitterMarkup      += '">' + twitterImage +'</a>';
 
-        return facebookMarkup;
+        return twitterMarkup;
     }
 
     function buildTumblrButton(link, image, description)

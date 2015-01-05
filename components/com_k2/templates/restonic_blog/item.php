@@ -11,7 +11,7 @@
 defined('_JEXEC') or die;
 
 JHtml::script('http://platform.tumblr.com/v1/share.js');
-JHtml::script(JUri::root() . '/media/pinit/restonicpins.js');
+JHtml::script(JUri::root() . '/media/pinit/restonicpins.prod.js');
 
 
 $doc = JFactory::getDocument();
@@ -359,7 +359,8 @@ $doc->addScriptDeclaration('_pinmedia  = "' . JUri::root() . $this->item->imageX
 					</div>
 
 					<div class="buffer">
-						<a href="http://bufferapp.com/add" class="buffer-add-button" data-text="Restonic Blog" data-count="horizontal" >Buffer</a><script type="text/javascript" src="http://static.bufferapp.com/js/button.js"></script>
+						<a href="http://bufferapp.com/add" class="buffer-add-button" data-text="Restonic Blog" data-count="horizontal">Buffer</a>
+                        <script type="text/javascript" src="https://d389zggrogs7qo.cloudfront.net/js/button.js"></script>
 					</div>
 
 					<div class="clr"></div>

@@ -59,7 +59,7 @@ module.exports = function(grunt) {
             },
             frontend: {
                 files: {
-                    'templates/tmpl_restonic/js/frontend.js':  'templates/tmpl_restonic/js/frontend.js'
+                    'media/pinit/restonicpins.prod.js': 'media/pinit/restonicpins.js'
                 }
             }
         },
@@ -73,6 +73,7 @@ module.exports = function(grunt) {
                 ]
             }
         }
+
     });
     // Plugin loading
     grunt.loadNpmTasks('grunt-contrib-concat');
