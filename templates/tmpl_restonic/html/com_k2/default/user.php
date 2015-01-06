@@ -17,7 +17,7 @@ $user = JFactory::getUser();
 
 <!-- Start K2 User Layout -->
 
-<div id="k2Container" class="container-fluid userView<?php if($this->params->get('pageclass_sfx')) echo ' '.$this->params->get('pageclass_sfx'); ?>">
+<div id="k2Container" class=" userView<?php if($this->params->get('pageclass_sfx')) echo ' '.$this->params->get('pageclass_sfx'); ?>">
 
 <?php if($this->params->get('show_page_title') && $this->params->get('page_title')!=$this->user->name): ?>
     <!-- Page title -->

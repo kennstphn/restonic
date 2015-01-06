@@ -210,7 +210,7 @@ jQuery(document).ready(function($) {
         var twitterImage   =  '<img src="/images/social-icons/twitter.png" />';
 
         var twitterMarkup  =  '<a href="https://twitter.com/intent/tweet?';
-        twitterMarkup      += 'text=' + $("meta[property='og:title']").attr("content");
+        twitterMarkup      += 'text=' + $.trim($('.itemTitle').text());
         twitterMarkup      += '&url='  +  link;
         twitterMarkup      += '&hashtags=sleepBlog';
         twitterMarkup      += '&via=restonicbeds';
