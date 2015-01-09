@@ -7808,6 +7808,9 @@ label,
   padding-left: 30px;
   color: #75133a;
 }
+#top-menu .nav > li #menu-comfort-care-limited {
+  background: url('../images/mattress-images/menu-comfortcare-limited.png');
+}
 #top-menu .nav > li #menu-comfort-care-signature {
   background: url('../images/mattress-images/menu-comfortcare-signature.png');
 }
@@ -7826,6 +7829,7 @@ label,
 #top-menu .nav > li #menu-healthrest-memory-foam {
   background: url('../images/mattress-images/menu-healthrest-memory-foam.png');
 }
+#top-menu .nav > li #menu-comfort-care-limited,
 #top-menu .nav > li #menu-comfort-care-signature,
 #top-menu .nav > li #menu-comfort-care-select,
 #top-menu .nav > li #menu-comfort-care,
@@ -7840,6 +7844,7 @@ label,
   filter: alpha(opacity=80);
   background-size: cover;
 }
+#top-menu .nav > li #menu-comfort-care-limited:hover,
 #top-menu .nav > li #menu-comfort-care-signature:hover,
 #top-menu .nav > li #menu-comfort-care-select:hover,
 #top-menu .nav > li #menu-comfort-care:hover,
