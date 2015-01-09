@@ -93,6 +93,9 @@ foreach ($list as $i => &$item) :
             if ($item->alias == 'mod-custom') {
 	            require JModuleHelper::getLayoutPath('mod_menu', 'default_heading_module');
             }
+            else if ($item->alias == 'modid-229-col-800') {
+                require JModuleHelper::getLayoutPath('mod_menu', 'default_heading_module_new');
+            }
             elseif ($item->parent) {
                 require JModuleHelper::getLayoutPath('mod_menu', 'default_heading_dropdown');
             }
