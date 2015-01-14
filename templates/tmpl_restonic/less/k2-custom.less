@@ -21,6 +21,18 @@
       margin-left: 0px;
     }
   }
+  &.count-4, &.count-2 {
+    .library-item {
+      .makeColumn(3.5);
+      &:first-child {
+        margin-left: 0px;
+      }
+      &:nth-child(3) {
+        clear:both;
+        margin-left: 0px;
+      }
+    }
+  }
 }
 
 .itemList {
