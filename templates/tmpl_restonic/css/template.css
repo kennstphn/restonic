@@ -8009,6 +8009,7 @@ footer .footer-nav ul li a:hover {
   float: right;
 }
 .mattress-items .library-item {
+  height: 235px;
   float: left;
   margin-left: 20px;
   width: 180px;
