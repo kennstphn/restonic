@@ -99,7 +99,7 @@ class warrantyLogic
         //	check for receipt
         if (! $this->hasRecept())
         {
-            $claimFormErrorMessage .= 'If you do not have your original recept, your claim will be received but cannot be processed.\n';
+            $claimFormErrorMessage .= 'If you do not have your original receipt, your claim will be received but cannot be processed.\n';
         }
 		if (! $this->isRigidCenter() // we do not have rigid center
 		   && $this->needsRigidSupport()) // mattress requires rigid support
