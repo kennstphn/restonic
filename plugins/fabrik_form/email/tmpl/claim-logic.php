@@ -16,10 +16,13 @@ class warrantyLogic
 
     public function isRigidCenter()
     {
-        $isRigidCenter = $this->data['tbl_warranty_claim_oct___rigid_center_support_raw'];
-        $isRigidCenter = filter_var($isRigidCenter[0], FILTER_VALIDATE_BOOLEAN);
-
-        return $isRigidCenter;
+        $legCountList = $this->data['tbl_warranty_claim_oct___how_many_legs_raw'];
+        $count =($legCountList[0]);
+        $count = filter_var($count, FILTER_VALIDATE_INT);
+         if ($count < 5) {
+              return false;
+         }
+          return true;
     }
 
     public function isStainFree()
@@ -88,4 +91,25 @@ class warrantyLogic
         // all other cases default false
         return false;
     }
+        public function getAdvancedErrorMessage()
+    {
+    	$claimFormErrorMessage = '';
+        // check for soiled or stained mattress
+		if (! $this->isStainFree())
+        {
+            $claimFormErrorMessage .= 'Mattress must be free from soils and stains for a warranty claim to be processed. \n';
+        }
+        //	check for receipt
+        if (! $this->hasReceipt())
+        {
+            $claimFormErrorMessage .= 'If you do not have your original receipt, your claim will be received but cannot be processed.\n';
+        }
+		if (! $this->isRigidCenter() // we do not have rigid center
+		   && $this->needsRigidSupport()) // mattress requires rigid support
+		{
+		   $claimFormErrorMessage .= 'This size of mattress requires rigid center support - at least a 5th leg in the center for support.\n';
+		}
+		return $claimFormErrorMessage;	
+    }
+
 }
