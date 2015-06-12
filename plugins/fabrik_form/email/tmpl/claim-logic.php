@@ -88,7 +88,7 @@ class warrantyLogic
         // all other cases default false
         return false;
     }
-        public function advancedErrorMsg()
+        public function getAdvancedErrorMessage()
     {
     	$claimFormErrorMessage = '';
         // check for soiled or stained mattress
