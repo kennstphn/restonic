@@ -52,7 +52,7 @@ if ($factoryName == 'Other')
     <p>Thank you for submitting a warranty claim with Restonic Mattress Company.</p>
 
     <p>
-        <?php echo $claimFormErrorMessage;?>
+        <?php echo $warrantyLogic->getAdvancedErrorMessage();?>
     </p>
     <p>
         While Restonic maintains the registry, the law label affords you warranty rights and the sales
